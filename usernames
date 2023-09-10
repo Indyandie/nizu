@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+username=$1
+
+find . -maxdepth 1 -type f -name "*.nix" | \
+xargs -I {} \
+sed -i '' -e "s/yourusername/$username/g" {}

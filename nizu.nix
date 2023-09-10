@@ -4,6 +4,8 @@
   imports = [
     ./hyprland.nix
     ./home-manager.nix
+    ./mb-pro.nix
+    # ./mb-air.nix
   ];
 
   nix = {

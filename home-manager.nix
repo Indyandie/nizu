@@ -1,11 +1,11 @@
 # home-manager
 
-{ config, pkgs, username, ... }:
+{ config, pkgs, ... }:
 
 {
   home-manager.useGlobalPkgs = true;
 
-  home-manager.users.${username} = { pkgs, ...}: {
+  home-manager.users.yourusername = { pkgs, ...}: {
 		 home = {
       stateVersion = "23.05";
       packages = with pkgs; [

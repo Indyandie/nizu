@@ -49,7 +49,7 @@
     };
   };
 
-  users.users.nizusan = {
+  users.users.yourusername = {
     shell = pkgs.zsh;
     packages = with pkgs; [];
   };

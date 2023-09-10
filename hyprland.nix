@@ -35,5 +35,5 @@
 		kitty
 		seatd
 		cliphist
-	]
+	];
 }

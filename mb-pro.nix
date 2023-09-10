@@ -11,7 +11,7 @@
   
   # wifi mac
   # boot.kernelModules = [ "wl" ];
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.firewall.enable = true;
   # boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
 
@@ -21,7 +21,6 @@
   hardware.bluetooth.enable = true;
   hardware.facetimehd.enable = true;
   hardware.pulseaudio.enable = true;
-  hardware.opengl.extraPackages = [ pkgs.vaapiIntel ];
 
   # The wifi broadcom driver 
   # networking.enableB43Firmware = true;
@@ -50,3 +49,4 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+}

@@ -28,7 +28,8 @@
 
   powerManagement.enable = true;
   services.acpid.enable = true;
-  powerManagement.cpuFreqGovernor = "schedutil";
+  # powerManagement.cpuFreqGovernor = "schedutil";
+  powerManagement.cpuFreqGovernor = "ondemand";
   services.mbpfan.enable = true;
   hardware.cpu.intel.updateMicrocode = true;
   hardware.opengl.extraPackages = with pkgs; [

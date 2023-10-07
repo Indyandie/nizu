@@ -1,7 +1,22 @@
 #!/usr/bin/env zsh
 
-username=$1
+while getopts ":n:r" opt; do
+  case $opt in
+		n)
+			username=$OPTARG
+		;;
+		r)
+			username=nizusan
+		;;
+  esac
+done
+
+echo $username
+
+find . -maxdepth 1 -type f -name "*.nix" | \
+xargs -I {} sed -i -E "s/(home-manager|users)\.users\.[a-z]+/\1\.users\.$username/g" {}
 
 find . -maxdepth 1 -type f -name "*.nix" | \
 xargs -I {} \
-sed -i '' -e "s/yourusername/$username/g" {}
+grep -EH '(home-manager|users)\.users\.[a-z]+' {}
+

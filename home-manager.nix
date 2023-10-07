@@ -5,7 +5,7 @@
 {
   home-manager.useGlobalPkgs = true;
 
-  home-manager.users.yourusername = { pkgs, ...}: {
+  home-manager.users.nizusan = { pkgs, ...}: {
 		 home = {
       stateVersion = "23.05";
       packages = with pkgs; [

@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
     ./hyprland.nix
-    # ./home-manager.nix
+    ./home-manager.nix
     ./mb-pro.nix
     # ./mb-air.nix
   ];
@@ -15,6 +15,40 @@
     '';
   };
   
+  # Sound
+
+  sound.mediaKeys.enable = true;
+  security.rtkit.enable = true;
+  sound.enable = lib.mkForce false;
+  hardware.pulseaudio.enable = lib.mkForce false;
+  services.pipewire = {
+    enable = true;
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
+    pulse.enable = true;
+    wireplumber.enable = true;
+    jack.enable = true; # (optional)
+  };
+  
+  # light
+
+  systemd.services.clightd = {
+    enable = true;
+    description = "Clight daemon";
+    serviceConfig = {
+      ExecStart = "${pkgs.clightd}/bin/clightd -d";
+      User = "buraku";
+    };
+  };
+
+  security.sudo.extraConfig = ''
+    # Allow the user to run the light command without a password
+    buraku ALL=(ALL) NOPASSWD: ${pkgs.light}/bin/light
+  '';
+
+
   # dbux
   services.dbus.enable = true;
 
@@ -32,7 +66,7 @@
   
   # Console font
   console = {
-    font = "${pkgs.kbd}/share/consolefonts/iso02-12x22.psfu.gz";
+    font = "${pkgs.terminus_font}/share/consolefonts/ter-132n.psf.gz";
   };
 
   # zsh
@@ -46,7 +80,7 @@
     ohMyZsh = {
       enable = true;
       plugins = [
-        "git" "deno" "sudo" "vi-mode" "ssh-agent"
+        "git" "deno" "sudo" "vi-mode"
       ];
     };
   };
@@ -55,6 +89,9 @@
     shell = pkgs.zsh;
     packages = with pkgs; [];
   };
+
+  # flatpak
+  services.flatpak.enable = true;
 
   # pkgs
   environment.systemPackages = with pkgs; [
@@ -70,6 +107,7 @@
   starship
   neofetch
   zsh
+  lsd
   dunst
   zip
   unzip
@@ -89,6 +127,9 @@
   udisks2
   ntfs3g
   exfat
+
+  # cloud
+  # dropbox
 
   # gtk
   gtk2
@@ -115,8 +156,22 @@
   rust-analyzer
 
   # games
-  steam
+  # steam # trying flatpak
 
+  # gpg
+  gnupg
+  keepassxc
+
+  # sound
+  alsa-utils
+
+  # backlight
+  light
+  clight
+  clightd
+
+  # calculator
+  bc
   ];
 
   # dash
@@ -125,10 +180,12 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
+
+  programs.gnupg.agent.pinentryFlavor = "gtk2";
 
   # List services that you want to enable:
 

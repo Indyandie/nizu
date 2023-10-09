@@ -4,19 +4,41 @@ while getopts ":n:r" opt; do
   case $opt in
 		n)
 			username=$OPTARG
+			updateusername=true
 		;;
 		r)
 			username=nizusan
+			updateusername=true
 		;;
   esac
 done
 
-echo $username
+if [[ $updateusername = true ]]; then
+	echo 'Previous usernames'
+	find . -maxdepth 1 -type f -name "*.nix" | \
+	xargs -I {} \
+	grep -EH '(home-manager|users)\.users\.[a-z]+' {}
 
-find . -maxdepth 1 -type f -name "*.nix" | \
-xargs -I {} sed -i -E "s/(home-manager|users)\.users\.[a-z]+/\1\.users\.$username/g" {}
+	find . -maxdepth 1 -type f -name "*.nix" | \
+	xargs -I {} sed -i -E "s/(home-manager|users)\.users\.[a-z]+/\1\.users\.$username/g" {}
 
-find . -maxdepth 1 -type f -name "*.nix" | \
-xargs -I {} \
-grep -EH '(home-manager|users)\.users\.[a-z]+' {}
-
+	echo 'New usernames'
+	find . -maxdepth 1 -type f -name "*.nix" | \
+	xargs -I {} \
+	grep -EH '(home-manager|users)\.users\.[a-z]+' {}
+else
+	echo "
+USERNAME - update username for nix config files\n\n
+SYNOPSIS
+username [-r] [-n]\n\n
+OPTIONS
+-r
+\tReset username to 'nizusan'.\n\n
+-n <username>
+\tUpdte username to custom value.\n\n
+	"
+	echo 'Existing usernames'
+	find . -maxdepth 1 -type f -name "*.nix" | \
+	xargs -I {} \
+	grep -EH '(home-manager|users)\.users\.[a-z]+' {}
+fi

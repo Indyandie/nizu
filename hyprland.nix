@@ -29,8 +29,9 @@
 		xdg-desktop-portal-hyprland
 		waybar
 		wofi
-		eww
+		# eww
 		eww-wayland
+    acpi
 		alacritty
 		kitty
 		seatd

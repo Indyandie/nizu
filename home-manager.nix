@@ -3,6 +3,8 @@
 { config, pkgs, ... }:
 
 {
+  imports = [ <home-manager/nixos> ];
+
   home-manager.useGlobalPkgs = true;
 
   home-manager.users.nizusan = { pkgs, ...}: {
@@ -14,7 +16,7 @@
       ];
 
       pointerCursor = {
-        name = "Simp1e-Gruvbox-Light";
+        name = "Simp1e-Gruvbox-Dark";
         package = pkgs.simp1e-cursors;
         size = 24;
         gtk.enable = true;
@@ -27,7 +29,7 @@
       enable = true;
 
       font = {
-        size = 16;
+        size = 12;
         name = "JetBrainsMono Nerd Font";
       };
 

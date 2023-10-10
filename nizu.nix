@@ -48,6 +48,8 @@
     buraku ALL=(ALL) NOPASSWD: ${pkgs.light}/bin/light
   '';
 
+  # mullvad vpn
+  services.mullvad-vpn.enable = true;
 
   # dbux
   services.dbus.enable = true;

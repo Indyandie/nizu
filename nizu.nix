@@ -51,6 +51,11 @@
   # mullvad vpn
   services.mullvad-vpn.enable = true;
 
+  # qt
+  qt.enable = true;
+  qt.style = "adwaita-dark";
+  qt.platformTheme = "gnome";
+  
   # dbux
   services.dbus.enable = true;
 

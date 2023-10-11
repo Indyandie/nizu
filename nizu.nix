@@ -115,12 +115,18 @@
   neofetch
   zsh
   lsd
+  exa # lS
   dunst
   zip
   unzip
   killall
-  tldr
-  bat
+  htop
+  bottom # htop
+  zoxide # jump
+  sd # sed
+  tealdeer # tldr
+  macchina # neofetch
+  bat # cat
   bat-extras.prettybat
   bat-extras.batwatch
   bat-extras.batman
@@ -153,6 +159,7 @@
 
   # browsers
   brave
+  mullvad-browser
 
   # node
   fnm

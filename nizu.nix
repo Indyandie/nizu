@@ -114,6 +114,7 @@
   starship
   neofetch
   zsh
+  oh-my-zsh
   lsd
   exa # lS
   dunst

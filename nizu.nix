@@ -133,6 +133,7 @@
   bat-extras.batman
   bat-extras.batpipe
   flatpak
+  clipboard-jh # copy pasta
 
   # files and drives
   xfce.thunar

@@ -28,6 +28,7 @@
   environment.systemPackages = with pkgs; [
 		
 		hyprland
+    hyprpicker
 		wayland
 		xwayland
 		xdg-utils # opening default programs from links
@@ -41,6 +42,7 @@
 		kitty
 		seatd
 		cliphist
+    wl-clipboard
 
 		# status bar
 		eww-wayland

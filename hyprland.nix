@@ -16,7 +16,11 @@
     wlr.enable = true;
 
     # make gtk apps happy
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [ 
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-kde
+      pkgs.xdg-desktop-portal-hyprland
+    ];
   };
 
   environment.systemPackages = with pkgs; [

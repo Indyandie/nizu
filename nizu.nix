@@ -150,11 +150,6 @@
   gtk3
   gtk4
 
-  # qt
-  libsForQt5.qt5.qtwayland
-  qt6.qtwayland
-
-
   # network
   networkmanager
   networkmanagerapplet

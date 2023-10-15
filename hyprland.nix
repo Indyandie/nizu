@@ -33,12 +33,20 @@
 		xdg-desktop-portal-hyprland
 		waybar
 		wofi
-		# eww
-		eww-wayland
+
     acpi
 		alacritty
 		kitty
 		seatd
 		cliphist
+
+		# status bar
+		eww-wayland
+    waybar
+
+    # qt
+    libsForQt5.qt5.qtwayland
+    qt6.qtwayland
+
 	];
 }

@@ -11,6 +11,8 @@
     };
   };
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   programs.waybar.enable = true;
 
   xdg.portal = {

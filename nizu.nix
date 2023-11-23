@@ -1,6 +1,8 @@
 { config, pkgs, lib, ... }:
 
-{
+let
+  unstable = import <nixos-unstable> {};
+in {
   imports = [
     ./hyprland.nix
     ./home-manager.nix
@@ -115,8 +117,9 @@
   neofetch
   zsh
   oh-my-zsh
-  lsd
-  exa # lS
+  # lsd
+  # exa # lS
+  unstable.eza
   dunst
   zip
   unzip

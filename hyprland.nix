@@ -11,7 +11,15 @@
     };
   };
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.variables = {
+    NIXOS_OZONE_WL = "1";
+    GDK_BACKEND = "wayland";
+    QT_QPA_PLATFORM = "wayland";
+    SDL_VIDEODRIVER = "wayland";
+    ELECTRON_ENABLE_STACK_DUMPING = "true";
+    ELECTRON_NO_ATTACH_CONSOLE = "true";
+  };
+
 
   programs.waybar.enable = true;
 

@@ -1,7 +1,11 @@
 { config, pkgs, lib, ... }:
 
 let
-  unstable = import <nixos-unstable> {};
+  unstable = import <nixos-unstable> {
+    config = {
+      allowUnfree = true;
+    };
+  };
 in {
   imports = [
     ./hyprland.nix
@@ -108,6 +112,7 @@ in {
   # editors
   unstable.helix
   vim
+  unstable.obsidian
 
   # programs
   unstable.curl

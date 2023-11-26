@@ -106,19 +106,17 @@ in {
   environment.systemPackages = with pkgs; [
 
   # editors
-  helix
+  unstable.helix
   vim
 
   # programs
-  curl
+  unstable.curl
   wget
-  git
-  starship
+  unstable.git
+  unstable.starship
   neofetch
   zsh
-  oh-my-zsh
-  # lsd
-  # exa # lS
+  unstable.oh-my-zsh
   unstable.eza
   dunst
   zip
@@ -126,17 +124,17 @@ in {
   killall
   htop
   bottom # htop
-  zoxide # jump
-  sd # sed
-  tealdeer # tldr
-  macchina # neofetch
-  bat # cat
-  bat-extras.prettybat
-  bat-extras.batwatch
-  bat-extras.batman
-  bat-extras.batpipe
+  unstable.zoxide # jump
+  unstable.sd # sed
+  unstable.tealdeer # tldr
+  unstable.macchina # neofetch
+  unstable.bat # cat
+  unstable.bat-extras.prettybat
+  unstable.bat-extras.batwatch
+  unstable.bat-extras.batman
+  unstable.bat-extras.batpipe
   flatpak
-  clipboard-jh # copy pasta
+  unstable.clipboard-jh # copy pasta
 
   # files and drives
   xfce.thunar

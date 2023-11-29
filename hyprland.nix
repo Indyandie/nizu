@@ -2,7 +2,13 @@
 
 { config, pkgs, ... }:
 
-{
+let
+  unstable = import <nixos-unstable> {
+    config = {
+      allowUnfree = true;
+    };
+  };
+in {
   programs.hyprland = {
     enable = true;
     xwayland = {
@@ -20,7 +26,6 @@
     ELECTRON_NO_ATTACH_CONSOLE = "true";
   };
 
-
   programs.waybar.enable = true;
 
   xdg.portal = {
@@ -37,26 +42,25 @@
 
   environment.systemPackages = with pkgs; [
 		
-		hyprland
-    hyprpicker
-		wayland
-		xwayland
-		xdg-utils # opening default programs from links
-		xdg-desktop-portal  
-		xdg-desktop-portal-hyprland
-		waybar
-		wofi
+		unstable.hyprland
+    unstable.hyprpicker
+		unstable.wayland
+		unstable.xwayland
+		unstable.xdg-utils # opening default programs from links
+		unstable.xdg-desktop-portal
+		unstable.xdg-desktop-portal-hyprland
+		unstable.wofi
+    unstable.waybar
 
     acpi
-		alacritty
+		unstable.alacritty
 		kitty
 		seatd
 		cliphist
-    wl-clipboard
+    unstable.wl-clipboard
 
 		# status bar
-		eww-wayland
-    waybar
+		unstable.eww-wayland
 
     # qt
     libsForQt5.qt5.qtwayland

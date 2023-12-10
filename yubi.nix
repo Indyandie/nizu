@@ -9,6 +9,10 @@ let
     };
   };
 in {
+  security.pam.services = {
+    login.u2fAuth = true;
+    sudo.u2fAuth = true;
+  };
 
   environment.systemPackages = with pkgs; [
     yubikey-manager-qt

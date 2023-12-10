@@ -11,6 +11,7 @@ in {
     ./hyprland.nix
     ./home-manager.nix
     ./mb-pro.nix
+    ./yubi.nix
     # ./mb-air.nix
   ];
 

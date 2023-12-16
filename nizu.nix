@@ -104,6 +104,13 @@ in {
     packages = with pkgs; [];
   };
 
+  # ssh
+  services.openssh.enable = true;
+
+  services.openssh.ports = [ 22 ];
+
+  networking.firewall.allowedTCPPorts = [ 80 443 22 ];
+
   # flatpak
   services.flatpak.enable = true;
 

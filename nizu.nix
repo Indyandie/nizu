@@ -126,6 +126,7 @@ in {
   curl
   wget
   git
+  diff-so-fancy
   starship
   neofetch
   zsh

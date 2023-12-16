@@ -42,25 +42,25 @@ in {
 
   environment.systemPackages = with pkgs; [
 		
-		unstable.hyprland
-    unstable.hyprpicker
-		unstable.wayland
-		unstable.xwayland
-		unstable.xdg-utils # opening default programs from links
-		unstable.xdg-desktop-portal
-		unstable.xdg-desktop-portal-hyprland
-		unstable.wofi
-    unstable.waybar
+		hyprland
+    hyprpicker
+		wayland
+		xwayland
+		xdg-utils # opening default programs from links
+		xdg-desktop-portal
+		xdg-desktop-portal-hyprland
+		wofi
+    waybar
 
     acpi
-		unstable.alacritty
+		alacritty
 		kitty
 		seatd
 		cliphist
-    unstable.wl-clipboard
+    wl-clipboard
 
 		# status bar
-		unstable.eww-wayland
+		eww-wayland
 
     # qt
     libsForQt5.qt5.qtwayland

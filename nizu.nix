@@ -114,6 +114,11 @@ in {
   # flatpak
   services.flatpak.enable = true;
 
+  
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
+
   # pkgs
   environment.systemPackages = with pkgs; [
 
@@ -121,6 +126,7 @@ in {
   helix
   vim
   # unstable.obsidian
+  obsidian
 
   # programs
   curl

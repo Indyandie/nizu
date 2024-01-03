@@ -203,6 +203,7 @@ in {
   alsa-utils
 
   # backlight
+  brightnessctl
   light
   clight
   clightd

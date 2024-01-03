@@ -147,6 +147,8 @@ in {
   zoxide # jump
   sd # sed
   tealdeer # tldr
+  ripgrep
+  libnotify
   macchina # neofetch
   bat # cat
   bat-extras.prettybat

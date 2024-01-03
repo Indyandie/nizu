@@ -50,8 +50,8 @@ in {
     };
   };
 
+  # Allow the user to run the light command without a password
   security.sudo.extraConfig = ''
-    # Allow the user to run the light command without a password
     buraku ALL=(ALL) NOPASSWD: ${pkgs.light}/bin/light
   '';
 

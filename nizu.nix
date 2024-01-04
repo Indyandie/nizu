@@ -115,6 +115,7 @@ in {
   services.flatpak.enable = true;
 
   
+  # Obsidian dependancy
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
@@ -125,7 +126,6 @@ in {
   # editors
   helix
   vim
-  # unstable.obsidian
   obsidian
 
   # programs
@@ -212,6 +212,9 @@ in {
 
   # calculator
   bc
+
+  # images
+  imagemagick
   ];
 
   # dash

@@ -43,8 +43,10 @@ in {
   environment.systemPackages = with pkgs; [
 		
 		hyprland
-    hyprpicker
+    hyprpicker # color picker
+    hyprpaper # wallpaper
 		wayland
+    wayland-protocols
 		xwayland
 		xdg-utils # opening default programs from links
 		xdg-desktop-portal

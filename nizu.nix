@@ -22,6 +22,7 @@ in {
     '';
   };
   
+
   # Sound
 
   sound.mediaKeys.enable = true;
@@ -120,6 +121,7 @@ in {
     "electron-25.9.0"
   ];
 
+
   # pkgs
   environment.systemPackages = with pkgs; [
 
@@ -162,6 +164,9 @@ in {
   yq
   glow
 
+  # py
+  python3
+
   # files and drives
   xfce.thunar
   libsForQt5.dolphin
@@ -191,7 +196,7 @@ in {
   mullvad-browser
 
   # node
-  nodejs_20
+  # nodejs_20
   # fnm # no bueno
 
   # rust

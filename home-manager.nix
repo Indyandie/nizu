@@ -9,9 +9,28 @@
 
   home-manager.users.nizusan = { pkgs, ...}: {
 		 home = {
-      stateVersion = "23.05";
+      stateVersion = "23.11";
+      username = "buraku";
+      homeDirectory = "/home/buraku";
+
+      # node & npm
       packages = with pkgs; [
         dconf
+        nodejs_20
+        nodePackages.bash-language-server
+        nodePackages.svelte-language-server
+        dot-language-server
+        typescript
+        nodePackages_latest.typescript-language-server
+        vscode-langservers-extracted
+        ansible
+        ansible-language-server
+        marksman
+        lua-language-server
+        python311Packages.python-lsp-server
+        yaml-language-server
+        ansible-lint
+        taplo # toml
         # gnome.dconf-editor
       ];
 

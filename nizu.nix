@@ -160,6 +160,7 @@ in {
   jq
   jql
   yq
+  glow
 
   # files and drives
   xfce.thunar

@@ -158,6 +158,7 @@ in {
   flatpak
   clipboard-jh # copy pasta
   jq
+  jql
   yq
 
   # files and drives

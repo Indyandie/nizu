@@ -191,7 +191,8 @@ in {
   mullvad-browser
 
   # node
-  fnm
+  nodejs_20
+  # fnm # no bueno
 
   # rust
   cargo

@@ -157,6 +157,8 @@ in {
   bat-extras.batpipe
   flatpak
   clipboard-jh # copy pasta
+  jq
+  yq
 
   # files and drives
   xfce.thunar

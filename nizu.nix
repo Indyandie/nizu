@@ -163,6 +163,8 @@ in {
   jql
   yq
   glow
+  figlet
+  lolcat
 
   # py
   python3

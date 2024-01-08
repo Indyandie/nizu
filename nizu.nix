@@ -22,6 +22,16 @@ in {
     '';
   };
   
+  xdg.portal.enable = true;
+
+  # Steam
+  
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
+
 
   # Sound
 
@@ -166,6 +176,11 @@ in {
   figlet
   lolcat
 
+  # pinentry
+  pinentry
+  # pinentry-gtk2
+  # pinentry-gnome
+
   # py
   python3
 
@@ -240,7 +255,7 @@ in {
     enableSSHSupport = true;
   };
 
-  programs.gnupg.agent.pinentryFlavor = "gtk2";
+  programs.gnupg.agent.pinentryFlavor = "gnome3";
 
   # List services that you want to enable:
 

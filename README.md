@@ -12,6 +12,9 @@ sed -i '' -e 's/yourusername/mango/g' {}
 
 ## Steam
 
+- [flatpak](https://flathub.org/apps/com.valvesoftware.Steam) <- using this
+- [nix wiki](https://nixos.wiki/wiki/Steam)
+
 ### Launch Issues
 
 > It's launching properly after I fixed an issue with **wofi**.

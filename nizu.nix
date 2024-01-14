@@ -187,8 +187,9 @@ in {
   jql
   yq
   glow
-  figlet
-  lolcat
+
+  # words
+  dict
 
   # pinentry
   pinentry
@@ -196,6 +197,8 @@ in {
   # pinentry-gnome
 
   # ascii
+  figlet
+  lolcat
   aewan
 
   # py

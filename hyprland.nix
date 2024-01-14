@@ -51,18 +51,22 @@ in {
 		xdg-utils # opening default programs from links
 		xdg-desktop-portal
 		xdg-desktop-portal-hyprland
-		wofi
-    waybar
-
-    acpi
-		alacritty
-		kitty
-		seatd
 		cliphist
     wl-clipboard
+		seatd
+
+    # launcher
+		wofi
+    bemoji # emoji picker
+
+    # terminal
+		alacritty
+		kitty
 
 		# status bar
 		eww-wayland
+    acpi
+    waybar
 
     # qt
     libsForQt5.qt5.qtwayland

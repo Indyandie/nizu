@@ -262,6 +262,9 @@ in {
 
   # images
   imagemagick
+
+  #comss
+  signal-desktop
   ];
 
   # dash

@@ -195,6 +195,9 @@ in {
   # pinentry-gtk2
   # pinentry-gnome
 
+  # ascii
+  aewan
+
   # py
   python3
 

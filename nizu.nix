@@ -186,9 +186,15 @@ in {
   glow
   atuin # shell history
 
+  # csv
+  qsv
+
   # JSON
   jq
   jql
+  jqp
+
+  # YAML
   yq
 
   # words

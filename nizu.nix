@@ -183,11 +183,13 @@ in {
   bat-extras.batpipe
   flatpak
   clipboard-jh # copy pasta
+  glow
+  atuin # shell history
+
+  # JSON
   jq
   jql
   yq
-  glow
-  atuin # shell history
 
   # words
   dict

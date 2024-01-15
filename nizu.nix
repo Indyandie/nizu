@@ -187,7 +187,8 @@ in {
   atuin # shell history
 
   # csv
-  qsv
+  csvkit
+  # qsv
 
   # JSON
   jq

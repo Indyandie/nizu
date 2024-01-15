@@ -187,6 +187,7 @@ in {
   jql
   yq
   glow
+  atuin # shell history
 
   # words
   dict
@@ -211,6 +212,7 @@ in {
   udisks2
   ntfs3g
   exfat
+  yazi
 
   # cloud
   # dropbox

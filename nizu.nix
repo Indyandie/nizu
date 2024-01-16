@@ -259,6 +259,9 @@ in {
   gnupg
   keepassxc
 
+  # media
+  playerctl
+
   # sound
   alsa-utils
 

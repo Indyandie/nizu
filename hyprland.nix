@@ -68,6 +68,10 @@ in {
     acpi
     waybar
 
+    #screenshots
+    grim
+    slurp
+
     # qt
     libsForQt5.qt5.qtwayland
     qt6.qtwayland

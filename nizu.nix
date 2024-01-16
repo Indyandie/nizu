@@ -276,6 +276,7 @@ in {
 
   # images
   imagemagick
+  imv # image viewer
 
   #comss
   signal-desktop

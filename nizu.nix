@@ -211,6 +211,9 @@ in {
     lolcat
     aewan
 
+    # fonts
+    font-manager
+
     # py
     python3
 

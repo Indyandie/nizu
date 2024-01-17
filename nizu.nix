@@ -149,137 +149,140 @@ in {
   # pkgs
   environment.systemPackages = with pkgs; [
 
-  # editors
-  helix
-  vim
-  obsidian
+    # editors
+    helix
+    vim
+    obsidian
 
-  # programs
-  curl
-  wget
-  git
-  diff-so-fancy
-  starship
-  neofetch
-  zsh
-  oh-my-zsh
-  eza
-  dunst
-  zip
-  unzip
-  killall
-  htop
-  bottom # htop
-  zoxide # jump
-  sd # sed
-  tealdeer # tldr
-  ripgrep
-  libnotify
-  macchina # neofetch
-  bat # cat
-  bat-extras.prettybat
-  bat-extras.batwatch
-  bat-extras.batman
-  bat-extras.batpipe
-  flatpak
-  clipboard-jh # copy pasta
-  glow
-  atuin # shell history
+    # programs
+    curl
+    wget
+    git
+    diff-so-fancy
+    starship
+    neofetch
+    zsh
+    oh-my-zsh
+    eza
+    dunst
+    zip
+    unzip
+    killall
+    htop
+    bottom # htop
+    zoxide # jump
+    sd # sed
+    tealdeer # tldr
+    ripgrep
+    libnotify
+    macchina # neofetch
+    bat # cat
+    bat-extras.prettybat
+    bat-extras.batwatch
+    bat-extras.batman
+    bat-extras.batpipe
+    flatpak
+    clipboard-jh # copy pasta
+    glow
+    atuin # shell history
 
-  # csv
-  csvkit
-  # qsv
+    # csv
+    csvkit
+    # qsv
 
-  # JSON
-  jq
-  jql
-  jqp
+    # JSON
+    jq
+    jql
+    jqp
 
-  # YAML
-  yq
+    # YAML
+    yq
 
-  # words
-  dict
+    # words
+    dict
 
-  # pinentry
-  pinentry
-  # pinentry-gtk2
-  # pinentry-gnome
+    # pinentry
+    pinentry
+    # pinentry-gtk2
+    # pinentry-gnome
 
-  # ascii
-  figlet
-  lolcat
-  aewan
+    # ascii
+    figlet
+    lolcat
+    aewan
 
-  # py
-  python3
+    # py
+    python3
 
-  # files and drives
-  xfce.thunar
-  libsForQt5.dolphin
-  udisks
-  udisks2
-  ntfs3g
-  exfat
-  yazi
+    # files and drives
+    xfce.thunar
+    libsForQt5.dolphin
+    udisks
+    udisks2
+    ntfs3g
+    exfat
+    yazi
 
-  # cloud
-  # dropbox
+    # cloud
+    # dropbox
 
-  # gtk
-  gtk2
-  gtk3
-  gtk4
+    # gtk
+    gtk2
+    gtk3
+    gtk4
 
-  # network
-  networkmanager
-  networkmanagerapplet
+    # network
+    networkmanager
+    networkmanagerapplet
 
-  # vpn
-  mullvad
-  mullvad-vpn
+    # vpn
+    mullvad
+    mullvad-vpn
 
-  # browsers
-  brave
-  mullvad-browser
+    # browsers
+    brave
+    mullvad-browser
 
-  # node
-  # nodejs_20
-  # fnm # no bueno
+    # node
+    # nodejs_20
+    # fnm # no bueno
 
-  # rust
-  cargo
-  rustc
-  rust-analyzer
+    # rust
+    cargo
+    rustc
+    rust-analyzer
 
-  # games
-  # steam # trying flatpak
+    # games
+    # steam # trying flatpak
 
-  # gpg
-  gnupg
-  keepassxc
+    # gpg
+    gnupg
+    keepassxc
 
-  # media
-  playerctl
+    # media
+    playerctl
 
-  # sound
-  alsa-utils
+    # sound
+    alsa-utils
 
-  # backlight
-  brightnessctl
-  light
-  clight
-  clightd
+    # backlight
+    brightnessctl
+    light
+    clight
+    clightd
 
-  # calculator
-  bc
+    # calculator
+    bc
 
-  # images
-  imagemagick
-  imv # image viewer
+    # images
+    imagemagick
+    imv # image viewer
 
-  #comss
-  signal-desktop
+    # comms
+    signal-desktop
+
+    # screenlock
+    swaylock
   ];
 
   # dash

@@ -32,6 +32,7 @@
         ansible-lint
         taplo # toml
         # gnome.dconf-editor
+        gnome.adwaita-icon-theme
       ];
 
       pointerCursor = {
@@ -50,6 +51,11 @@
       font = {
         size = 12;
         name = "JetBrainsMono Nerd Font";
+      };
+
+      theme = {
+        name = "Materia-dark";
+        package = pkgs.materia-theme;
       };
 
       gtk3 = {

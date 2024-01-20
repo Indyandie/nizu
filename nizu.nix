@@ -286,8 +286,6 @@ in {
     # comms
     signal-desktop
 
-    # screenlock
-    swaylock
   ];
 
   # dash

@@ -24,6 +24,9 @@ in {
   
   xdg.portal.enable = true;
 
+  # env vars
+  environment.variables.GTK_THEME = "Materia:dark";
+
 #   # Steam
   
 #   programs.steam = {
@@ -129,9 +132,7 @@ in {
 
   # ssh
   services.openssh.enable = true;
-
   services.openssh.ports = [ 22 ];
-
   networking.firewall.allowedTCPPorts = [ 80 443 22 ];
 
   # flatpak
@@ -144,7 +145,6 @@ in {
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
-
 
   # pkgs
   environment.systemPackages = with pkgs; [
@@ -174,6 +174,7 @@ in {
     sd # sed
     tealdeer # tldr
     ripgrep
+    fd
     libnotify
     macchina # neofetch
     bat # cat
@@ -233,6 +234,7 @@ in {
     gtk2
     gtk3
     gtk4
+    gnome.gnome-themes-extra
 
     # network
     networkmanager

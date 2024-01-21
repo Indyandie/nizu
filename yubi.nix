@@ -15,8 +15,17 @@ in {
     swaylock = {};
   };
 
+  security.pam.yubico = {
+    enable = true;
+    debug = true;
+    mode = "challenge-response";
+    id = [ "" ];
+  };
+
   environment.systemPackages = with pkgs; [
     yubikey-manager-qt
     pam_u2f
+    yubikey-manager
+    yubico-pam
 	];
 }

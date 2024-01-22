@@ -92,6 +92,9 @@ in {
   # dbux
   services.dbus.enable = true;
 
+  # gvfs
+  gvfs.enable = true;
+  
   # usb
   services.gvfs.enable = true; # auto mount usb
   services.udisks2.enable = true;

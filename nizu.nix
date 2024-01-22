@@ -93,8 +93,22 @@ in {
   services.dbus.enable = true;
 
   # gvfs
-  gvfs.enable = true;
+  services.gvfs.enable = true;
   
+  # xfce
+
+  # thunar
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+      thunar-volman
+    ];
+  };
+
+  ## thumbnails
+  services.tumbler.enable = true;
+
   # usb
   services.gvfs.enable = true; # auto mount usb
   services.udisks2.enable = true;

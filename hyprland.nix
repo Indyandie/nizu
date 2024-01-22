@@ -19,11 +19,14 @@ in {
 
   environment.variables = {
     NIXOS_OZONE_WL = "1";
+    NIXOS_XDG_OPEN_USE_PORTAL = "1";
     GDK_BACKEND = "wayland";
     QT_QPA_PLATFORM = "wayland";
     SDL_VIDEODRIVER = "wayland";
     ELECTRON_ENABLE_STACK_DUMPING = "true";
     ELECTRON_NO_ATTACH_CONSOLE = "true";
+    XDG_SESSION_DESKTOP = "Hyprland";
+    GTK_USE_PORTAL = "1";
   };
 
   programs.waybar.enable = true;

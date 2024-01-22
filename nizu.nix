@@ -92,9 +92,6 @@ in {
   # dbux
   services.dbus.enable = true;
 
-  # gvfs
-  services.gvfs.enable = true;
-  
   # xfce
 
   # thunar

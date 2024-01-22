@@ -237,6 +237,7 @@ in {
     libsForQt5.dolphin
     udisks
     udisks2
+    udiskie
     ntfs3g
     exfat
     yazi

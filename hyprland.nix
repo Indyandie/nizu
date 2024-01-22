@@ -43,10 +43,11 @@ in {
   environment.systemPackages = with pkgs; [
 		
 		hyprland
+    hyprland-protocols
     hyprpicker # color picker
     hyprpaper # wallpaper
 		wayland
-    wayland-protocols
+    # wayland-protocols
 		xwayland
 		xdg-utils # opening default programs from links
 		xdg-desktop-portal
@@ -75,6 +76,8 @@ in {
     # qt
     libsForQt5.qt5.qtwayland
     qt6.qtwayland
+    adwaita-qt
+    adwaita-qt6
 
     # screenlock
     swaylock

@@ -269,12 +269,13 @@ in {
 
     # sound
     alsa-utils
+    pamixer
 
     # backlight
     brightnessctl
-    light
-    clight
-    clightd
+    # light
+    # clight
+    # clightd
 
     # calculator
     bc

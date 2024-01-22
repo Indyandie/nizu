@@ -72,9 +72,13 @@ in {
     acpi
     waybar
 
-    #screenshots
+    # screenshots
     grim
     slurp
+
+    # screen-recording
+    wf-recorder
+    ffmpeg
 
     # qt
     libsForQt5.qt5.qtwayland

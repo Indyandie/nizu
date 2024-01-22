@@ -299,6 +299,10 @@ in {
     imagemagick
     imv # image viewer
 
+    # video
+    vlc
+    clapper
+
     # comms
     signal-desktop
 

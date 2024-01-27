@@ -74,11 +74,12 @@ in {
 
     # screenshots
     grim
-    slurp
+    unstable.slurp
 
     # screen-recording
     wf-recorder
-    ffmpeg
+    wl-screenrec
+    # unstable.ffmpeg
 
     # qt
     libsForQt5.qt5.qtwayland

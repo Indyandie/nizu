@@ -7,6 +7,7 @@
   imports =
     [ # Include the results of the hardware scan.
       # <nixos-hardware/apple/macbook-pro/11-5>
+      <nixos-hardware/apple>
     ];
   
   # wifi mac
@@ -31,11 +32,70 @@
   powerManagement.cpuFreqGovernor = "ondemand";
   services.mbpfan.enable = true;
   hardware.cpu.intel.updateMicrocode = true;
-  hardware.opengl.extraPackages = with pkgs; [
-    vaapiIntel
-    vaapiVdpau
-    libvdpau-va-gl
-    intel-media-driver
+
+  # Accelerated Video Playback
+
+  nixpkgs.config.packageOverrides = pkgs: {
+    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+    # ffmpeg = pkgs.ffmpeg.override {
+    #   # vaapiSupport = true;
+    #   # openglSupport = true;
+    # };
+  };  
+
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # LIBVA_DRIVER_NAME=iHD
+      vaapiIntel         # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      vaapiVdpau
+      libvdpau-va-gl
+      amdvlk 
+      intel-ocl 
+      # intel-vaapi-driver
+      rocmPackages.clr.icd
+    ];
+  };
+
+  # hardware.opengl.extraPackages32 = with pkgs.pkgsi686Linux; [ 
+  #   vaapiIntel 
+  #   intel-media-driver
+  #   intel-vaapi-driver
+  #   amdvlk
+  # ];
+
+  # opencl
+
+  environment.variables = {
+    ROC_ENABLE_PRE_VEGA = "1";
+  };
+
+  boot.initrd.kernelModules = [ "amdgpu" ];
+
+  services.xserver.videoDrivers = [ "amdgpu"];
+
+  # # amd drivers
+
+  # hardware.opengl = {
+  #   ## radv: an open-source Vulkan driver from freedesktop
+  #   driSupport = true;
+  #   driSupport32Bit = true;
+
+  #   ## amdvlk: an open-source Vulkan driver from AMD
+  #   extraPackages = [ pkgs.amdvlk ];
+  #   extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+  # };
+
+  # pkgs
+  environment.systemPackages = with pkgs; [
+    ffmpeg
+    # vaapi
+    libva
+    libva-utils
+    libaom
+    mesa
   ];
 
   boot = {

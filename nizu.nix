@@ -35,19 +35,6 @@ in {
 #     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
 #   };
 
-#   # amd drivers
-
-#   hardware.opengl = {
-#   ## radv: an open-source Vulkan driver from freedesktop
-#   driSupport = true;
-#   driSupport32Bit = true;
-
-#   ## amdvlk: an open-source Vulkan driver from AMD
-#   extraPackages = [ pkgs.amdvlk ];
-#   extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
-# };
-
-
   # Sound
 
   sound.mediaKeys.enable = true;
@@ -302,6 +289,7 @@ in {
     # video
     vlc
     clapper
+    mpv
 
     # comms
     signal-desktop

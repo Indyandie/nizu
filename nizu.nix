@@ -22,8 +22,6 @@ in {
     '';
   };
   
-  xdg.portal.enable = true;
-
   # env vars
   environment.variables.GTK_THEME = "Materia:dark";
 
@@ -37,10 +35,12 @@ in {
 
   # Sound
 
-  sound.mediaKeys.enable = true;
+  # sound.mediaKeys.enable = true;
+  # sound.enable = lib.mkForce false;
+  # hardware.pulseaudio.enable = lib.mkForce false;
+  # hardware.pulseaudio.enable = false;
+
   security.rtkit.enable = true;
-  sound.enable = lib.mkForce false;
-  hardware.pulseaudio.enable = lib.mkForce false;
   services.pipewire = {
     enable = true;
     alsa = {
@@ -50,6 +50,7 @@ in {
     pulse.enable = true;
     wireplumber.enable = true;
     jack.enable = true; # (optional)
+    socketActivation = true;
   };
   
   # light
@@ -139,8 +140,8 @@ in {
   # flatpak
 
   services.flatpak.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  xdg.portal.config.common.default = "gtk";
+  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  # xdg.portal.config.common.default = "gtk";
   
   # Obsidian dependancy
   nixpkgs.config.permittedInsecurePackages = [
@@ -287,9 +288,26 @@ in {
     imv # image viewer
 
     # video
+    # unstable.ffmpeg
+    # ffmpeg = pkgs.ffmpeg.override {
+    #   # vaapiSupport = true;
+    #   # openglSupport = true;
+    # };
+    wireplumber
     vlc
     clapper
     mpv
+    # obs-studio
+    # obs-studio-plugins.wlrobs
+    # obs-studio-plugins.obs-vaapi
+    (pkgs.wrapOBS {
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+        obs-backgroundremoval
+        obs-pipewire-audio-capture
+        obs-vaapi
+      ];
+    })
 
     # comms
     signal-desktop

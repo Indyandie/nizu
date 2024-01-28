@@ -21,7 +21,7 @@
 
   hardware.bluetooth.enable = true;
   hardware.facetimehd.enable = true;
-  hardware.pulseaudio.enable = true;
+  # hardware.pulseaudio.enable = true;
 
   # The wifi broadcom driver 
   # networking.enableB43Firmware = true;
@@ -37,10 +37,6 @@
 
   nixpkgs.config.packageOverrides = pkgs: {
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-    # ffmpeg = pkgs.ffmpeg.override {
-    #   # vaapiSupport = true;
-    #   # openglSupport = true;
-    # };
   };  
 
   hardware.opengl = {
@@ -90,7 +86,6 @@
 
   # pkgs
   environment.systemPackages = with pkgs; [
-    ffmpeg
     # vaapi
     libva
     libva-utils

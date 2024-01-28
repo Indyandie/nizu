@@ -38,3 +38,6 @@ steam --reset
 
 When exiting steam it get's stuck because of the `gldriverquery` process, killing the process shuts steam down.
 
+## OBS Studio
+
+- [Plugins](https://nixos.wiki/wiki/OBS_Studio)

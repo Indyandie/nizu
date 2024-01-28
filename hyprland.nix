@@ -32,8 +32,8 @@ in {
   programs.waybar.enable = true;
 
   xdg.portal = {
-    enable = true;
-    wlr.enable = true;
+    # enable = true;
+    # wlr.enable = true;
 
     # make gtk apps happy
     extraPortals = [ 
@@ -78,8 +78,7 @@ in {
 
     # screen-recording
     wf-recorder
-    wl-screenrec
-    # unstable.ffmpeg
+    # wl-screenrec
 
     # qt
     libsForQt5.qt5.qtwayland

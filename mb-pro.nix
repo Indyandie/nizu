@@ -1,6 +1,6 @@
 # Let's see how this goes :O
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
 
@@ -10,6 +10,12 @@
       <nixos-hardware/apple>
     ];
   
+  systemd.packages = with pkgs; [
+    auto-cpufreq
+  ];
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+
   # wifi mac
   # boot.kernelModules = [ "wl" ];
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -31,7 +37,11 @@
   # powerManagement.cpuFreqGovernor = "schedutil";
   powerManagement.cpuFreqGovernor = "ondemand";
   services.mbpfan.enable = true;
-  hardware.cpu.intel.updateMicrocode = true;
+  services.auto-cpufreq.enable = true;
+  # hardware.cpu.intel.updateMicrocode = true;
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  boot.blacklistedKernelModules = [ "nouveau" "nvidia" ]; # Disable NVIDIA video cards
 
   # Accelerated Video Playback
 
@@ -44,6 +54,7 @@
     driSupport = true;
     driSupport32Bit = true;
     extraPackages = with pkgs; [
+      intel-compute-runtime
       intel-media-driver # LIBVA_DRIVER_NAME=iHD
       vaapiIntel         # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
       vaapiVdpau

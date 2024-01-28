@@ -32,14 +32,15 @@ in {
   programs.waybar.enable = true;
 
   xdg.portal = {
-    # enable = true;
+    enable = true;
+    xdgOpenUsePortal = true;
     # wlr.enable = true;
 
     # make gtk apps happy
     extraPortals = [ 
       pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal-kde
-      pkgs.xdg-desktop-portal-hyprland
+      # pkgs.xdg-desktop-portal-hyprland
     ];
   };
 

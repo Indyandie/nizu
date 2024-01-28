@@ -52,6 +52,10 @@ in {
     jack.enable = true; # (optional)
     socketActivation = true;
   };
+
+  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+  boot.kernelModules = [ "v4l2loopback" ];
+  boot.extraModprobeConfig = "options v4l2loopback exclusive_caps=1 video_nr=9 card_label=\"obs\"";
   
   # light
 
@@ -288,6 +292,7 @@ in {
     imv # image viewer
 
     # video
+    ffmpeg_6-full
     # unstable.ffmpeg
     # ffmpeg = pkgs.ffmpeg.override {
     #   # vaapiSupport = true;

@@ -41,3 +41,8 @@ When exiting steam it get's stuck because of the `gldriverquery` process, killin
 ## OBS Studio
 
 - [Plugins](https://nixos.wiki/wiki/OBS_Studio)
+- [Pipewire](https://nixos.wiki/wiki/PipeWire)
+
+## Hyprland
+
+- [XNM1](https://github.com/XNM1/linux-nixos-hyprland-config-dotfiles)

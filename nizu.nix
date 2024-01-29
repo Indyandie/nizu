@@ -110,11 +110,6 @@ in {
     options = "--delete-older-than 3d";
   };
   
-  # Console font
-  console = {
-    font = "${pkgs.terminus_font}/share/consolefonts/ter-132n.psf.gz";
-  };
-
   # zsh
   users.defaultUserShell = pkgs.zsh;
 
@@ -277,6 +272,8 @@ in {
     # sound
     alsa-utils
     pamixer
+    sox
+    # beep # couldn't find audio device
 
     # backlight
     brightnessctl

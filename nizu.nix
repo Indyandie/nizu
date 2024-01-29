@@ -25,6 +25,10 @@ in {
   # env vars
   environment.variables.GTK_THEME = "Materia:dark";
 
+  environment.pathsToLink = [
+    "/share/"
+  ];
+
 #   # Steam
   
 #   programs.steam = {
@@ -273,6 +277,7 @@ in {
     alsa-utils
     pamixer
     sox
+    sound-theme-freedesktop
     # beep # couldn't find audio device
 
     # backlight
@@ -286,6 +291,7 @@ in {
 
     # images
     imagemagick
+    jp2a # ASCII
     imv # image viewer
 
     # video

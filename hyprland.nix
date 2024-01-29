@@ -11,6 +11,7 @@ let
 in {
   programs.hyprland = {
     enable = true;
+    package = unstable.hyprland;
     xwayland = {
       enable = true;
       # hidpi = true;

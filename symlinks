@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+# An sounds to current $USER
+ln -sfn /run/current-system/sw/share/sounds $HOME/.local/share/sounds
+

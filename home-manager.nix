@@ -33,6 +33,7 @@
         taplo # toml
         # gnome.dconf-editor
         gnome.adwaita-icon-theme
+        # vscodium # doesn't work - opens and closes immediately
       ];
 
       pointerCursor = {
@@ -42,6 +43,7 @@
         gtk.enable = true;
         x11.enable = true;
       };
+
     };
 
 

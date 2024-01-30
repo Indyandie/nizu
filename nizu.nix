@@ -225,13 +225,12 @@ in {
 
     # files and drives
     xfce.thunar
-    libsForQt5.dolphin
     udisks
     udisks2
     udiskie
     ntfs3g
     exfat
-    yazi
+    # yazi # causing errors on build
 
     # cloud
     # dropbox

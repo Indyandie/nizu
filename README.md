@@ -46,3 +46,7 @@ When exiting steam it get's stuck because of the `gldriverquery` process, killin
 ## Hyprland
 
 - [XNM1](https://github.com/XNM1/linux-nixos-hyprland-config-dotfiles)
+
+## Dev
+
+- [vscodium](https://nixos.wiki/wiki/VSCodium)

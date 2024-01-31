@@ -21,6 +21,11 @@ in {
       experimental-features = nix-command flakes
     '';
   };
+
+  # optimizw
+  nix.optimise.automatic = true;
+  nix.optimise.dates = [ "22;30" ];
+  nix.settings.auto-optimise-store = true;
   
   # env vars
   environment.variables.GTK_THEME = "Materia:dark";

@@ -92,5 +92,7 @@ in {
     swaylock
     swayidle
 
+    # night shift
+    hyprshade
 	];
 }

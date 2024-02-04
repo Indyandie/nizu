@@ -50,3 +50,16 @@ When exiting steam it get's stuck because of the `gldriverquery` process, killin
 ## Dev
 
 - [vscodium](https://nixos.wiki/wiki/VSCodium)
+
+## Javascript
+
+- [NPM Packages](https://matthewrhone.dev/nixos-npm-globally)
+
+### Node
+
+#### Yarn
+
+##### Corepack
+
+Enabling **corepack** aka `corepack enable` is very tricky in nixos. I still dont fully understand the configuration that I ended up with. Using the configuration in [home-manager](./home-manager.nix) and running `corepack prepare` made everyone happy, **Yarn** and **GIthub actions**. We'll see what happens.
+

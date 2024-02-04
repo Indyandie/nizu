@@ -1,8 +1,18 @@
 # home-manager
 
-{ config, pkgs, ... }:
-
-{
+{ config, pkgs, lib, ... }:
+let corepackEnable = pkgs.stdenv.mkDerivation {
+    name = "corepack";
+    buildInputs = [ pkgs.nodePackages_latest.nodejs ];
+    phases = [ "installPhase" ];
+    installPhase = ''
+      mkdir -p $out/bin
+      corepack enable --install-directory $out/bin
+      corepack enable --install-directory $out/bin yarn
+      # corepack prepare yarn@4.1.0 --activate
+    '';
+};
+in {
   imports = [ <home-manager/nixos> ];
 
   home-manager.useGlobalPkgs = true;
@@ -16,13 +26,12 @@
       # node & npm
       packages = with pkgs; [
         dconf
-        # nodejs_20
         nodePackages_latest.nodejs
-        node2nix
+        corepackEnable
+        # corepack_latest
         # nodePackages_latest.yarn
-        yarn-berry
-        yarn2nix
-        corepack_latest
+        # node2nix
+        # yarn2nix
         nodePackages_latest.bash-language-server
         nodePackages_latest.svelte-language-server
         nodePackages_latest.typescript-language-server

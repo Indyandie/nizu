@@ -18,7 +18,10 @@ in {
   home-manager.useGlobalPkgs = true;
 
   home-manager.users.nizusan = { pkgs, ...}: {
-		 home = {
+    programs.neovim.enable = true;
+    programs.neovim.withNodeJs = true;
+
+    home = {
       stateVersion = "23.11";
       username = "buraku";
       homeDirectory = "/home/buraku";
@@ -49,6 +52,12 @@ in {
         # gnome.dconf-editor
         gnome.adwaita-icon-theme
         # vscodium # doesn't work - opens and closes immediately
+
+        # neovim
+        gcc
+        # cl
+        # rocmPackages.llvm.clang
+        # zig
       ];
 
       pointerCursor = {

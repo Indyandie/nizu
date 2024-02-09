@@ -64,6 +64,7 @@ in {
     # launcher
 		wofi
     bemoji # emoji picker
+    wtype # bemoji dependency
 
     # terminal
 		alacritty

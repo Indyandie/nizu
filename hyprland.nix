@@ -11,7 +11,7 @@ let
 in {
   programs.hyprland = {
     enable = true;
-    package = unstable.hyprland;
+    package = unstable.pkgs.hyprland;
     xwayland = {
       enable = true;
       # hidpi = true;
@@ -46,8 +46,7 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
-		
-		hyprland
+
     hyprland-protocols
     hyprpicker # color picker
     hyprpaper # wallpaper

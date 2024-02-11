@@ -197,6 +197,9 @@ in {
     glow
     atuin # shell history
 
+    # multiplexer
+    zellij
+
     # csv
     csvkit
     # qsv

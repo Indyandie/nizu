@@ -323,6 +323,8 @@ in {
     # comms
     signal-desktop
 
+    # rust lsp
+    rust-analyzer
   ];
 
   # dash

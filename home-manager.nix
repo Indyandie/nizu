@@ -65,7 +65,6 @@ in {
         # zig
 
         # rust
-        rust-analyzer
         rustup
       ];
 

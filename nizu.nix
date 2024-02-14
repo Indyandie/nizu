@@ -7,6 +7,7 @@ let
     };
   };
 in {
+
   imports = [
     ./hyprland.nix
     ./home-manager.nix
@@ -264,11 +265,6 @@ in {
     # node
     # nodejs_20
     # fnm # no bueno
-
-    # rust
-    cargo
-    rustc
-    rust-analyzer
 
     # games
     # steam # trying flatpak

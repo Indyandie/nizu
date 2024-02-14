@@ -13,7 +13,10 @@ let corepackEnable = pkgs.stdenv.mkDerivation {
     '';
 };
 in {
-  imports = [ <home-manager/nixos> ];
+
+  imports = [ 
+    <home-manager/nixos>
+  ];
 
   home-manager.useGlobalPkgs = true;
 
@@ -51,6 +54,8 @@ in {
         python311Packages.python-lsp-server
         # gnome.dconf-editor
         gnome.adwaita-icon-theme
+
+        # editors
         # vscodium # doesn't work - opens and closes immediately
 
         # neovim
@@ -58,6 +63,10 @@ in {
         # cl
         # rocmPackages.llvm.clang
         # zig
+
+        # rust
+        rust-analyzer
+        rustup
       ];
 
       pointerCursor = {

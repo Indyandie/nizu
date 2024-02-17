@@ -218,8 +218,6 @@ in {
 
     # pinentry
     pinentry
-    # pinentry-gtk2
-    # pinentry-gnome
 
     # ascii
     figlet
@@ -239,10 +237,7 @@ in {
     udiskie
     ntfs3g
     exfat
-    # yazi # causing errors on build
-
-    # cloud
-    # dropbox
+    yazi
 
     # gtk
     gtk2
@@ -262,13 +257,6 @@ in {
     brave
     mullvad-browser
 
-    # node
-    # nodejs_20
-    # fnm # no bueno
-
-    # games
-    # steam # trying flatpak
-
     # gpg
     gnupg
     keepassxc
@@ -285,9 +273,6 @@ in {
 
     # backlight
     brightnessctl
-    # light
-    # clight
-    # clightd
 
     # calculator
     bc
@@ -308,9 +293,6 @@ in {
     vlc
     clapper
     mpv
-    # obs-studio
-    # obs-studio-plugins.wlrobs
-    # obs-studio-plugins.obs-vaapi
     (pkgs.wrapOBS {
       plugins = with pkgs.obs-studio-plugins; [
         wlrobs

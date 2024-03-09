@@ -66,6 +66,9 @@ in {
 
         # rust
         rustup
+
+        # data sync
+        syncthing
       ];
 
       pointerCursor = {

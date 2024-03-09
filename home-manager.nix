@@ -47,6 +47,7 @@ in {
         ansible
         ansible-language-server
         marksman
+        ltex-ls
         lua-language-server
         yaml-language-server
         ansible-lint

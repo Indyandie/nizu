@@ -13,6 +13,7 @@ in {
     login.u2fAuth = true;
     sudo.u2fAuth = true;
     swaylock = {};
+    hyprlock = {};
   };
 
   security.pam.yubico = {

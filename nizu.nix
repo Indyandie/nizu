@@ -223,6 +223,7 @@ in {
     figlet
     lolcat
     aewan
+    fortune-kind
 
     # fonts
     font-manager

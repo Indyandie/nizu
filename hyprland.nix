@@ -91,6 +91,8 @@ in {
     # screenlock
     swaylock
     swayidle
+    unstable.hyprlock
+    unstable.hypridle
 
     # night shift
     hyprshade

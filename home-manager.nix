@@ -70,6 +70,10 @@ in {
 
         # data sync
         syncthing
+        localsend
+
+        # vpn
+        # unstable.mullvad-vpn
       ];
 
       pointerCursor = {

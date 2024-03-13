@@ -302,6 +302,11 @@ in {
 
     # comms
     signal-desktop
+
+    # letsencrupt
+    certbot
+
+    openssl
   ];
 
   # dash

@@ -53,6 +53,8 @@ in {
         ansible-lint
         taplo # toml
         python311Packages.python-lsp-server
+        sqls # sql
+
         # gnome.dconf-editor
         gnome.adwaita-icon-theme
 

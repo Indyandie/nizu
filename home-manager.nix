@@ -52,8 +52,13 @@ in {
         yaml-language-server
         ansible-lint
         taplo # toml
+
+        # py
         python311Packages.python-lsp-server
-        sqls # sql
+        python311Packages.black
+
+        # sql
+        sqls 
 
         # gnome.dconf-editor
         gnome.adwaita-icon-theme
@@ -76,6 +81,9 @@ in {
 
         # vpn
         # unstable.mullvad-vpn
+
+        # JS
+        deno
       ];
 
       pointerCursor = {

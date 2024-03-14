@@ -41,6 +41,7 @@ in {
         nodePackages_latest.bash-language-server
         nodePackages_latest.svelte-language-server
         nodePackages_latest.typescript-language-server
+        nodePackages_latest.prettier
         typescript
         dot-language-server
         vscode-langservers-extracted
@@ -59,6 +60,10 @@ in {
 
         # sql
         sqls 
+        python311Packages.sqlparse
+
+        # bash
+        shfmt
 
         # gnome.dconf-editor
         gnome.adwaita-icon-theme

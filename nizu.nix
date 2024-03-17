@@ -269,6 +269,9 @@ in {
     sound-theme-freedesktop
     # beep # couldn't find audio device
 
+    # music 
+    upiano
+
     # backlight
     brightnessctl
 
@@ -278,6 +281,7 @@ in {
     # images
     imagemagick
     jp2a # ASCII
+    ascii-image-converter
     imv # image viewer
 
     # video

@@ -89,6 +89,9 @@ in {
 
         # JS
         deno
+
+        # markdown
+        libsForQt5.ghostwriter
       ];
 
       pointerCursor = {

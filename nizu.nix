@@ -333,6 +333,7 @@ in {
     noto-fonts-emoji
     noto-fonts-cjk
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
+    atkinson-hyperlegible
   ];
 
 }

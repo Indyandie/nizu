@@ -87,9 +87,6 @@ in {
         # vpn
         # unstable.mullvad-vpn
 
-        # JS
-        deno
-
         # markdown
         libsForQt5.ghostwriter
       ];

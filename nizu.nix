@@ -311,6 +311,10 @@ in {
     certbot
 
     openssl
+
+    # JS
+    unstable.deno
+
   ];
 
   # dash

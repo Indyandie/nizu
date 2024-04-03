@@ -150,9 +150,9 @@ in {
   # xdg.portal.config.common.default = "gtk";
   
   # Obsidian dependancy
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-  ];
+  # nixpkgs.config.permittedInsecurePackages = [
+  #   "electron-25.9.0"
+  # ];
 
   # pkgs
   environment.systemPackages = with pkgs; [
@@ -160,7 +160,7 @@ in {
     # editors
     helix
     vim
-    obsidian
+    unstable.obsidian
 
     # programs
     curl

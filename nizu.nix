@@ -158,7 +158,7 @@ in {
   environment.systemPackages = with pkgs; [
 
     # editors
-    helix
+    unstable.helix
     vim
     unstable.obsidian
 

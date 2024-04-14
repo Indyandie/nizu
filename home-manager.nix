@@ -1,19 +1,15 @@
 # home-manager
 
 { config, pkgs, lib, ... }:
-let corepackEnable = pkgs.stdenv.mkDerivation {
-    name = "corepack";
-    buildInputs = [ pkgs.nodePackages_latest.nodejs ];
-    phases = [ "installPhase" ];
-    installPhase = ''
-      mkdir -p $out/bin
-      corepack enable --install-directory $out/bin
-      corepack enable --install-directory $out/bin yarn
-      # corepack prepare yarn@4.1.0 --activate
-    '';
-};
-in {
 
+
+let
+  unstable = import <nixos-unstable> {
+    config = {
+      allowUnfree = true;
+    };
+  };
+in {
   imports = [ 
     <home-manager/nixos>
   ];
@@ -33,13 +29,9 @@ in {
       packages = with pkgs; [
         dconf
         nodePackages_latest.nodejs
-        corepackEnable
-        # corepack_latest
-        # nodePackages_latest.yarn
-        # node2nix
-        # yarn2nix
         nodePackages_latest.bash-language-server
         nodePackages_latest.svelte-language-server
+        nodePackages_latest.jsdoc
         nodePackages_latest.typescript-language-server
         nodePackages_latest.prettier
         typescript
@@ -71,7 +63,7 @@ in {
         # editors
         # vscodium # doesn't work - opens and closes immediately
 
-        # neovim
+        # neovim dependency
         gcc
         # cl
         # rocmPackages.llvm.clang
@@ -89,6 +81,32 @@ in {
 
         # markdown
         libsForQt5.ghostwriter
+
+        # email
+        unstable.protonmail-desktop
+
+        # notes
+        unstable.obsidian
+
+        # vpn
+        # mullvad
+        unstable.mullvad-vpn
+
+        # browsers
+        brave
+        mullvad-browser
+
+        # gpg
+        keepassxc
+
+        # sounds
+        sound-theme-freedesktop
+
+        # comms
+        signal-desktop
+
+        # API Testing
+        unstable.bruno
       ];
 
       pointerCursor = {

@@ -35,13 +35,13 @@ in {
     "/share/"
   ];
 
-#   # Steam
+  #   # Steam
   
-#   programs.steam = {
-#     enable = true;
-#     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-#     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-#   };
+  #   programs.steam = {
+  #     enable = true;
+  #     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  #     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  #   };
 
   # Sound
 
@@ -160,7 +160,6 @@ in {
     # editors
     unstable.helix
     vim
-    unstable.obsidian
 
     # programs
     curl
@@ -247,17 +246,8 @@ in {
     networkmanager
     networkmanagerapplet
 
-    # vpn
-    # mullvad
-    unstable.mullvad-vpn
-
-    # browsers
-    brave
-    mullvad-browser
-
     # gpg
     gnupg
-    keepassxc
 
     # media
     playerctl
@@ -266,7 +256,6 @@ in {
     alsa-utils
     pamixer
     sox
-    sound-theme-freedesktop
     # beep # couldn't find audio device
 
     # music 
@@ -304,9 +293,6 @@ in {
       ];
     })
 
-    # comms
-    signal-desktop
-
     # letsencrupt
     certbot
 
@@ -315,6 +301,8 @@ in {
     # JS
     unstable.deno
 
+    # markup
+    pandoc
   ];
 
   # dash

@@ -165,6 +165,7 @@ in {
     curl
     wget
     git
+    gh
     diff-so-fancy
     starship
     neofetch

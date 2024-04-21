@@ -66,7 +66,7 @@ in {
     wtype # bemoji dependency
 
     # terminal
-		alacritty
+		unstable.alacritty
 		kitty
 
 		# status bar

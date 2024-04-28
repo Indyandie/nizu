@@ -196,7 +196,7 @@ in {
     atuin # shell history
 
     # multiplexer
-    zellij
+    unstable.zellij
 
     # csv
     csvkit

@@ -34,6 +34,7 @@ in {
         nodePackages_latest.jsdoc
         nodePackages_latest.typescript-language-server
         nodePackages_latest.prettier
+        nodePackages_latest.vscode-html-languageserver-bin
         typescript
         dot-language-server
         vscode-langservers-extracted
@@ -45,6 +46,9 @@ in {
         yaml-language-server
         ansible-lint
         taplo # toml
+
+        # html
+        emmet-ls
 
         # py
         python311Packages.python-lsp-server

@@ -153,7 +153,7 @@ in
     lazygit # tui
     gh
     diff-so-fancy
-    starship
+    unstable.starship
     neofetch
     zsh
     oh-my-zsh

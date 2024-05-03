@@ -24,7 +24,7 @@ in
     '';
   };
 
-  # optimizw
+  # optimise
   nix.optimise.automatic = true;
   nix.optimise.dates = [ "22;30" ];
   nix.settings.auto-optimise-store = true;
@@ -35,21 +35,6 @@ in
   environment.pathsToLink = [
     "/share/"
   ];
-
-  #   # Steam
-
-  #   programs.steam = {
-  #     enable = true;
-  #     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-  #     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  #   };
-
-  # Sound
-
-  # sound.mediaKeys.enable = true;
-  # sound.enable = lib.mkForce false;
-  # hardware.pulseaudio.enable = lib.mkForce false;
-  # hardware.pulseaudio.enable = false;
 
   security.rtkit.enable = true;
   services.pipewire = {
@@ -69,7 +54,6 @@ in
   boot.extraModprobeConfig = "options v4l2loopback exclusive_caps=1 video_nr=9 card_label=\"obs\"";
 
   # light
-
   systemd.services.clightd = {
     enable = true;
     description = "Clight daemon";
@@ -78,11 +62,6 @@ in
       User = "buraku";
     };
   };
-
-  # Allow the user to run the light command without a password
-  security.sudo.extraConfig = ''
-    buraku ALL=(ALL) NOPASSWD: ${pkgs.light}/bin/light
-  '';
 
   # mullvad vpn
   services.mullvad-vpn.enable = true;
@@ -142,7 +121,12 @@ in
     };
   };
 
+  # users
+<<<<<<< main
   users.users.nizusan = {
+=======
+  users.users.buraku = {
+>>>>>>> local
     shell = pkgs.zsh;
     # packages = with pkgs; [];
   };
@@ -150,13 +134,6 @@ in
   # flatpak
 
   services.flatpak.enable = true;
-  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  # xdg.portal.config.common.default = "gtk";
-
-  # Obsidian dependancy
-  # nixpkgs.config.permittedInsecurePackages = [
-  #   "electron-25.9.0"
-  # ];
 
   # pkgs
   environment.systemPackages = with pkgs; [
@@ -318,9 +295,7 @@ in
   # dash
   environment.binsh = "${pkgs.dash}/bin/dash";
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
+  # gpg
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;

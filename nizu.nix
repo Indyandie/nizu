@@ -122,11 +122,7 @@ in
   };
 
   # users
-<<<<<<< main
-  users.users.nizusan = {
-=======
   users.users.buraku = {
->>>>>>> local
     shell = pkgs.zsh;
     # packages = with pkgs; [];
   };

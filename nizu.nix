@@ -6,7 +6,8 @@ let
       allowUnfree = true;
     };
   };
-in {
+in
+{
 
   imports = [
     ./hyprland.nix
@@ -27,7 +28,7 @@ in {
   nix.optimise.automatic = true;
   nix.optimise.dates = [ "22;30" ];
   nix.settings.auto-optimise-store = true;
-  
+
   # env vars
   environment.variables.GTK_THEME = "Materia:dark";
 
@@ -36,7 +37,7 @@ in {
   ];
 
   #   # Steam
-  
+
   #   programs.steam = {
   #     enable = true;
   #     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
@@ -66,7 +67,7 @@ in {
   boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
   boot.kernelModules = [ "v4l2loopback" ];
   boot.extraModprobeConfig = "options v4l2loopback exclusive_caps=1 video_nr=9 card_label=\"obs\"";
-  
+
   # light
 
   systemd.services.clightd = {
@@ -92,7 +93,7 @@ in {
   qt.enable = true;
   qt.style = "adwaita-dark";
   qt.platformTheme = "gnome";
-  
+
   # dbux
   services.dbus.enable = true;
 
@@ -114,14 +115,14 @@ in {
   services.gvfs.enable = true; # auto mount usb
   services.udisks2.enable = true;
   services.devmon.enable = true;
-  
+
   # garbage clean up
   nix.gc = {
     automatic = true;
     dates = "daily";
     options = "--delete-older-than 3d";
   };
-  
+
   # zsh
   users.defaultUserShell = pkgs.zsh;
 
@@ -133,7 +134,10 @@ in {
     ohMyZsh = {
       enable = true;
       plugins = [
-        "git" "deno" "sudo" "vi-mode"
+        "git"
+        "deno"
+        "sudo"
+        "vi-mode"
       ];
     };
   };
@@ -148,7 +152,7 @@ in {
   services.flatpak.enable = true;
   # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   # xdg.portal.config.common.default = "gtk";
-  
+
   # Obsidian dependancy
   # nixpkgs.config.permittedInsecurePackages = [
   #   "electron-25.9.0"
@@ -330,7 +334,7 @@ in {
     noto-fonts
     noto-fonts-emoji
     noto-fonts-cjk
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     atkinson-hyperlegible
   ];
 

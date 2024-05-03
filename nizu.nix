@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
 let
   unstable = import <nixos-unstable> {
@@ -140,7 +140,7 @@ in {
 
   users.users.nizusan = {
     shell = pkgs.zsh;
-    packages = with pkgs; [];
+    # packages = with pkgs; [];
   };
 
   # flatpak

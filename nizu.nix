@@ -158,13 +158,18 @@ in {
   environment.systemPackages = with pkgs; [
 
     # editors
-    unstable.helix
     vim
+    unstable.helix
+
+    # nix lsp & formatter
+    nixpkgs-fmt
+    nil
 
     # programs
     curl
     wget
     git
+    lazygit # tui
     gh
     diff-so-fancy
     starship

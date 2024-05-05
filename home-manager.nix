@@ -35,6 +35,7 @@ in {
         nodePackages_latest.typescript-language-server
         nodePackages_latest.prettier
         nodePackages_latest.vscode-html-languageserver-bin
+        nodePackages_latest.sql-formatter
         typescript
         dot-language-server
         vscode-langservers-extracted

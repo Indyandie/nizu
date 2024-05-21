@@ -9,14 +9,15 @@ let
       allowUnfree = true;
     };
   };
-in {
-  imports = [ 
+in
+{
+  imports = [
     <home-manager/nixos>
   ];
 
   home-manager.useGlobalPkgs = true;
 
-  home-manager.users.nizusan = { pkgs, ...}: {
+  home-manager.users.nizusan = { pkgs, ... }: {
     programs.neovim.enable = true;
     programs.neovim.withNodeJs = true;
 
@@ -24,6 +25,7 @@ in {
       stateVersion = "23.11";
       username = "buraku";
       homeDirectory = "/home/buraku";
+
 
       # node & npm
       packages = with pkgs; [
@@ -56,7 +58,7 @@ in {
         python311Packages.black
 
         # sql
-        sqls 
+        sqls
         python311Packages.sqlparse
 
         # bash

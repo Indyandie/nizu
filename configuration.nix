@@ -1,12 +1,13 @@
 # Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
- 
+
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -28,7 +29,7 @@
     dates = "daily";
     options = "--delete-older-than 3d";
   };
-  
+
   # Console font
   console = {
     font = "${pkgs.terminus_font}/share/consolefonts/ter-132n.psf.gz";
@@ -78,30 +79,31 @@
 
   # home-manager
   home-manager.useGlobalPkgs = true;
-  
-  home-manager.users.nizusan = { pkgs, ...}: {
-    home = {
-      packages = [ ];
-      stateVersion = "23.11";
-    };
 
-    gtk = {
-      enable = true;
-
-      font = {
-        size = 16;
-        name = "JetBrainsMono Nerd Font";
+  home-manager.users.nizusan = { pkgs, ... }: {
+      home = {
+        packages = [ ];
+        stateVersion = "23.11";
       };
 
-      gtk3 = {
-        extraConfig = {
-          gtk-application-prefer-dark-theme = 1;
+      gtk = {
+        enable = true;
+
+        font = {
+          size = 16;
+          name = "JetBrainsMono Nerd Font";
         };
-      };
 
-      gtk4 = {
-        extraConfig = {
-          gtk-application-prefer-dark-theme = 1;
+        gtk3 = {
+          extraConfig = {
+            gtk-application-prefer-dark-theme = 1;
+          };
+        };
+
+        gtk4 = {
+          extraConfig = {
+            gtk-application-prefer-dark-theme = 1;
+          };
         };
       };
     };

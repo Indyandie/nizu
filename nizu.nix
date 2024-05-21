@@ -307,6 +307,7 @@ in
     noto-fonts-cjk
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     atkinson-hyperlegible
+    jetbrains-mono
   ];
 
 }

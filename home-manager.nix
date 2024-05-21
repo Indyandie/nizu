@@ -114,6 +114,9 @@ in
 
         # API Testing
         unstable.bruno
+
+        # pico8
+        steam-run
       ];
 
       pointerCursor = {

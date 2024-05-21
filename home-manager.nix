@@ -1,6 +1,6 @@
 # home-manager
 
-{ config, pkgs, lib, ... }:
+{ ... }:
 
 
 let

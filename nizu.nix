@@ -59,7 +59,7 @@ in
     description = "Clight daemon";
     serviceConfig = {
       ExecStart = "${pkgs.clightd}/bin/clightd -d";
-      User = "buraku";
+      User = "nizusan";
     };
   };
 
@@ -122,7 +122,7 @@ in
   };
 
   # users
-  users.users.buraku = {
+  users.users.nizusan = {
     shell = pkgs.zsh;
     # packages = with pkgs; [];
   };

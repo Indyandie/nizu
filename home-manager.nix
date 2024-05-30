@@ -23,8 +23,8 @@ in
 
     home = {
       stateVersion = "23.11";
-      username = "buraku";
-      homeDirectory = "/home/buraku";
+      username = "nizusan";
+      homeDirectory = "/home/nizusan";
 
 
       # node & npm

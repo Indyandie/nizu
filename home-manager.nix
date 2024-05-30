@@ -35,6 +35,7 @@ in
         nodePackages_latest.svelte-language-server
         nodePackages_latest.jsdoc
         nodePackages_latest.typescript-language-server
+        typescript
         nodePackages_latest.prettier
         nodePackages_latest.vscode-html-languageserver-bin
         nodePackages_latest.sql-formatter
@@ -49,6 +50,7 @@ in
         yaml-language-server
         ansible-lint
         taplo # toml
+        tailwindcss-language-server
 
         # html
         emmet-ls

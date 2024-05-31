@@ -1,14 +1,22 @@
-# Nizu
+# Nizu (NixOS)
 
 ## User
 
-Update the username `yourusername` with your username...
+Update the username `nizusan` with your username(`$USER`)...
 
 ```sh
 find . -maxdepth 1 -type f -name "*.nix" | \
 xargs -I {} \
-sed -i '' -e 's/yourusername/mango/g' {}
+sed -i '' -e 's/nizusan/`$USER`/g' {}
 ```
+
+Or use this [script](./usernames)
+
+```sh
+./usernames -h
+```
+
+---
 
 ## Steam
 
@@ -61,8 +69,6 @@ When exiting steam it get's stuck because of the `gldriverquery` process, killin
 
 ##### Corepack
 
-> [!error]
-> This no longer works :(
+> [!error] This no longer works :(
 
 Enabling **corepack** aka `corepack enable` is very tricky in nixos. I still dont fully understand the configuration that I ended up with. Using the configuration in [home-manager](./home-manager.nix) and running `corepack prepare` made everyone happy, **Yarn** and **GIthub actions**. We'll see what happens.
-

@@ -18,6 +18,12 @@ Or use this [script](./usernames)
 
 ---
 
+## Hyprland
+
+- [XNM1](https://github.com/XNM1/linux-nixos-hyprland-config-dotfiles)
+
+---
+
 ## Steam
 
 - [flatpak](https://flathub.org/apps/com.valvesoftware.Steam) <- using this
@@ -46,18 +52,14 @@ steam --reset
 
 When exiting steam it get's stuck because of the `gldriverquery` process, killing the process shuts steam down.
 
+---
+
 ## OBS Studio
 
 - [Plugins](https://nixos.wiki/wiki/OBS_Studio)
 - [Pipewire](https://nixos.wiki/wiki/PipeWire)
 
-## Hyprland
-
-- [XNM1](https://github.com/XNM1/linux-nixos-hyprland-config-dotfiles)
-
-## Dev
-
-- [vscodium](https://nixos.wiki/wiki/VSCodium)
+---
 
 ## Javascript
 
@@ -66,6 +68,8 @@ When exiting steam it get's stuck because of the `gldriverquery` process, killin
 ### Node
 
 #### Yarn
+
+> [!note] I'm no longer using Yarn unless I absolutely have to.
 
 ##### Corepack
 

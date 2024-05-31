@@ -1,4 +1,4 @@
-# nizu
+# Nizu
 
 ## User
 
@@ -60,6 +60,9 @@ When exiting steam it get's stuck because of the `gldriverquery` process, killin
 #### Yarn
 
 ##### Corepack
+
+> [!error]
+> This no longer works :(
 
 Enabling **corepack** aka `corepack enable` is very tricky in nixos. I still dont fully understand the configuration that I ended up with. Using the configuration in [home-manager](./home-manager.nix) and running `corepack prepare` made everyone happy, **Yarn** and **GIthub actions**. We'll see what happens.
 

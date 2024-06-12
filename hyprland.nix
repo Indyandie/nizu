@@ -8,7 +8,8 @@ let
       allowUnfree = true;
     };
   };
-in {
+in
+{
   programs.hyprland = {
     enable = true;
     package = unstable.pkgs.hyprland;
@@ -38,7 +39,7 @@ in {
     # wlr.enable = true;
 
     # make gtk apps happy
-    extraPortals = [ 
+    extraPortals = [
       pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal-kde
       # pkgs.xdg-desktop-portal-hyprland
@@ -50,15 +51,15 @@ in {
     hyprland-protocols
     hyprpicker # color picker
     hyprpaper # wallpaper
-		wayland
+    wayland
     # wayland-protocols
-		xwayland
-		xdg-utils # opening default programs from links
-		xdg-desktop-portal
-		xdg-desktop-portal-hyprland
-		cliphist
+    xwayland
+    xdg-utils # opening default programs from links
+    xdg-desktop-portal
+    xdg-desktop-portal-hyprland
+    cliphist
     wl-clipboard
-		seatd
+    seatd
 
     # launcher
     rofi-wayland
@@ -67,11 +68,11 @@ in {
     # wofi
 
     # terminal
-		unstable.alacritty
-		kitty
+    unstable.alacritty
+    kitty
 
-		# status bar
-		eww-wayland
+    # status bar
+    eww-wayland
     acpi
     waybar
 
@@ -97,5 +98,5 @@ in {
 
     # night shift
     hyprshade
-	];
+  ];
 }

@@ -61,9 +61,10 @@ in {
 		seatd
 
     # launcher
-		wofi
+    rofi-wayland
     bemoji # emoji picker
     wtype # bemoji dependency
+    # wofi
 
     # terminal
 		unstable.alacritty

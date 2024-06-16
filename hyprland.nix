@@ -72,7 +72,7 @@ in
     kitty
 
     # status bar
-    eww-wayland
+    eww
     acpi
     waybar
 

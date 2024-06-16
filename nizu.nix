@@ -54,14 +54,15 @@ in
   boot.extraModprobeConfig = "options v4l2loopback exclusive_caps=1 video_nr=9 card_label=\"obs\"";
 
   # light
-  systemd.services.clightd = {
-    enable = true;
-    description = "Clight daemon";
-    serviceConfig = {
-      ExecStart = "${pkgs.clightd}/bin/clightd -d";
-      User = "nizusan";
-    };
-  };
+  programs.light.enable = true;
+  # systemd.services.clightd = {
+  #   enable = true;
+  #   description = "Clight daemon";
+  #   serviceConfig = {
+  #     ExecStart = "${pkgs.clightd}/bin/clightd -d";
+  #     User = "nizusan";
+  #   };
+  # };
 
   # mullvad vpn
   services.mullvad-vpn.enable = true;

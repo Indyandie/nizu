@@ -5,11 +5,12 @@
 {
 
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       # <nixos-hardware/apple/macbook-pro/11-5>
       <nixos-hardware/apple>
     ];
-  
+
   systemd.packages = with pkgs; [
     auto-cpufreq
   ];
@@ -47,7 +48,7 @@
 
   nixpkgs.config.packageOverrides = pkgs: {
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  };  
+  };
 
   hardware.opengl = {
     enable = true;
@@ -56,11 +57,11 @@
     extraPackages = with pkgs; [
       intel-compute-runtime
       intel-media-driver # LIBVA_DRIVER_NAME=iHD
-      vaapiIntel         # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
       vaapiVdpau
       libvdpau-va-gl
-      amdvlk 
-      intel-ocl 
+      amdvlk
+      intel-ocl
       # intel-vaapi-driver
       rocmPackages.clr.icd
     ];
@@ -74,14 +75,12 @@
   # ];
 
   # opencl
-
   environment.variables = {
     ROC_ENABLE_PRE_VEGA = "1";
   };
 
   boot.initrd.kernelModules = [ "amdgpu" ];
-
-  services.xserver.videoDrivers = [ "amdgpu"];
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   # # amd drivers
 
@@ -104,9 +103,9 @@
     mesa
   ];
 
+  # https://forum.manjaro.org/t/kworker-kacpid-over-70-of-cpu-dual-boot-mac-manjaro/61981
   boot = {
-  kernelModules = [ "applesmc" "i915" ];
-    # https://forum.manjaro.org/t/kworker-kacpid-over-70-of-cpu-dual-boot-mac-manjaro/61981
+    kernelModules = [ "applesmc" "i915" ];
     kernelParams = [ "hid_apple.iso_layout=0" "acpi_backlight=vendor" "acpi_mask_gpe=0x15" ];
   };
 

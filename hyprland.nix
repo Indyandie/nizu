@@ -31,8 +31,6 @@ in
     GTK_USE_PORTAL = "1";
   };
 
-  programs.waybar.enable = true;
-
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
@@ -74,7 +72,6 @@ in
     # status bar
     eww
     acpi
-    waybar
 
     # screenshots
     grim

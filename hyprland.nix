@@ -19,6 +19,9 @@ in
     };
   };
 
+  programs.hyprlock.enable = true;
+  services.hypridle.enable = true;
+
   environment.variables = {
     NIXOS_OZONE_WL = "1";
     NIXOS_XDG_OPEN_USE_PORTAL = "1";
@@ -86,12 +89,6 @@ in
     qt6.qtwayland
     adwaita-qt
     adwaita-qt6
-
-    # screenlock
-    swaylock
-    swayidle
-    unstable.hyprlock
-    unstable.hypridle
 
     # night shift
     hyprshade

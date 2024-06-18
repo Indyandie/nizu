@@ -12,8 +12,8 @@ in {
   security.pam.services = {
     login.u2fAuth = true;
     sudo.u2fAuth = true;
-    swaylock = {};
     hyprlock = {};
+    hyprlock.fprintAuth = false;
   };
 
   security.pam.yubico = {

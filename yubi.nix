@@ -1,19 +1,11 @@
 # Yubico
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
-let
-  unstable = import <nixos-unstable> {
-    config = {
-      allowUnfree = true;
-    };
-  };
-in {
+{
   security.pam.services = {
     login.u2fAuth = true;
     sudo.u2fAuth = true;
-    hyprlock = {};
-    hyprlock.fprintAuth = false;
   };
 
   security.pam.yubico = {
@@ -28,5 +20,5 @@ in {
     pam_u2f
     yubikey-manager
     yubico-pam
-	];
+  ];
 }

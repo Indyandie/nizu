@@ -19,8 +19,26 @@ in
     };
   };
 
-  programs.hyprlock.enable = true;
-  services.hypridle.enable = true;
+  services.hypridle = {
+    enable = true;
+    package = unstable.pkgs.hypridle;
+  };
+
+  programs.hyprlock = {
+    enable = true;
+    package = unstable.pkgs.hyprlock;
+  };
+
+  security.pam.services.hyprlock = {
+    unixAuth = true;
+    yubicoAuth = true;
+    fprintAuth = false;
+    # text = ''
+    #   auth sufficient pam_unix.so try_first_pass likeauth nullok
+    #   auth sufficient pam_fprintd.so
+    #   auth include login
+    # '';
+  };
 
   environment.variables = {
     NIXOS_OZONE_WL = "1";
@@ -43,7 +61,6 @@ in
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal-kde
-      # pkgs.xdg-desktop-portal-hyprland
     ];
   };
 

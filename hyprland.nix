@@ -29,16 +29,11 @@ in
     package = unstable.pkgs.hyprlock;
   };
 
-  # security.pam.services.hyprlock = {
-  #   unixAuth = true;
-  #   yubicoAuth = true;
-  #   fprintAuth = false;
-    # text = ''
-    #   auth sufficient pam_unix.so try_first_pass likeauth nullok
-    #   auth sufficient pam_fprintd.so
-    #   auth include login
-    # '';
-  # };
+  security.pam.services.hyprlock = {
+    unixAuth = true;
+    yubicoAuth = true;
+    fprintAuth = false;
+  };
 
   environment.variables = {
     NIXOS_OZONE_WL = "1";

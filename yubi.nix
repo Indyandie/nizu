@@ -14,16 +14,13 @@
       unixAuth = true;
       yubicoAuth = true;
     };
-    hyprlock = {
-      unixAuth = true;
-      yubicoAuth = true;
-    };
   };
 
   security.pam.yubico = {
     enable = true;
     debug = true;
     mode = "challenge-response";
+    # control = "required";
   };
 
   environment.systemPackages = with pkgs; [

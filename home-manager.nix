@@ -22,7 +22,7 @@ in
     programs.neovim.withNodeJs = true;
 
     home = {
-      stateVersion = "23.11";
+      stateVersion = "24.05";
       username = "nizusan";
       homeDirectory = "/home/nizusan";
 

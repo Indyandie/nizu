@@ -392,7 +392,7 @@ in
       ];
     })
 
-    # letsencrupt
+    # letsencrypt
     certbot
 
     openssl
@@ -402,7 +402,7 @@ in
 
     # markup
     pandoc
-
+    asciidoctor # convert adoc files
   ];
 
   # dash

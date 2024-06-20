@@ -403,6 +403,9 @@ in
     # markup
     pandoc
     asciidoctor # convert adoc files
+
+    # epub
+    bk
   ];
 
   # dash

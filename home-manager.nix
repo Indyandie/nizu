@@ -119,6 +119,9 @@ in
 
         # pico8
         steam-run
+
+        # epub
+        foliate
       ];
 
       pointerCursor = {

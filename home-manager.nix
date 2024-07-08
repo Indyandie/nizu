@@ -122,6 +122,10 @@ in
 
         # epub
         foliate
+
+        # typst
+        typst-lsp
+        typstfmt
       ];
 
       pointerCursor = {

@@ -402,7 +402,8 @@ in
 
     # markup
     pandoc
-    asciidoctor # convert adoc files
+    # asciidoctor # convert adoc files
+    asciidoctor-with-extensions
 
     # epub
     bk

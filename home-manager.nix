@@ -126,6 +126,7 @@ in
         # typst
         typst-lsp
         typstfmt
+
         # ascii
         ascii-draw
       ];
@@ -150,8 +151,12 @@ in
       };
 
       theme = {
+        # name = "Arc-dark";
+        # package = pkgs.arc-theme;
         name = "Materia-dark";
         package = pkgs.materia-theme;
+        # name = "Pop-Dark";
+        # package = pkgs.pop-gtk-theme;
       };
 
       gtk3 = {

@@ -126,6 +126,8 @@ in
         # typst
         typst-lsp
         typstfmt
+        # ascii
+        ascii-draw
       ];
 
       pointerCursor = {

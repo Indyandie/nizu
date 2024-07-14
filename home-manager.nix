@@ -129,6 +129,9 @@ in
 
         # ascii
         ascii-draw
+
+        ## gtk
+        themechanger
       ];
 
       pointerCursor = {

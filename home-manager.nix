@@ -16,13 +16,14 @@ in
   ];
 
   home-manager.useGlobalPkgs = true;
+  home-manager.backupFileExtension = "backup";
 
   home-manager.users.nizusan = { pkgs, ... }: {
     programs.neovim.enable = true;
     programs.neovim.withNodeJs = true;
 
     home = {
-      stateVersion = "24.05";
+      stateVersion = "23.05";
       username = "nizusan";
       homeDirectory = "/home/nizusan";
 

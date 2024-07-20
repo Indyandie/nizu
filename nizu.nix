@@ -298,6 +298,8 @@ in
 
     # csv
     csvkit
+    csvq
+    csvlens
     # qsv
 
     # JSON

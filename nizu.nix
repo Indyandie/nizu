@@ -429,5 +429,7 @@ in
     jetbrains-mono
   ];
 
+  services.cron.enable = true;
+
 }
 

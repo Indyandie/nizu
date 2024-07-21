@@ -32,7 +32,7 @@ in
       packages = with pkgs; [
         dconf
         nodePackages_latest.nodejs
-        nodePackages_latest.bash-language-server
+        # nodePackages_latest.bash-language-server
         nodePackages_latest.svelte-language-server
         nodePackages_latest.jsdoc
         nodePackages_latest.typescript-language-server
@@ -133,6 +133,9 @@ in
 
         ## gtk
         themechanger
+
+        ## css
+        lightningcss
       ];
 
       pointerCursor = {

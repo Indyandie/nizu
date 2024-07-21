@@ -254,6 +254,9 @@ in
     vim
     unstable.helix
 
+    # bash lsp
+    unstable.bash-language-server
+
     # nix lsp & formatter
     nixpkgs-fmt
     nil

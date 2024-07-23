@@ -268,6 +268,7 @@ in
     lazygit # tui
     gh
     diff-so-fancy
+    difftastic
     unstable.starship
     neofetch
     zsh

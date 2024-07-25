@@ -326,6 +326,9 @@ in
     aewan
     fortune-kind
 
+    # unicode
+    uni
+
     # fonts
     font-manager
 

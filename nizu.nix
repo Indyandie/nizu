@@ -1,4 +1,4 @@
-# { config, options, pkgs, ... }:
+ { config, options, pkgs, ... }:
 
 let
   unstable = import <nixos-unstable> {

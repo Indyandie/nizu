@@ -91,6 +91,7 @@ in
 
         # markdown
         libsForQt5.ghostwriter
+        mermaid-cli
 
         # email
         unstable.protonmail-desktop
@@ -114,6 +115,7 @@ in
 
         # comms
         signal-desktop
+        discord
 
         # API Testing
         unstable.bruno

@@ -1,4 +1,4 @@
-{ config, options, pkgs, ... }:
+# { config, options, pkgs, ... }:
 
 let
   unstable = import <nixos-unstable> {
@@ -293,7 +293,7 @@ in
     bat-extras.batman
     bat-extras.batpipe
     flatpak
-    clipboard-jh # copy pasta
+    # clipboard-jh # copy pasta # https://github.com/Slackadays/Clipboard/issues/171
     glow
     atuin # shell history
 
@@ -304,6 +304,7 @@ in
     csvkit
     csvq
     csvlens
+    sc-im
     # qsv
 
     # JSON

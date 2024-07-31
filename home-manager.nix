@@ -138,6 +138,9 @@ in
 
         ## css
         lightningcss
+
+        ## pdf
+        evince
       ];
 
       pointerCursor = {

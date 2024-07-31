@@ -412,6 +412,7 @@ in
 
     # markup
     pandoc
+    texliveSmall # pdflatex
     # asciidoctor # convert adoc files
     asciidoctor-with-extensions
 

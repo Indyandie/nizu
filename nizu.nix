@@ -326,6 +326,7 @@ in
     lolcat
     aewan
     fortune-kind
+    chafa
 
     # unicode
     uni

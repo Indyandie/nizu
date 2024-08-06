@@ -419,6 +419,9 @@ in
 
     # epub
     bk
+
+    # broswer
+    w3m-nox
   ];
 
   # dash

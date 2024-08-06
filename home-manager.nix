@@ -141,6 +141,9 @@ in
 
         ## pdf
         evince
+
+        #svg
+        inkscape-with-extensions
       ];
 
       pointerCursor = {

@@ -12,7 +12,7 @@ in
 {
   programs.hyprland = {
     enable = true;
-    package = unstable.pkgs.hyprland;
+    # package = unstable.pkgs.hyprland;
     xwayland = {
       enable = true;
       # hidpi = true;

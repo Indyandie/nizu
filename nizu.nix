@@ -1,4 +1,4 @@
- { config, options, pkgs, ... }:
+{ config, options, pkgs, ... }:
 
 let
   unstable = import <nixos-unstable> {
@@ -300,6 +300,9 @@ in
     # multiplexer
     unstable.zellij
 
+    # data
+    unstable.dasel
+
     # csv
     csvkit
     csvq
@@ -413,6 +416,8 @@ in
 
     # markup
     pandoc
+    # weasyprint
+    python312Packages.weasyprint
     texliveSmall # pdflatex
     # asciidoctor # convert adoc files
     asciidoctor-with-extensions

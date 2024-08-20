@@ -427,6 +427,10 @@ in
 
     # broswer
     w3m-nox
+
+    # odin
+    odin
+    ols
   ];
 
   # dash

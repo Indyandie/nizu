@@ -118,7 +118,7 @@ in
         discord
 
         # API Testing
-        unstable.bruno
+        bruno
 
         # pico8
         steam-run

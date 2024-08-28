@@ -442,6 +442,8 @@ in
     enableSSHSupport = true;
   };
 
+  programs.gnupg.agent.pinentryPackage = pkgs.pinentry-gnome3;
+
   # font
   fonts.fontDir.enable = true;
   fonts.packages = with pkgs; [

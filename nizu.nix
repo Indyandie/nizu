@@ -264,6 +264,7 @@ in
     # programs
     curl
     wget
+    file # MIME
     git
     lazygit # tui
     gh

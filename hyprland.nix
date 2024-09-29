@@ -21,12 +21,12 @@ in
 
   services.hypridle = {
     enable = true;
-    package = unstable.pkgs.hypridle;
+    # package = unstable.pkgs.hypridle;
   };
 
   programs.hyprlock = {
     enable = true;
-    package = unstable.pkgs.hyprlock;
+    # package = unstable.pkgs.hyprlock;
   };
 
   security.pam.services.hyprlock = {

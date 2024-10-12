@@ -22,6 +22,13 @@ in
     programs.neovim.enable = true;
     programs.neovim.withNodeJs = true;
 
+    # firefox
+    programs.firefox.enable = true;
+    programs.firefox.package = pkgs.firefox;
+
+    # fix firefox cursor
+    programs.dconf.enable = true;
+
     home = {
       stateVersion = "23.05";
       username = "nizusan";

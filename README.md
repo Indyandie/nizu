@@ -1,5 +1,10 @@
 # Nizu (NixOS)
 
+## To Do
+
+- [ ] Move npm packages and node projects to deno
+- [ ] Remove node when deno 2.0 is released
+
 ## User
 
 Update the username `nizusan` with your username(`$USER`)...

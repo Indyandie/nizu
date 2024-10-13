@@ -26,9 +26,6 @@ in
     programs.firefox.enable = true;
     programs.firefox.package = pkgs.firefox;
 
-    # fix firefox cursor
-    programs.dconf.enable = true;
-
     home = {
       stateVersion = "23.05";
       username = "nizusan";
@@ -76,9 +73,6 @@ in
 
         # gnome.dconf-editor
         gnome.adwaita-icon-theme
-
-        # editors
-        # vscodium # doesn't work - opens and closes immediately
 
         # neovim dependency
         gcc

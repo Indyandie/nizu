@@ -32,30 +32,27 @@ in
       homeDirectory = "/home/nizusan";
 
 
-      # node & npm
       packages = with pkgs; [
-        dconf
+
+        # node & npm
         nodePackages_latest.nodejs
-        # nodePackages_latest.bash-language-server
-        nodePackages_latest.svelte-language-server
-        nodePackages_latest.jsdoc
-        nodePackages_latest.typescript-language-server
+
         typescript
-        nodePackages_latest.prettier
-        nodePackages_latest.vscode-html-languageserver-bin
-        nodePackages_latest.sql-formatter
-        typescript
-        dot-language-server
         vscode-langservers-extracted
+        tailwindcss-language-server
+        dot-language-server
         ansible
+        ansible-lint
         ansible-language-server
         marksman
         ltex-ls
         lua-language-server
         yaml-language-server
-        ansible-lint
         taplo # toml
-        tailwindcss-language-server
+
+        unstable.svelte-language-server
+        unstable.astro-language-server
+
 
         # html
         emmet-ls
@@ -70,7 +67,9 @@ in
 
         # bash
         shfmt
+        unstable.bash-language-server
 
+        dconf
         # gnome.dconf-editor
         gnome.adwaita-icon-theme
 

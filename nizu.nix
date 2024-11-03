@@ -432,6 +432,9 @@ in
     # odin
     odin
     ols
+
+    # android
+    android-udev-rules
   ];
 
   # dash

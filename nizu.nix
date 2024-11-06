@@ -386,6 +386,7 @@ in
     jp2a # ASCII
     ascii-image-converter
     imv # image viewer
+    loupe
 
     # video
     ffmpeg_6-full

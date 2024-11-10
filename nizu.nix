@@ -186,7 +186,6 @@ in
     SDL2.dev
     libusb1
     dbus-glib
-    ffmpeg
 
     # Only libraries are needed from those two
     libudev0-shim
@@ -388,13 +387,56 @@ in
     imv # image viewer
     loupe
 
-    # video
-    ffmpeg_6-full
-    # unstable.ffmpeg
-    # ffmpeg = pkgs.ffmpeg.override {
-    #   # vaapiSupport = true;
-    #   # openglSupport = true;
-    # };
+    # ffmpeg
+    # yanked from https://github.com/hnjae/nix-config/blob/7a3cbbd6a62c3091a78694efb5000ed0c0fcb830/modules/home-manager/generic-home/programs/80-multimedia/ffmpeg/package.nix#L4
+
+    (pkgs.ffmpeg-full.override {
+      withHeadlessDeps = true;
+      withSmallDeps = true;
+      withUnfree = pkgs.config.allowUnfree;
+
+      withCuda = false;
+      withCudaLLVM = false;
+      withNvdec = false;
+      withNvenc = false;
+      withVdpau = false;
+
+      withAlsa = false;
+      withPulse = false;
+      withSdl2 = false;
+
+      withFontconfig = false;
+      withFreetype = false;
+      withSsh = false;
+
+      withOpencl = true;
+
+      withAom = true;
+      withRav1e = true;
+      withSvtav1 = !pkgs.stdenv.isAarch64;
+      withTheora = false;
+      withXvid = false;
+
+      withVoAmrwbenc = true;
+      withOpencoreAmrnb = true;
+      withGsm = true;
+      withGme = true;
+      withFdkAac = true;
+
+      withWebp = true;
+      withSvg = true;
+      withOpenjpeg = true; # jpeg2000 de/encoder
+
+      withXml2 = true;
+      withBluray = true;
+
+      withVmaf = !pkgs.stdenv.isAarch64;
+
+      # filter
+      withVidStab = true;
+      withGrayscale = true;
+      withLadspa = true;
+    })
     wireplumber
     vlc
     clapper

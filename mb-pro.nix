@@ -28,18 +28,28 @@
     enableB43Firmware = true; # The wifi broadcom driver     
   };
 
-  hardware.bluetooth.enable = true;
-  hardware.facetimehd.enable = true;
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  # hardware.cpu.intel.updateMicrocode = true;
+  hardware = {
+    bluetooth.enable = true;
+    facetimehd.enable = true;
+    cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    # cpu.intel.updateMicrocode = true;
+  };
 
-  powerManagement.enable = true;
-  powerManagement.cpuFreqGovernor = "ondemand";
-  # powerManagement.cpuFreqGovernor = "schedutil";
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "ondemand";
+    # cpuFreqGovernor = "schedutil";
+  };
 
-  services.acpid.enable = true;
-  services.mbpfan.enable = true;
-  services.auto-cpufreq.enable = true;
+  services = {
+    acpid.enable = true;
+    mbpfan.enable = true;
+    auto-cpufreq.enable = true;
+    xserver.videoDrivers = [ "amdgpu" ];
+
+    # Enable CUPS to print documents.
+    printing.enable = true;
+  };
 
   # Accelerated Video Playback
 
@@ -50,9 +60,10 @@
 
   hardware.opengl = {
     enable = true;
-    #   #   ## radv: an open-source Vulkan driver from freedesktop
     driSupport = true;
     driSupport32Bit = true;
+
+    # radv: an open-source Vulkan driver from freedesktop
     extraPackages = with pkgs; [
       ## amdvlk: an open-source Vulkan driver from AMD
       amdvlk
@@ -60,8 +71,8 @@
       ## vaapi
       # intel-vaapi-driver
       # vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-      #   intel-compute-runtime
 
+      #   intel-compute-runtime
       #   intel-media-driver # LIBVA_DRIVER_NAME=iHD
       #   intel-ocl
       #   vaapiVdpau
@@ -73,20 +84,18 @@
     extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
   };
 
-  environment.variables = {
-    ROC_ENABLE_PRE_VEGA = "1";
+  environment = {
+    variables = {
+      ROC_ENABLE_PRE_VEGA = "1";
+    };
+
+    # pkgs
+    systemPackages = with pkgs; [
+      libva
+      libva-utils
+      libaom
+      mesa
+    ];
   };
 
-  services.xserver.videoDrivers = [ "amdgpu" ];
-
-  # pkgs
-  environment.systemPackages = with pkgs; [
-    libva
-    libva-utils
-    libaom
-    mesa
-  ];
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 }

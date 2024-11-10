@@ -45,6 +45,35 @@
     facetimehd.enable = true;
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     # cpu.intel.updateMicrocode = true;
+
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+
+      # radv: an open-source Vulkan driver from freedesktop
+      extraPackages = with pkgs; [
+        ## amdvlk: an open-source Vulkan driver from AMD
+        amdvlk
+
+        ## OpenCL
+        rocmPackages.clr.icd
+
+        ## vaapi
+        # intel-vaapi-driver
+        # vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+
+        #   intel-compute-runtime
+        #   intel-media-driver # LIBVA_DRIVER_NAME=iHD
+        #   intel-ocl
+        #   vaapiVdpau
+        #   libvdpau-va-gl
+        #   rocmPackages.clr.icd
+      ];
+
+      # amd drivers
+      extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+    };
   };
 
   powerManagement = {
@@ -64,40 +93,11 @@
   };
 
   # Accelerated Video Playback
-
   nixpkgs.config.packageOverrides = pkgs: {
     intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
 
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-
-    # radv: an open-source Vulkan driver from freedesktop
-    extraPackages = with pkgs; [
-      ## amdvlk: an open-source Vulkan driver from AMD
-      amdvlk
-
-      ## OpenCL
-      rocmPackages.clr.icd
-
-      ## vaapi
-      # intel-vaapi-driver
-      # vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-
-      #   intel-compute-runtime
-      #   intel-media-driver # LIBVA_DRIVER_NAME=iHD
-      #   intel-ocl
-      #   vaapiVdpau
-      #   libvdpau-va-gl
-      #   rocmPackages.clr.icd
-    ];
-
-    # amd drivers
-    extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
-  };
 
   environment = {
     variables = {

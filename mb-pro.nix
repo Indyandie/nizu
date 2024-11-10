@@ -1,5 +1,6 @@
 { config, pkgs, lib, ... }:
 {
+  # https://nixos.wiki/wiki/AMD_GPU
 
   imports = [
     # Include the results of the hardware scan.
@@ -26,11 +27,16 @@
       "hid_apple.iso_layout=0"
       "acpi_backlight=vendor"
       "acpi_mask_gpe=0x15"
-      "radeon.si_support=0"
-      "amdgpu.si_support=1"
+
+      # Cause boot to be blank, no supported by this gpu
+      # "radeon.si_support=0"
+      # "amdgpu.si_support=1"
     ];
     extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
-    blacklistedKernelModules = [ "nouveau" "nvidia" ]; # Disable NVIDIA video cards
+    blacklistedKernelModules = [
+      "nouveau"
+      "nvidia"
+    ]; # Disable NVIDIA video cards
     initrd.kernelModules = [ "amdgpu" ]; # AMD GPU
   };
 
@@ -54,25 +60,36 @@
       # radv: an open-source Vulkan driver from freedesktop
       extraPackages = with pkgs; [
         ## amdvlk: an open-source Vulkan driver from AMD
-        amdvlk
+        # amdvlk not supported
 
         ## OpenCL
-        rocmPackages.clr.icd
+        # rocmPackages.clr.icd
+
+        ## OpenCL - Radeon
+        # NOTE: at some point GPUs in the R600-family and newer
+        # may need to replace this with the "rusticl" ICD;
+        # and GPUs in the R500-family and older may need to
+        # pin the package version or backport/patch this back in
+        # - https://www.phoronix.com/news/Mesa-Delete-Clover-Discussion
+        # - https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/19385
+        mesa.opencl
+
+        # accelerated graphics
+        # intel-media-driver
+        # intel-vaapi-driver
+        # intel-gmmlib
+        # intel-ocl
+        # intel-compute-runtime
+        vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+
+        libvdpau-va-gl
 
         ## vaapi
-        # intel-vaapi-driver
-        # vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-
-        #   intel-compute-runtime
-        #   intel-media-driver # LIBVA_DRIVER_NAME=iHD
-        #   intel-ocl
-        #   vaapiVdpau
-        #   libvdpau-va-gl
-        #   rocmPackages.clr.icd
+        vaapiVdpau
       ];
 
       # amd drivers
-      extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+      # extraPackages32 = [ pkgs.driversi686Linux.amdvlk ]; # vulkan not supported
     };
   };
 
@@ -93,15 +110,17 @@
   };
 
   # Accelerated Video Playback
-  nixpkgs.config.packageOverrides = pkgs: {
-    intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
-    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  };
+  # nixpkgs.config.packageOverrides = pkgs: {
+  #   intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
+  #   vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+  # };
 
 
   environment = {
     variables = {
-      ROC_ENABLE_PRE_VEGA = "1";
+      # ROC_ENABLE_PRE_VEGA = "1"; # Required for Polaris and up
+      VDPAU_DRIVER = "radeonsi";
+      LIBVA_DRIVER_NAME = "radeonsi";
     };
 
     # pkgs
@@ -110,7 +129,14 @@
       libva-utils
       libaom
       mesa
+      clinfo # check OpenCL
+      lact
     ];
+  };
+
+  systemd = {
+    packages = with pkgs; [ lact ];
+    services.lactd.wantedBy = [ "multi-user.target" ];
   };
 
 }

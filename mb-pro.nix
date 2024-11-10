@@ -7,6 +7,12 @@
     <nixos-hardware/apple>
   ];
 
+  # HIP - https://nixos.wiki/wiki/AMD_GPU#HIP
+  # https://rocm.docs.amd.com/projects/HIP/en/latest/
+  systemd.tmpfiles.rules = [
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  ];
+
   # systemd.packages = with pkgs; [
   #   auto-cpufreq
   # ];

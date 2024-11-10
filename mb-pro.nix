@@ -16,10 +16,16 @@
   # https://forum.manjaro.org/t/kworker-kacpid-over-70-of-cpu-dual-boot-mac-manjaro/61981
   boot = {
     kernelModules = [ "applesmc" "i915" "wl" ];
-    kernelParams = [ "hid_apple.iso_layout=0" "acpi_backlight=vendor" "acpi_mask_gpe=0x15" ];
+    kernelParams = [
+      "hid_apple.iso_layout=0"
+      "acpi_backlight=vendor"
+      "acpi_mask_gpe=0x15"
+      "radeon.si_support=0"
+      "amdgpu.si_support=1"
+    ];
     extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
     blacklistedKernelModules = [ "nouveau" "nvidia" ]; # Disable NVIDIA video cards
-    initrd.kernelModules = [ "amdgpu" ];
+    initrd.kernelModules = [ "amdgpu" ]; # AMD GPU
   };
 
   # wifi
@@ -45,7 +51,7 @@
     acpid.enable = true;
     mbpfan.enable = true;
     auto-cpufreq.enable = true;
-    xserver.videoDrivers = [ "amdgpu" ];
+    xserver.videoDrivers = [ "amdgpu" ]; # AMD GPU 
 
     # Enable CUPS to print documents.
     printing.enable = true;

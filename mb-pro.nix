@@ -74,6 +74,9 @@
       ## amdvlk: an open-source Vulkan driver from AMD
       amdvlk
 
+      ## OpenCL
+      rocmPackages.clr.icd
+
       ## vaapi
       # intel-vaapi-driver
       # vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)

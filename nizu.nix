@@ -470,6 +470,23 @@ in
 
     # broswer
     w3m-nox
+    # brave
+    (brave.override {
+      # https://peter.sh/experiments/chromium-command-line-switches/
+
+      # --enable-features=VaapiVideoDecodeLinuxGL
+      commandLineArgs = ''
+        --ignore-gpu-blocklist
+        --enable-zero-copy
+        --use-gl=egl
+        --use-angle=gl
+        --ozone-platform=wayland
+        --disable-gpu-blocklist
+        --enable-gl=opengl
+        --enable-features=VaapiVideoDecodeLinuxGL
+
+      '';
+    })
 
     # odin
     odin

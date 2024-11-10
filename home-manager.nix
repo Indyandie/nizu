@@ -104,7 +104,20 @@ in
         unstable.mullvad-vpn
 
         # browsers
-        brave
+        # brave
+        # https://discourse.nixos.org/t/chrome-wayland/35395/15
+        # (brave.override {
+        #   # https://peter.sh/experiments/chromium-command-line-switches/
+
+        #   # --enable-features=VaapiVideoDecodeLinuxGL
+        #   commandLineArgs = ''
+        #     --use-gl=angle
+        #     --use-angle=gl
+        #     --ozone-platform=wayland
+        #     --disable-gpu-blocklist
+        #     --enable-gl=opengl
+        #   '';
+        # })
         mullvad-browser
 
         # gpg

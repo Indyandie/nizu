@@ -1,11 +1,11 @@
 { config, pkgs, lib, ... }:
 {
   # https://nixos.wiki/wiki/AMD_GPU
+  # https://wiki.archlinux.org/title/MacBookPro11,x
 
   imports = [
-    # Include the results of the hardware scan.
     <nixos-hardware/apple/macbook-pro/11-5>
-    <nixos-hardware/apple>
+    <nixos-hardware/apple/macbook-pro>
   ];
 
   # HIP - https://nixos.wiki/wiki/AMD_GPU#HIP
@@ -14,9 +14,6 @@
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
 
-  # systemd.packages = with pkgs; [
-  #   auto-cpufreq
-  # ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
@@ -47,6 +44,7 @@
   };
 
   hardware = {
+    amdgpu.initrd.enable = true;
     bluetooth.enable = true;
     facetimehd.enable = true;
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
@@ -74,18 +72,12 @@
         # - https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/19385
         mesa.opencl
 
-        # accelerated graphics
-        # intel-media-driver
-        # intel-vaapi-driver
-        # intel-gmmlib
-        # intel-ocl
-        # intel-compute-runtime
-        vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-
         libvdpau-va-gl
 
         ## vaapi
         vaapiVdpau
+        mesa
+        mesa.drivers
       ];
 
       # amd drivers
@@ -109,18 +101,12 @@
     printing.enable = true;
   };
 
-  # Accelerated Video Playback
-  # nixpkgs.config.packageOverrides = pkgs: {
-  #   intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
-  #   vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  # };
-
-
   environment = {
     variables = {
       # ROC_ENABLE_PRE_VEGA = "1"; # Required for Polaris and up
       VDPAU_DRIVER = "radeonsi";
       LIBVA_DRIVER_NAME = "radeonsi";
+      # VDPAU_DRIVER = "va_gl";
     };
 
     # pkgs
@@ -135,7 +121,11 @@
   };
 
   systemd = {
-    packages = with pkgs; [ lact ];
+    packages = with pkgs; [
+      lact
+      auto-cpufreq
+    ];
+
     services.lactd.wantedBy = [ "multi-user.target" ];
   };
 

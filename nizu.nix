@@ -74,7 +74,7 @@ in
   qt.style = "adwaita-dark";
   qt.platformTheme = "gnome";
 
-  # dbux
+  # dbus
   services.dbus.enable = true;
 
   # xfce
@@ -129,7 +129,6 @@ in
   };
 
   # flatpak
-
   services.flatpak.enable = true;
 
   # run a non-nixos executable on NixOs

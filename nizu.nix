@@ -307,7 +307,7 @@ in
     csvq
     csvlens
     sc-im
-    # qsv
+    unstable.qsv
 
     # JSON
     jq

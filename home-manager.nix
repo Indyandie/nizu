@@ -1,22 +1,20 @@
-# home-manager
+{ pkgs, ... }:
 
-{ ... }:
-
-
-let
-  unstable = import <nixos-unstable> {
-    config = {
-      allowUnfree = true;
-    };
-  };
-in
+# let
+#   unstable = import <nixos-unstable> {
+#     config = {
+#       allowUnfree = true;
+#     };
+#   };
+# in
 {
   imports = [
     <home-manager/nixos>
   ];
 
   home-manager.useGlobalPkgs = true;
-  home-manager.backupFileExtension = "backup";
+  # home-manager.useUserPackages = true;
+  # home-manager.backupFileExtension = "backup";
 
   home-manager.users.nizusan = { pkgs, ... }: {
     programs.neovim.enable = true;
@@ -32,132 +30,131 @@ in
       homeDirectory = "/home/nizusan";
 
 
-      packages = with pkgs; [
+      # packages = with pkgs; [
 
-        # node & npm
-        nodePackages_latest.nodejs
+      #   # # node & npm
+      #   # nodePackages_latest.nodejs
 
-        typescript
-        vscode-langservers-extracted
-        tailwindcss-language-server
-        dot-language-server
-        ansible
-        ansible-lint
-        ansible-language-server
-        marksman
-        ltex-ls
-        lua-language-server
-        yaml-language-server
-        taplo # toml
+      #   # typescript
+      #   # vscode-langservers-extracted
+      #   # tailwindcss-language-server
+      #   # dot-language-server
+      #   # ansible
+      #   # ansible-lint
+      #   # ansible-language-server
+      #   # marksman
+      #   # ltex-ls
+      #   # lua-language-server
+      #   # yaml-language-server
+      #   # taplo # toml
 
-        unstable.svelte-language-server
-        unstable.astro-language-server
+      #   # unstable.svelte-language-server
+      #   # unstable.astro-language-server
 
 
-        # html
-        emmet-ls
+      #   # # html
+      #   # emmet-ls
 
-        # py
-        python311Packages.python-lsp-server
-        python311Packages.black
+      #   # # py
+      #   # python311Packages.python-lsp-server
+      #   # python311Packages.black
 
-        # sql
-        sqls
-        python311Packages.sqlparse
+      #   # # sql
+      #   # sqls
+      #   # python311Packages.sqlparse
 
-        # bash
-        shfmt
-        unstable.bash-language-server
+      #   # # bash
+      #   # shfmt
+      #   # unstable.bash-language-server
 
-        dconf
-        # gnome.dconf-editor
-        gnome.adwaita-icon-theme
+      #   # dconf
+      #   # # gnome.dconf-editor
+      #   # gnome.adwaita-icon-theme
 
-        # neovim dependency
-        gcc
-        # cl
-        # rocmPackages.llvm.clang
-        # zig
+      #   # # neovim dependency
+      #   # gcc
+      #   # # cl
+      #   # # rocmPackages.llvm.clang
+      #   # # zig
 
-        # rust
-        rustup
+      #   # # rust
+      #   # rustup
 
-        # data sync
-        syncthing
-        localsend
+      #   # # data sync
+      #   # syncthing
+      #   # localsend
 
-        # vpn
-        # unstable.mullvad-vpn
+      #   # vpn
+      #   # unstable.mullvad-vpn
 
-        # markdown
-        libsForQt5.ghostwriter
-        mermaid-cli
+      #   # # markdown
+      #   # libsForQt5.ghostwriter
+      #   # mermaid-cli
 
-        # email
-        unstable.protonmail-desktop
+      #   # # email
+      #   # unstable.protonmail-desktop
 
-        # notes
-        unstable.obsidian
+      #   # # notes
+      #   # unstable.obsidian
 
-        # vpn
-        # mullvad
-        unstable.mullvad-vpn
+      #   # # vpn
+      #   # # mullvad
+      #   # unstable.mullvad-vpn
 
-        # browsers
-        # brave
-        # https://discourse.nixos.org/t/chrome-wayland/35395/15
-        # (brave.override {
-        #   # https://peter.sh/experiments/chromium-command-line-switches/
+      #   # browsers
+      #   # brave
+      #   # https://discourse.nixos.org/t/chrome-wayland/35395/15
+      #   # (brave.override {
+      #   #   # https://peter.sh/experiments/chromium-command-line-switches/
 
-        #   # --enable-features=VaapiVideoDecodeLinuxGL
-        #   commandLineArgs = ''
-        #     --use-gl=angle
-        #     --use-angle=gl
-        #     --ozone-platform=wayland
-        #     --disable-gpu-blocklist
-        #     --enable-gl=opengl
-        #   '';
-        # })
-        mullvad-browser
+      #   #   # --enable-features=VaapiVideoDecodeLinuxGL
+      #   #   commandLineArgs = ''
+      #   #     --use-gl=angle
+      #   #     --use-angle=gl
+      #   #     --ozone-platform=wayland
+      #   #     --disable-gpu-blocklist
+      #   #     --enable-gl=opengl
+      #   #   '';
+      #   # })
+      #   # mullvad-browser
 
-        # gpg
-        keepassxc
+      #   # # gpg
+      #   # keepassxc
 
-        # sounds
-        sound-theme-freedesktop
+      #   # # sounds
+      #   # sound-theme-freedesktop
 
-        # comms
-        signal-desktop
-        discord
+      #   # # comms
+      #   # signal-desktop
 
-        # API Testing
-        bruno
+      #   # # API Testing
+      #   # bruno
 
-        # pico8
-        steam-run
+      #   # # pico8
+      #   # steam-run
 
-        # epub
-        foliate
+      #   # # epub
+      #   # foliate
 
-        # typst
-        typst-lsp
-        typstfmt
+      #   # # typst
+      #   # typst-lsp
+      #   # typstfmt
 
-        # ascii
-        ascii-draw
+      #   # # ascii
+      #   # ascii-draw
 
-        ## gtk
-        themechanger
+      #   # ## gtk
+      #   # themechanger
 
-        ## css
-        lightningcss
+      #   # ## css
+      #   # lightningcss
 
-        ## pdf
-        evince
+      #   # ## pdf
+      #   # evince
 
-        #svg
-        inkscape-with-extensions
-      ];
+      #   # #svg
+      #   # inkscape-with-extensions
+      # ];
 
       pointerCursor = {
         name = "Simp1e-Gruvbox-Dark";

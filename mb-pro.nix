@@ -5,7 +5,6 @@
 
   imports = [
     <nixos-hardware/apple/macbook-pro/11-5>
-    <nixos-hardware/apple/macbook-pro>
   ];
 
   # HIP - https://nixos.wiki/wiki/AMD_GPU#HIP
@@ -34,7 +33,7 @@
       "nouveau"
       "nvidia"
     ]; # Disable NVIDIA video cards
-    initrd.kernelModules = [ "amdgpu" ]; # AMD GPU
+    # initrd.kernelModules = [ "amdgpu" ]; # AMD GPU
   };
 
   # wifi
@@ -57,11 +56,6 @@
 
       # radv: an open-source Vulkan driver from freedesktop
       extraPackages = with pkgs; [
-        ## amdvlk: an open-source Vulkan driver from AMD
-        # amdvlk not supported
-
-        ## OpenCL
-        # rocmPackages.clr.icd
 
         ## OpenCL - Radeon
         # NOTE: at some point GPUs in the R600-family and newer
@@ -95,7 +89,7 @@
     acpid.enable = true;
     mbpfan.enable = true;
     auto-cpufreq.enable = true;
-    xserver.videoDrivers = [ "amdgpu" ]; # AMD GPU 
+    # xserver.videoDrivers = [ "amdgpu" ]; # AMD GPU 
 
     # Enable CUPS to print documents.
     printing.enable = true;

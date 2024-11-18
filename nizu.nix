@@ -46,6 +46,20 @@ in
     pathsToLink = [
       "/share/"
     ];
+
+    # gtk
+    etc = {
+      "xdg/gtk-2.0/gtkrc".text = ''
+        gtk-theme-name = "Materia-dark"
+      '';
+
+      "xdg/gtk-3.0/settings.ini".text = ''
+        [Settings]
+        gtk-theme-name = "Materia-dark"
+        gtk-application-prefer-dark-theme = true
+      '';
+    };
+
   };
 
   security.rtkit.enable = true;
@@ -364,6 +378,9 @@ in
     gtk3
     gtk4
     gnome.gnome-themes-extra
+    dconf
+    gnome.adwaita-icon-theme
+    themechanger
 
     # network
     networkmanager
@@ -502,6 +519,7 @@ in
 
     # android
     android-udev-rules
+
   ];
 
 

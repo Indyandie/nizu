@@ -21,8 +21,8 @@
     programs.neovim.withNodeJs = true;
 
     # firefox
-    programs.firefox.enable = true;
-    programs.firefox.package = pkgs.firefox;
+    # programs.firefox.enable = true;
+    # programs.firefox.package = pkgs.firefox;
 
     home = {
       stateVersion = "23.05";
@@ -67,9 +67,9 @@
       #   # shfmt
       #   # unstable.bash-language-server
 
-      #   # dconf
-      #   # # gnome.dconf-editor
-      #   # gnome.adwaita-icon-theme
+      #   # dconf # MOVED
+      #   # # gnome.dconf-editor # MOVED
+      #   # gnome.adwaita-icon-theme # MOVED
 
       #   # # neovim dependency
       #   # gcc
@@ -119,7 +119,7 @@
       #   # mullvad-browser
 
       #   # # gpg
-      #   # keepassxc
+      #   # keepassxc # MOVED
 
       #   # # sounds
       #   # sound-theme-freedesktop
@@ -144,7 +144,7 @@
       #   # ascii-draw
 
       #   # ## gtk
-      #   # themechanger
+      #   # themechanger # MOVED
 
       #   # ## css
       #   # lightningcss
@@ -167,34 +167,34 @@
     };
 
 
-    gtk = {
-      enable = true;
+    # gtk = {
+    #   enable = true;
 
-      font = {
-        size = 12;
-        name = "JetBrainsMono Nerd Font";
-      };
+    #   font = {
+    #     size = 12;
+    #     name = "JetBrainsMono Nerd Font";
+    #   };
 
-      theme = {
-        # name = "Arc-dark";
-        # package = pkgs.arc-theme;
-        name = "Materia-dark";
-        package = pkgs.materia-theme;
-        # name = "Pop-Dark";
-        # package = pkgs.pop-gtk-theme;
-      };
+    #   theme = {
+    #     # name = "Arc-dark";
+    #     # package = pkgs.arc-theme;
+    #     name = "Materia-dark";
+    #     package = pkgs.materia-theme;
+    #     # name = "Pop-Dark";
+    #     # package = pkgs.pop-gtk-theme;
+    #   };
 
-      gtk3 = {
-        extraConfig = {
-          gtk-application-prefer-dark-theme = 1;
-        };
-      };
+    #   gtk3 = {
+    #     extraConfig = {
+    #       gtk-application-prefer-dark-theme = 1;
+    #     };
+    #   };
 
-      gtk4 = {
-        extraConfig = {
-          gtk-application-prefer-dark-theme = 1;
-        };
-      };
-    };
+    #   gtk4 = {
+    #     extraConfig = {
+    #       gtk-application-prefer-dark-theme = 1;
+    #     };
+    #   };
+    # };
   };
 }

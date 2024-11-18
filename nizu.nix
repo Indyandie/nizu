@@ -11,10 +11,8 @@ in
 
   imports = [
     ./hyprland.nix
-    #./home-manager.nix
     ./mb-pro.nix
     ./yubi.nix
-    # ./mb-air.nix
   ];
 
   nix = {
@@ -22,118 +20,134 @@ in
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
-  };
 
-  # optimise
-  nix.optimise.automatic = true;
-  nix.optimise.dates = [ "22:30" ];
-  nix.settings.auto-optimise-store = true;
-
-  # env vars
-  environment.variables.GTK_THEME = "Materia:dark";
-
-  environment.pathsToLink = [
-    "/share/"
-  ];
-
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa = {
-      enable = true;
-      support32Bit = true;
+    # optimise
+    optimise = {
+      automatic = true;
+      dates = [ "22:30" ];
     };
-    pulse.enable = true;
-    wireplumber.enable = true;
-    jack.enable = true; # (optional)
-    socketActivation = true;
+    settings.auto-optimise-store = true;
+
+    # garbage clean up
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 3d";
+    };
   };
 
-  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
-  boot.kernelModules = [ "v4l2loopback" ];
-  boot.extraModprobeConfig = "options v4l2loopback exclusive_caps=1 video_nr=9 card_label=\"obs\"";
+  environment = {
+    # env vars
+    variables.GTK_THEME = "Materia:dark";
 
-  # light
-  programs.light.enable = true;
-  # systemd.services.clightd = {
-  #   enable = true;
-  #   description = "Clight daemon";
-  #   serviceConfig = {
-  #     ExecStart = "${pkgs.clightd}/bin/clightd -d";
-  #     User = "nizusan";
-  #   };
-  # };
+    # dash
+    binsh = "${pkgs.dash}/bin/dash";
 
-  # mullvad vpn
-  services.mullvad-vpn.enable = true;
-  services.mullvad-vpn.package = unstable.pkgs.mullvad;
-  services.mullvad-vpn.enableExcludeWrapper = false;
-
-  # qt
-  qt.enable = true;
-  qt.style = "adwaita-dark";
-  qt.platformTheme = "gnome";
-
-  # dbus
-  services.dbus.enable = true;
-
-  # xfce
-
-  # thunar
-  programs.thunar = {
-    enable = true;
-    plugins = with pkgs.xfce; [
-      thunar-archive-plugin
-      thunar-volman
+    pathsToLink = [
+      "/share/"
     ];
   };
 
-  ## thumbnails
-  services.tumbler.enable = true;
+  security.rtkit.enable = true;
 
-  # usb
-  services.gvfs.enable = true; # auto mount usb
-  services.udisks2.enable = true;
-  services.devmon.enable = true;
-
-  # garbage clean up
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 3d";
+  boot = {
+    extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+    kernelModules = [ "v4l2loopback" ];
+    extraModprobeConfig = "options v4l2loopback exclusive_caps=1 video_nr=9 card_label=\"obs\"";
   };
 
-  # zsh
-  users.defaultUserShell = pkgs.zsh;
+  # qt
+  qt = {
+    enable = true;
+    style = "adwaita-dark";
+    platformTheme = "gnome";
+  };
 
-  programs.zsh = {
-    enable = true; # zsh
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-    enableCompletion = true;
-    ohMyZsh = {
+  services = {
+    ## thumbnails
+    tumbler.enable = true;
+
+    # usb
+    gvfs.enable = true; # auto mount usb
+    udisks2.enable = true;
+    devmon.enable = true;
+
+    # dbus
+    dbus.enable = true;
+
+    # flatpak
+    flatpak.enable = true;
+
+    # cronjob
+    cron.enable = true;
+
+    pipewire = {
       enable = true;
-      plugins = [
-        "git"
-        "deno"
-        "sudo"
-        "vi-mode"
-      ];
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+      pulse.enable = true;
+      wireplumber.enable = true;
+      jack.enable = true; # (optional)
+      socketActivation = true;
+    };
+
+    # mullvad vpn
+    mullvad-vpn = {
+      enable = true;
+      package = unstable.pkgs.mullvad;
+      enableExcludeWrapper = false;
     };
   };
 
-  # users
-  users.users.nizusan = {
-    shell = pkgs.zsh;
-    # packages = with pkgs; [];
+  users = {
+    # zsh
+    defaultUserShell = pkgs.zsh;
+
+    # users
+    users.nizusan = {
+      shell = pkgs.zsh;
+      # packages = with pkgs; [];
+    };
   };
 
-  # flatpak
-  services.flatpak.enable = true;
+  programs = {
+    ## xfce thunar
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce; [
+        thunar-archive-plugin
+        thunar-volman
+      ];
+    };
 
+    # light
+    light.enable = true;
 
-  programs.firefox.enable = true;
-  programs.firefox.package = pkgs.firefox;
+    # zsh
+    zsh = {
+      enable = true;
+      autosuggestions.enable = true;
+      syntaxHighlighting.enable = true;
+      enableCompletion = true;
+      ohMyZsh = {
+        enable = true;
+        plugins = [
+          "git"
+          "deno"
+          "sudo"
+          "vi-mode"
+        ];
+      };
+    };
+
+    # firefox
+    firefox = {
+      enable = true;
+      package = pkgs.firefox;
+    };
+  };
 
   # run a non-nixos executable on NixOs
   # https://unix.stackexchange.com/questions/522822/different-methods-to-run-a-non-nixos-executable-on-nixos
@@ -490,23 +504,19 @@ in
     android-udev-rules
   ];
 
-  # dash
-  environment.binsh = "${pkgs.dash}/bin/dash";
-
-  programs.gnupg.agent.pinentryPackage = pkgs.pinentry-gnome3;
 
   # font
-  fonts.fontDir.enable = true;
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-emoji
-    noto-fonts-cjk
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    atkinson-hyperlegible
-    jetbrains-mono
-  ];
+  fonts = {
+    fontDir.enable = true;
 
-  services.cron.enable = true;
-
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-emoji
+      noto-fonts-cjk
+      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      atkinson-hyperlegible
+      jetbrains-mono
+    ];
+  };
 }
 

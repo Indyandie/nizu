@@ -1,4 +1,4 @@
-{ config, options, pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
   unstable = import <nixos-unstable> {
@@ -11,7 +11,7 @@ in
 
   imports = [
     ./hyprland.nix
-    ./home-manager.nix
+    #./home-manager.nix
     ./mb-pro.nix
     ./yubi.nix
     # ./mb-air.nix
@@ -26,7 +26,7 @@ in
 
   # optimise
   nix.optimise.automatic = true;
-  nix.optimise.dates = [ "22;30" ];
+  nix.optimise.dates = [ "22:30" ];
   nix.settings.auto-optimise-store = true;
 
   # env vars
@@ -131,125 +131,131 @@ in
   # flatpak
   services.flatpak.enable = true;
 
+
+  programs.firefox.enable = true;
+  programs.firefox.package = pkgs.firefox;
+
   # run a non-nixos executable on NixOs
   # https://unix.stackexchange.com/questions/522822/different-methods-to-run-a-non-nixos-executable-on-nixos
 
-  programs.nix-ld.enable = true;
+  # programs.nix-ld.enable = true;
 
-  programs.nix-ld.libraries = options.programs.nix-ld.libraries.default ++ (with pkgs; [
-    stdenv.cc.cc
-    openssl
-    xorg.libXcomposite
-    xorg.libXtst
-    xorg.libXrandr
-    xorg.libXext
-    xorg.libX11
-    xorg.libXfixes
-    libGL
-    libva
-    xorg.libxcb
-    xorg.libXdamage
-    xorg.libxshmfence
-    xorg.libXxf86vm
-    libelf
+  # programs.nix-ld.libraries = options.programs.nix-ld.libraries.default ++ (with pkgs; [
+  #   stdenv.cc.cc
+  #   openssl
+  #   xorg.libXcomposite
+  #   xorg.libXtst
+  #   xorg.libXrandr
+  #   xorg.libXext
+  #   xorg.libX11
+  #   xorg.libXfixes
+  #   libGL
+  #   libva
+  #   xorg.libxcb
+  #   xorg.libXdamage
+  #   xorg.libxshmfence
+  #   xorg.libXxf86vm
+  #   libelf
 
-    # Required
-    glib
-    gtk2
-    bzip2
+  #   # Required
+  #   glib
+  #   gtk2
+  #   bzip2
 
-    # Without these it silently fails
-    alsa-lib
-    xorg.libICE
-    xorg.libSM
-    xorg.libX11
-    xorg.libXScrnSaver
-    xorg.libXau
-    xorg.libXcursor
-    xorg.libXdmcp
-    xorg.libXext
-    xorg.libXfixes
-    xorg.libXi
-    xorg.libXinerama
-    xorg.libXrandr
-    xorg.libXrender
-    xorg.libXxf86vm
-    xorg.libxcb
-    udev
-    gnome2.GConf
-    nspr
-    nss
-    cups
-    libcap
-    SDL2
-    SDL2.dev
-    libusb1
-    dbus-glib
+  #   # Without these it silently fails
+  #   alsa-lib
+  #   xorg.libICE
+  #   xorg.libSM
+  #   xorg.libX11
+  #   xorg.libXScrnSaver
+  #   xorg.libXau
+  #   xorg.libXcursor
+  #   xorg.libXdmcp
+  #   xorg.libXext
+  #   xorg.libXfixes
+  #   xorg.libXi
+  #   xorg.libXinerama
+  #   xorg.libXrandr
+  #   xorg.libXrender
+  #   xorg.libXxf86vm
+  #   xorg.libxcb
+  #   udev
+  #   gnome2.GConf
+  #   nspr
+  #   nss
+  #   cups
+  #   libcap
+  #   SDL2
+  #   SDL2.dev
+  #   libusb1
+  #   dbus-glib
 
-    # Only libraries are needed from those two
-    libudev0-shim
+  #   # Only libraries are needed from those two
+  #   libudev0-shim
 
-    # Verified games requirements
-    xorg.libXt
-    xorg.libXmu
-    libogg
-    libvorbis
-    SDL
-    SDL2_image
-    glew110
-    libidn
-    tbb
+  #   # Verified games requirements
+  #   xorg.libXt
+  #   xorg.libXmu
+  #   libogg
+  #   libvorbis
+  #   SDL
+  #   SDL2_image
+  #   glew110
+  #   libidn
+  #   tbb
 
-    # Other things from runtime
-    flac
-    freeglut
-    libjpeg
-    libpng
-    libpng12
-    libsamplerate
-    libmikmod
-    libtheora
-    libtiff
-    pixman
-    speex
-    SDL_image
-    SDL_ttf
-    SDL_mixer
-    SDL2_ttf
-    SDL2_mixer
-    libappindicator-gtk2
-    libdbusmenu-gtk2
-    libindicator-gtk2
-    libcaca
-    libcanberra
-    libgcrypt
-    libvpx
-    librsvg
-    xorg.libXft
-    libvdpau
-    gnome2.pango
-    cairo
-    atk
-    gdk-pixbuf
-    fontconfig
-    freetype
-    dbus
-    alsaLib
-    expat
-    # Needed for electron
-    libdrm
-    mesa
-    libxkbcommon
+  #   # Other things from runtime
+  #   flac
+  #   freeglut
+  #   libjpeg
+  #   libpng
+  #   libpng12
+  #   libsamplerate
+  #   libmikmod
+  #   libtheora
+  #   libtiff
+  #   pixman
+  #   speex
+  #   SDL_image
+  #   SDL_ttf
+  #   SDL_mixer
+  #   SDL2_ttf
+  #   SDL2_mixer
+  #   libappindicator-gtk2
+  #   libdbusmenu-gtk2
+  #   libindicator-gtk2
+  #   libcaca
+  #   libcanberra
+  #   libgcrypt
+  #   libvpx
+  #   librsvg
+  #   xorg.libXft
+  #   libvdpau
+  #   gnome2.pango
+  #   cairo
+  #   atk
+  #   gdk-pixbuf
+  #   fontconfig
+  #   freetype
+  #   dbus
+  #   alsaLib
+  #   expat
+  #   # Needed for electron
+  #   libdrm
+  #   mesa
+  #   libxkbcommon
 
-    wayland
-    xwayland
-  ]);
+  #   wayland
+  #   xwayland
+  # ]);
 
   # pkgs
   environment.systemPackages = with pkgs; [
 
+    # gpg
+    keepassxc
+
     # editors
-    vim
     unstable.helix
 
     # bash lsp
@@ -260,12 +266,9 @@ in
     nil
 
     # programs
-    curl
-    wget
-    file # MIME
-    git
-    lazygit # tui
     gh
+    lazygit # tui
+    file # MIME
     diff-so-fancy
     difftastic
     unstable.starship
@@ -291,7 +294,6 @@ in
     bat-extras.batwatch
     bat-extras.batman
     bat-extras.batpipe
-    flatpak
     # clipboard-jh # copy pasta # https://github.com/Slackadays/Clipboard/issues/171
     glow
     atuin # shell history
@@ -307,7 +309,7 @@ in
     csvq
     csvlens
     sc-im
-    unstable.qsv
+    # unstable.qsv
 
     # JSON
     jq
@@ -326,7 +328,6 @@ in
     # ascii
     figlet
     lolcat
-    aewan
     fortune-kind
     chafa
 
@@ -336,11 +337,7 @@ in
     # fonts
     font-manager
 
-    # py
-    python3
-
     # files and drives
-    xfce.thunar
     udisks
     udisks2
     udiskie
@@ -357,9 +354,6 @@ in
     # network
     networkmanager
     networkmanagerapplet
-
-    # gpg
-    gnupg
 
     # media
     playerctl
@@ -389,53 +383,53 @@ in
     # ffmpeg
     # yanked from https://github.com/hnjae/nix-config/blob/7a3cbbd6a62c3091a78694efb5000ed0c0fcb830/modules/home-manager/generic-home/programs/80-multimedia/ffmpeg/package.nix#L4
 
-    (pkgs.ffmpeg-full.override {
-      withHeadlessDeps = true;
-      withSmallDeps = true;
-      withUnfree = pkgs.config.allowUnfree;
+    # (pkgs.ffmpeg-full.override {
+    #   withHeadlessDeps = true;
+    #   withSmallDeps = true;
+    #   withUnfree = pkgs.config.allowUnfree;
 
-      withCuda = false;
-      withCudaLLVM = false;
-      withNvdec = false;
-      withNvenc = false;
-      withVdpau = false;
+    #   withCuda = false;
+    #   withCudaLLVM = false;
+    #   withNvdec = false;
+    #   withNvenc = false;
+    #   withVdpau = false;
 
-      withAlsa = false;
-      withPulse = false;
-      withSdl2 = false;
+    #   withAlsa = false;
+    #   withPulse = false;
+    #   withSdl2 = false;
 
-      withFontconfig = false;
-      withFreetype = false;
-      withSsh = false;
+    #   withFontconfig = false;
+    #   withFreetype = false;
+    #   withSsh = false;
 
-      withOpencl = true;
+    #   withOpencl = true;
 
-      withAom = true;
-      withRav1e = true;
-      withSvtav1 = !pkgs.stdenv.isAarch64;
-      withTheora = false;
-      withXvid = false;
+    #   withAom = true;
+    #   withRav1e = true;
+    #   withSvtav1 = !pkgs.stdenv.isAarch64;
+    #   withTheora = false;
+    #   withXvid = false;
 
-      withVoAmrwbenc = true;
-      withOpencoreAmrnb = true;
-      withGsm = true;
-      withGme = true;
-      withFdkAac = true;
+    #   withVoAmrwbenc = true;
+    #   withOpencoreAmrnb = true;
+    #   withGsm = true;
+    #   withGme = true;
+    #   withFdkAac = true;
 
-      withWebp = true;
-      withSvg = true;
-      withOpenjpeg = true; # jpeg2000 de/encoder
+    #   withWebp = true;
+    #   withSvg = true;
+    #   withOpenjpeg = true; # jpeg2000 de/encoder
 
-      withXml2 = true;
-      withBluray = true;
+    #   withXml2 = true;
+    #   withBluray = true;
 
-      withVmaf = !pkgs.stdenv.isAarch64;
+    #   withVmaf = !pkgs.stdenv.isAarch64;
 
-      # filter
-      withVidStab = true;
-      withGrayscale = true;
-      withLadspa = true;
-    })
+    #   # filter
+    #   withVidStab = true;
+    #   withGrayscale = true;
+    #   withLadspa = true;
+    # })
     wireplumber
     vlc
     clapper
@@ -463,7 +457,7 @@ in
     python312Packages.weasyprint
     texliveSmall # pdflatex
     # asciidoctor # convert adoc files
-    asciidoctor-with-extensions
+    # asciidoctor-with-extensions
 
     # epub
     bk
@@ -498,12 +492,6 @@ in
 
   # dash
   environment.binsh = "${pkgs.dash}/bin/dash";
-
-  # gpg
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
 
   programs.gnupg.agent.pinentryPackage = pkgs.pinentry-gnome3;
 

@@ -51,13 +51,27 @@ in
     # gtk
     etc = {
       "xdg/gtk-2.0/gtkrc".text = ''
-        gtk-theme-name = "Materia-dark"
+        gtk-theme-name=rose-pine-gtk
       '';
 
       "xdg/gtk-3.0/settings.ini".text = ''
         [Settings]
-        gtk-theme-name = "Materia-dark"
-        gtk-application-prefer-dark-theme = true
+        gtk-theme-name=rose-pine-gtk
+        gtk-icon-theme-name=rose-pine-moon-icons
+        gtk-font-name=JetBrainsMono Nerd Font 16
+        gtk-cursor-theme-name=BreezeX-RosePine-Linux
+        gtk-cursor-theme-size=48
+        gtk-toolbar-style=GTK_TOOLBAR_ICONS
+        gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
+        gtk-button-images=0
+        gtk-menu-images=0
+        gtk-enable-event-sounds=1
+        gtk-enable-input-feedback-sounds=0
+        gtk-xft-antialias=1
+        gtk-xft-hinting=1
+        gtk-xft-hintstyle=hintmedium
+        gtk-xft-rgba=rgb
+        gtk-application-prefer-dark-theme=true
       '';
     };
 

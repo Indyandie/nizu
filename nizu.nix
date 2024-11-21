@@ -38,7 +38,8 @@ in
 
   environment = {
     # env vars
-    variables.GTK_THEME = "Materia:dark";
+    ## gtk
+    # variables.GTK_THEME = "rose-pine-moon-gtk";
 
     # dash
     binsh = "${pkgs.dash}/bin/dash";

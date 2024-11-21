@@ -393,9 +393,10 @@ in
     gtk3
     gtk4
     gnome.gnome-themes-extra
-    dconf
     gnome.adwaita-icon-theme
-    themechanger
+    dconf
+    unstable.nwg-look
+    glib
 
     # network
     networkmanager

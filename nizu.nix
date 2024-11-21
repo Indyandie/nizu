@@ -295,6 +295,9 @@ in
   # pkgs
   environment.systemPackages = with pkgs; [
 
+    # nixos
+    # nix-du
+
     # gpg
     keepassxc
 

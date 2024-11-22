@@ -334,7 +334,7 @@ in
     ripgrep
     fd
     libnotify
-    macchina # neofetch
+    unstable.macchina # neofetch
     bat # cat
     bat-extras.prettybat
     bat-extras.batwatch

@@ -137,7 +137,35 @@ in
     # users
     users.nizusan = {
       shell = pkgs.zsh;
-      # packages = with pkgs; [];
+      packages = with pkgs; [
+        # sounds
+        sound-theme-freedesktop
+
+        # comms
+        signal-desktop
+
+        # API Testing
+        bruno
+
+        # epub
+        foliate
+
+        # typst
+        typst-lsp
+        typstfmt
+
+        # ascii
+        ascii-draw
+
+        ## css
+        lightningcss
+
+        ## pdf
+        evince
+
+        #svg
+        inkscape-with-extensions
+      ];
     };
   };
 

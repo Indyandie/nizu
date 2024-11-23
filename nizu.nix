@@ -219,6 +219,12 @@ in
       };
     };
 
+    # nvim
+    neovim = {
+      enable = true;
+      withNodeJs = true;
+    };
+
     # firefox
     firefox = {
       enable = true;

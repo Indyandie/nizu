@@ -88,8 +88,8 @@ in
   # qt
   qt = {
     enable = true;
-    style = "adwaita-dark";
-    platformTheme = "gnome";
+    style = "gtk2";
+    platformTheme = "gtk2";
   };
 
   services = {

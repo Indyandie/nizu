@@ -139,6 +139,47 @@ in
       shell = pkgs.zsh;
 
       packages = with pkgs; [
+        # node & npm
+        nodePackages_latest.nodejs # ver 23 causes issues
+
+        # js
+        unstable.typescript
+        unstable.svelte-language-server
+        unstable.astro-language-server
+
+        # html
+        emmet-ls
+        unstable.vscode-langservers-extracted
+        unstable.tailwindcss-language-server
+
+        # sh
+        unstable.dot-language-server
+        shfmt
+        unstable.bash-language-server
+        unstable.ansible
+        unstable.ansible-lint
+        unstable.ansible-language-server
+
+        # md
+        unstable.marksman
+        unstable.ltex-ls
+
+        # py
+        python311Packages.python-lsp-server
+        python311Packages.black
+
+        # lua
+        unstable.lua-language-server
+
+        # sql
+        sqls
+        python311Packages.sqlparse
+
+        # yaml
+        unstable.yaml-language-server
+
+        # toml
+        unstable.taplo
 
         # browser
         (brave.override {

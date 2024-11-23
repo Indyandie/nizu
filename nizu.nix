@@ -255,6 +255,10 @@ in
 
         #svg
         inkscape-with-extensions
+
+        # voxel
+        goxel
+
       ];
     };
   };

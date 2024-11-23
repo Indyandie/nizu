@@ -199,11 +199,40 @@ in
           '';
         })
 
+        # # neovim dependency
+        gcc
+        # cl
+        # rocmPackages.llvm.clang
+        # zig
+
+        # # rust
+        unstable.rustup
+
+        # # data sync
+        syncthing
+        localsend
+
+        # vpn
+        unstable.mullvad-vpn
+
+        # markdown
+        libsForQt5.ghostwriter
+        mermaid-cli
+
+        # email
+        unstable.protonmail-desktop
+
+        # notes
+        unstable.obsidian
+
+        # vpn
+        unstable.mullvad-vpn
+
         # sounds
         sound-theme-freedesktop
 
         # comms
-        signal-desktop
+        unstable.signal-desktop
 
         # API Testing
         bruno
@@ -216,13 +245,13 @@ in
         typstfmt
 
         # ascii
-        ascii-draw
+        unstable.ascii-draw
 
         ## css
-        lightningcss
+        unstable.lightningcss
 
         ## pdf
-        evince
+        unstable.evince
 
         #svg
         inkscape-with-extensions

@@ -137,7 +137,27 @@ in
     # users
     users.nizusan = {
       shell = pkgs.zsh;
+
       packages = with pkgs; [
+
+        # browser
+        (brave.override {
+          # https://peter.sh/experiments/chromium-command-line-switches/
+
+          # --enable-features=VaapiVideoDecodeLinuxGL
+          commandLineArgs = ''
+            --ignore-gpu-blocklist
+            --enable-zero-copy
+            --use-gl=egl
+            --use-angle=gl
+            --ozone-platform=wayland
+            --disable-gpu-blocklist
+            --enable-gl=opengl
+            --enable-features=VaapiVideoDecodeLinuxGL
+
+          '';
+        })
+
         # sounds
         sound-theme-freedesktop
 
@@ -540,25 +560,8 @@ in
     # epub
     bk
 
-    # broswer
+    # browser
     w3m-nox
-    # brave
-    (brave.override {
-      # https://peter.sh/experiments/chromium-command-line-switches/
-
-      # --enable-features=VaapiVideoDecodeLinuxGL
-      commandLineArgs = ''
-        --ignore-gpu-blocklist
-        --enable-zero-copy
-        --use-gl=egl
-        --use-angle=gl
-        --ozone-platform=wayland
-        --disable-gpu-blocklist
-        --enable-gl=opengl
-        --enable-features=VaapiVideoDecodeLinuxGL
-
-      '';
-    })
 
     # odin
     odin

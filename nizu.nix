@@ -259,6 +259,8 @@ in
         # voxel
         goxel
 
+        # games
+        unstable.airshipper
       ];
     };
   };

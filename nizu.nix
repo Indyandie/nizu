@@ -16,7 +16,6 @@ in
   ];
 
   nix = {
-    package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -662,7 +661,7 @@ in
     packages = with pkgs; [
       noto-fonts
       noto-fonts-emoji
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       atkinson-hyperlegible
       jetbrains-mono

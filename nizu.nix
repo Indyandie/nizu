@@ -262,6 +262,9 @@ in
         # games
         unstable.airshipper
 
+        # rss
+        newsflash
+        gnome-feeds
       ];
     };
   };
@@ -653,6 +656,8 @@ in
     # android
     android-udev-rules
 
+    # rss tui
+    unstable.newsboat
   ];
 
 

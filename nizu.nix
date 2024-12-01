@@ -263,7 +263,6 @@ in
         unstable.airshipper
 
         # rss
-        newsflash
         gnome-feeds
       ];
     };

@@ -3,10 +3,6 @@
   # https://nixos.wiki/wiki/AMD_GPU
   # https://wiki.archlinux.org/title/MacBookPro11,x
 
-  imports = [
-    <nixos-hardware/apple/macbook-pro/11-5>
-  ];
-
   # HIP - https://nixos.wiki/wiki/AMD_GPU#HIP
   # https://rocm.docs.amd.com/projects/HIP/en/latest/
   systemd.tmpfiles.rules = [
@@ -49,10 +45,10 @@
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     # cpu.intel.updateMicrocode = true;
 
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+      # driSupport = true; # Removed
+      # driSupport32Bit = true; # Removed
 
       # radv: an open-source Vulkan driver from freedesktop
       extraPackages = with pkgs; [

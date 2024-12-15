@@ -1,14 +1,6 @@
 # hyprland
 
 { pkgs, ... }:
-
-let
-  unstable = import <nixos-unstable> {
-    config = {
-      allowUnfree = true;
-    };
-  };
-in
 {
   programs.hyprland = {
     enable = true;
@@ -21,12 +13,10 @@ in
 
   services.hypridle = {
     enable = true;
-    # package = unstable.pkgs.hypridle;
   };
 
   programs.hyprlock = {
     enable = true;
-    # package = unstable.pkgs.hyprlock;
   };
 
   security.pam.services.hyprlock = {

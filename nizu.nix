@@ -1,14 +1,5 @@
 { config, pkgs, options, ... }:
-
-let
-  unstable = import <nixos-unstable> {
-    config = {
-      allowUnfree = true;
-    };
-  };
-in
 {
-
   imports = [
     ./hyprland.nix
     ./mb-pro.nix
@@ -125,7 +116,7 @@ in
     # mullvad vpn
     mullvad-vpn = {
       enable = true;
-      package = unstable.pkgs.mullvad;
+      package = pkgs.unstable.mullvad;
       enableExcludeWrapper = false;
     };
   };
@@ -414,7 +405,7 @@ in
     fontconfig
     freetype
     dbus
-    alsaLib
+    alsa-lib # renamed
     expat
     # Needed for electron
     libdrm
@@ -528,8 +519,8 @@ in
     gtk2
     gtk3
     gtk4
-    gnome.gnome-themes-extra
-    gnome.adwaita-icon-theme
+    gnome-themes-extra # renamed
+    adwaita-icon-theme
     dconf
     unstable.nwg-look
     glib

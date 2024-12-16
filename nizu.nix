@@ -131,7 +131,7 @@
 
       packages = with pkgs; [
         # node & npm
-        nodePackages_latest.nodejs # ver 23 causes issues
+        nodejs_22
 
         # js
         unstable.typescript

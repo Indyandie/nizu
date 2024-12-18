@@ -211,7 +211,7 @@
         mermaid-cli
 
         # email
-        unstable.protonmail-desktop
+        protonmail-desktop
 
         # notes
         unstable.obsidian

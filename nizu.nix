@@ -255,6 +255,9 @@
 
         # rss
         gnome-feeds
+
+        ## to do
+        taskwarrior3
       ];
     };
   };
@@ -549,6 +552,7 @@
 
     # images
     imagemagick
+    exiftool
     jp2a # ASCII
     ascii-image-converter
     imv # image viewer

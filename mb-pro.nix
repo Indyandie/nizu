@@ -89,6 +89,9 @@
 
     # Enable CUPS to print documents.
     printing.enable = true;
+
+    # bluetooth
+    blueman.enable = true;
   };
 
   environment = {

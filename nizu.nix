@@ -258,6 +258,7 @@
 
         ## to do
         taskwarrior3
+        taskchampion-sync-server
       ];
     };
   };
@@ -652,6 +653,9 @@
 
     # rss tui
     unstable.newsboat
+
+    # DNS
+    dig
   ];
 
 

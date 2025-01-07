@@ -2,12 +2,11 @@
 
 ## To Do
 
-- [ ] Move npm packages and node projects to deno
-- [ ] Remove node when deno 2.0 is released
 - [ ] create helper script or aliases
   - logs build info
   - track disk space
   - better garbage collection and optimize
+  - update `flake.lock` and apply changes
 
 ## User
 

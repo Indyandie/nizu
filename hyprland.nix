@@ -73,6 +73,7 @@
     # terminal
     unstable.alacritty
     kitty
+    unstable.ghostty
 
     # status bar
     eww

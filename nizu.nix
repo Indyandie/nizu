@@ -260,6 +260,17 @@
         ## to do
         taskwarrior3
         taskchampion-sync-server
+
+        ## thumbnails
+        ffmpegthumbnailer # Video files
+        webp-pixbuf-loader # .webp images
+        poppler_gi # poppler-glib - Adobe .pdf files
+        haskellPackages.freetype2 # freetype2 - Font files
+        libgsf # .odf files
+        evince # .pdf files
+        gnome-epub-thumbnailer # .epub and .mobi ebook files
+        mcomix # .cbr comicbook archives
+        f3d # 3D files, including glTF, stl, step, ply, obj, fbx.
       ];
     };
   };

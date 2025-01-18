@@ -91,6 +91,7 @@
     gvfs.enable = true; # auto mount usb
     udisks2.enable = true;
     devmon.enable = true;
+    udisks2.mountOnMedia = true; # mount device to /media/
 
     # dbus
     dbus.enable = true;
@@ -304,6 +305,9 @@
       enable = true;
       package = pkgs.firefox;
     };
+
+    # partition-manager.enable = true; # missing privileges
+    gnome-disks.enable = true;
   };
 
   # run a non-nixos executable on NixOs

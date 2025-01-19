@@ -92,8 +92,14 @@
     qt6.qtwayland
     adwaita-qt
     adwaita-qt6
+    # hyprland-qt-support  # https://wiki.hyprland.org/Hypr-Ecosystem/hyprland-qt-support/
+
+    hyprpolkitagent
 
     # night shift
-    hyprshade
+    # hyprshade
+    hyprsunset
+
+    # hyprsysteminfo # https://wiki.hyprland.org/Hypr-Ecosystem/hyprsysteminfo/
   ];
 }

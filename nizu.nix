@@ -500,7 +500,7 @@
     csvq
     csvlens
     sc-im
-    # unstable.qsv
+    unstable.qsv
 
     # JSON
     jq

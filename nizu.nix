@@ -174,6 +174,8 @@
         unstable.taplo
 
         # browser
+        ladybird
+
         (brave.override {
           # https://peter.sh/experiments/chromium-command-line-switches/
 
@@ -508,7 +510,7 @@
     jqp
 
     # YAML
-    yq
+    unstable.yq-go
 
     # words
     dict

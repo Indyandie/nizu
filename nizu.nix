@@ -318,7 +318,7 @@
     # firefox
     firefox = {
       enable = true;
-      package = pkgs.floorp;
+      package = pkgs.unstable.floorp;
     };
 
     # chromium policies

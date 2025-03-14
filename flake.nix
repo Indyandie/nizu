@@ -7,6 +7,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs =
@@ -14,6 +15,7 @@
     , nixpkgs
     , nixos-hardware
     , nixpkgs-unstable
+    , zen-browser
       # inputs
     , ...
     }@attrs:
@@ -38,18 +40,13 @@
           }
           nixos-hardware.nixosModules.apple-macbook-pro-11-5
           ./configuration.nix
-          # {
-          #   environment.systemPackages = [
-          #     # output packages
-          #     ghostty.packages.x86_64-linux.default
-          #   ];
-          # }
+          {
+            environment.systemPackages = [
+              # output packages
+              zen-browser.packages.x86_64-linux.default
+            ];
+          }
         ];
       };
     };
-
-  # https://github.com/MarceColl/zen-browser-flake
-  # add zen-browser to ./configuration.nix import 
-  # [ zen-browser, ...]
-  # add zen-browser.packages."${system}".default packages
 }

@@ -321,6 +321,11 @@
       package = pkgs.firefox;
     };
 
+    # chromium policies
+    chromium = {
+      enable = true;
+    };
+
     # partition-manager.enable = true; # missing privileges
     gnome-disks.enable = true;
   };

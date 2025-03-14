@@ -206,8 +206,9 @@
         syncthing
         localsend
 
-        # vpn
+        # browser/vpn
         unstable.mullvad-vpn
+        unstable.mullvad-browser
 
         # markdown
         libsForQt5.ghostwriter
@@ -218,9 +219,6 @@
 
         # notes
         unstable.obsidian
-
-        # vpn
-        unstable.mullvad-vpn
 
         # sounds
         sound-theme-freedesktop

@@ -7,7 +7,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    # zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs =
@@ -15,7 +15,7 @@
     , nixpkgs
     , nixos-hardware
     , nixpkgs-unstable
-    , zen-browser
+    # , zen-browser
       # inputs
     , ...
     }@attrs:
@@ -40,12 +40,12 @@
           }
           nixos-hardware.nixosModules.apple-macbook-pro-11-5
           ./configuration.nix
-          {
-            environment.systemPackages = [
-              # output packages
-              zen-browser.packages.x86_64-linux.default
-            ];
-          }
+          # {
+          #   environment.systemPackages = [
+          #     # output packages
+          #     zen-browser.packages.x86_64-linux.default
+          #   ];
+          # }
         ];
       };
     };

@@ -120,6 +120,13 @@
       package = pkgs.unstable.mullvad;
       enableExcludeWrapper = false;
     };
+
+    # text expander (no worky)
+    # espanso = {
+    #   enable = true;
+    #   package = pkgs.unstable.espanso-wayland;
+    # };
+
   };
 
   users = {

@@ -241,7 +241,7 @@
         foliate
 
         # typst
-        typst-lsp
+        tinymist
         typstfmt
 
         # ascii

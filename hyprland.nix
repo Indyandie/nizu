@@ -98,7 +98,7 @@
 
     # night shift
     # hyprshade
-    hyprsunset
+    unstable.hyprsunset
 
     # hyprsysteminfo # https://wiki.hyprland.org/Hypr-Ecosystem/hyprsysteminfo/
   ];

@@ -24,7 +24,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    yubikey-manager-qt
+    yubioath-flutter
     pam_u2f
     yubikey-manager
     yubico-pam

@@ -181,7 +181,7 @@
         unstable.taplo
 
         # browser
-        ladybird
+        # ladybird
 
         (brave.override {
           # https://peter.sh/experiments/chromium-command-line-switches/
@@ -226,6 +226,7 @@
 
         # notes
         unstable.obsidian
+        unstable.standardnotes
 
         # sounds
         sound-theme-freedesktop

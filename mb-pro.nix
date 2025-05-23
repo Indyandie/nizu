@@ -67,7 +67,6 @@
         ## vaapi
         vaapiVdpau
         mesa
-        mesa.drivers
       ];
 
       # amd drivers

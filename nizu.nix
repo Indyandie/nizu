@@ -575,6 +575,9 @@
     # music 
     upiano
 
+    # video
+    yt-dlp
+
     # backlight
     brightnessctl
 

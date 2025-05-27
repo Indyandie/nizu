@@ -40,7 +40,7 @@
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
-    # wlr.enable = true;
+    wlr.enable = true;
 
     # make gtk apps happy
     extraPortals = [

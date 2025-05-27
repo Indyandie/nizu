@@ -5,16 +5,22 @@
 
   # HIP - https://nixos.wiki/wiki/AMD_GPU#HIP
   # https://rocm.docs.amd.com/projects/HIP/en/latest/
-  systemd.tmpfiles.rules = [
-    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
-  ];
+  # systemd.tmpfiles.rules = [
+  #   "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  # ];
 
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   # https://forum.manjaro.org/t/kworker-kacpid-over-70-of-cpu-dual-boot-mac-manjaro/61981
   boot = {
-    kernelModules = [ "applesmc" "i915" "wl" ];
+    kernelModules = [
+      "applesmc"
+      "i915"
+      "wl"
+      "radeon"
+      # "amdgpu"
+    ];
     kernelParams = [
       "hid_apple.iso_layout=0"
       "acpi_backlight=vendor"
@@ -35,11 +41,11 @@
   # wifi
   networking = {
     firewall.enable = true;
-    enableB43Firmware = true; # The wifi broadcom driver     
+    # enableB43Firmware = true; # The wifi broadcom driver     
   };
 
   hardware = {
-    amdgpu.initrd.enable = true;
+    amdgpu.initrd.enable = false;
     bluetooth.enable = true;
     facetimehd.enable = true;
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
@@ -47,8 +53,6 @@
 
     graphics = {
       enable = true;
-      # driSupport = true; # Removed
-      # driSupport32Bit = true; # Removed
 
       # radv: an open-source Vulkan driver from freedesktop
       extraPackages = with pkgs; [
@@ -60,7 +64,7 @@
         # pin the package version or backport/patch this back in
         # - https://www.phoronix.com/news/Mesa-Delete-Clover-Discussion
         # - https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/19385
-        mesa.opencl
+        # mesa.opencl # no devices
 
         libvdpau-va-gl
 
@@ -76,7 +80,7 @@
 
   powerManagement = {
     enable = true;
-    cpuFreqGovernor = "ondemand";
+    # cpuFreqGovernor = "ondemand";
     # cpuFreqGovernor = "schedutil";
   };
 
@@ -107,8 +111,8 @@
       libva-utils
       libaom
       mesa
-      clinfo # check OpenCL
-      lact
+      # clinfo # check OpenCL
+      # lact # vulcan compat check
     ];
   };
 

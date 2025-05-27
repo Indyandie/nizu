@@ -575,6 +575,9 @@
     # music 
     upiano
 
+    ## music player
+    tauon
+
     # video
     yt-dlp
 

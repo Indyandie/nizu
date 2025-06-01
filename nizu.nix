@@ -180,6 +180,9 @@
         # toml
         unstable.taplo
 
+        # bash lsp
+        unstable.bash-language-server
+
         # snippet lsp
         simple-completion-language-server
 
@@ -267,6 +270,10 @@
 
         # rss
         gnome-feeds
+
+        ## music player
+        tauon
+
 
         ## to do
         taskwarrior3
@@ -465,9 +472,6 @@
     # editors
     unstable.helix
 
-    # bash lsp
-    unstable.bash-language-server
-
     # nix lsp & formatter
     nixpkgs-fmt
     nil
@@ -577,9 +581,6 @@
 
     # music 
     upiano
-
-    ## music player
-    tauon
 
     # video
     yt-dlp

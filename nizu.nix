@@ -180,6 +180,9 @@
         # toml
         unstable.taplo
 
+        # snippet lsp
+        simple-completion-language-server
+
         # browser
         # ladybird
 

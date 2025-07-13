@@ -186,10 +186,11 @@
         # snippet lsp
         simple-completion-language-server
 
-        # browser
+        ## browsers
+
         # ladybird
 
-        (brave.override {
+        (unstable.brave.override {
           # https://peter.sh/experiments/chromium-command-line-switches/
 
           # --enable-features=VaapiVideoDecodeLinuxGL
@@ -205,6 +206,7 @@
 
           '';
         })
+
 
         # # neovim dependency
         gcc
@@ -683,6 +685,7 @@
 
     # browser
     w3m-nox
+    unstable.chawan
 
     # odin
     odin

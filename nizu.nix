@@ -164,15 +164,15 @@
         unstable.ltex-ls
 
         # py
-        python311Packages.python-lsp-server
-        python311Packages.black
+        python313Packages.python-lsp-server
+        python313Packages.black
 
         # lua
         unstable.lua-language-server
 
         # sql
         sqls
-        python311Packages.sqlparse
+        python313Packages.sqlparse
 
         # yaml
         unstable.yaml-language-server
@@ -676,7 +676,8 @@
     # markup
     pandoc
     # weasyprint
-    python312Packages.weasyprint
+    python313Packages.weasyprint
+
     texliveSmall # pdflatex
     # asciidoctor # convert adoc files
     # asciidoctor-with-extensions

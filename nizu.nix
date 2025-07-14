@@ -700,6 +700,9 @@
 
     # DNS
     dig
+
+    # vibes 
+    # unstable.opencode # Note: Remove versions older than 0.1.x before installing 
   ];
 
 

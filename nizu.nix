@@ -599,7 +599,8 @@
     jp2a # ASCII
     ascii-image-converter
     imv # image viewer
-    loupe
+    # loupe
+    eog # eye of gnome
 
     # ffmpeg
     # yanked from https://github.com/hnjae/nix-config/blob/7a3cbbd6a62c3091a78694efb5000ed0c0fcb830/modules/home-manager/generic-home/programs/80-multimedia/ffmpeg/package.nix#L4

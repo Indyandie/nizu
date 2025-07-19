@@ -11,8 +11,22 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   # https://forum.manjaro.org/t/kworker-kacpid-over-70-of-cpu-dual-boot-mac-manjaro/61981
+
+  # boot.kernelPackages = pkgs.linuxPackages_6_12;
+
+  nixpkgs.config.permittedInsecurePackages = [
+    # "broadcom-sta-6.30.223.271-57-6.12.38"
+    "broadcom-sta"
+  ];
+
   boot = {
-    extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
+    extraModulePackages = [
+      # config.boot.kernelPackages.broadcom_sta
+      # # config.boot.kernelPackages.linuxKernel.packages.linux_6_12.broadcom_sta
+      # config.boot.kernelPackages.broadcom_sta
+    ];
+
+
 
     kernelModules = [
       "applesmc"

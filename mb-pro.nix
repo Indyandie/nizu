@@ -14,17 +14,17 @@
 
   # boot.kernelPackages = pkgs.linuxPackages_6_12;
 
-  nixpkgs.config.permittedInsecurePackages = [
-    # "broadcom-sta-6.30.223.271-57-6.12.38"
-    "broadcom-sta"
-  ];
+  # nixpkgs.config.permittedInsecurePackages = [
+  #   # "broadcom-sta-6.30.223.271-57-6.12.38"
+  #   "broadcom-sta"
+  # ];
 
   boot = {
-    extraModulePackages = [
-      # config.boot.kernelPackages.broadcom_sta
-      # # config.boot.kernelPackages.linuxKernel.packages.linux_6_12.broadcom_sta
-      # config.boot.kernelPackages.broadcom_sta
-    ];
+    #   extraModulePackages = [
+    # config.boot.kernelPackages.broadcom_sta
+    # # config.boot.kernelPackages.linuxKernel.packages.linux_6_12.broadcom_sta
+    # config.boot.kernelPackages.broadcom_sta
+    # ];
 
 
 
@@ -33,17 +33,24 @@
       "i915"
       "wl"
       "radeon"
+      # "amdgpu"
+      "apple-gmux"
+      "brcmfmac" # wifi
     ];
 
     kernelParams = [
       "hid_apple.iso_layout=0"
       "acpi_backlight=vendor"
       "acpi_mask_gpe=0x15"
+      # "radeon.si_support=0"
+      # "amdgpu.si_support=1"
+      "brcmfmac.feature_disable=0x82000" # wifi
     ];
 
     blacklistedKernelModules = [
       "nouveau"
       "nvidia" # Disable NVIDIA video cards
+      # "radeon" # Blacklist radeon after switch
     ];
   };
 
@@ -61,10 +68,10 @@
 
     graphics = {
       enable = true;
+      enable32Bit = true;
 
       extraPackages = with pkgs; [
         libvdpau-va-gl
-
         ## vaapi
         vaapiVdpau
         mesa

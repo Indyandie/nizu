@@ -1,7 +1,14 @@
 { config, pkgs, lib, ... }:
 {
   # CPU Model: Intel(R) Core(TM) i7-4870HQ CPU @ 2.50GHz
+
   # GPU: Intel Corporation Crystal Well Integrated Graphics Controller, Advanced Micro Devices, Inc. [AMD/ATI] Venus XT [Radeon HD 8870M / R9 M270X/M370X] 
+  # - Intel GPU https://nixos.wiki/wiki/Intel_Graphics
+  #     - The Intel Corporation Crystal Well Integrated Graphics Controller (rev 08) is part of the 4th generation Intel Core processors, known as Haswell.
+  # - AMD GPU https://wiki.nixos.org/wiki/AMD_GPU
+  #    - https://nixos.wiki/wiki/AMD_GPU
+  #    - https://www.techpowerup.com/gpu-specs/radeon-r9-m370x-mac-edition.c2730
+
   # WiFi Chipset: Broadcom Inc. and subsidiaries BCM43602 802.11ac Wireless LAN SoC
   # System Model: MacBookPro11,5
 

@@ -74,11 +74,9 @@
       enable32Bit = true;
 
       extraPackages = with pkgs; [
-        libvdpau-va-gl
-
-        libvdpau-va-gl
 
         ## vaapi
+        libvdpau-va-gl
         vaapiVdpau
         mesa
         intel-vaapi-driver # older intel versions
@@ -90,10 +88,10 @@
         # QSV - Quick Sync Video
         intel-media-sdk
         intel-media-driver # For Intel Quick Sync
+        intel-media-driver
 
         # intel - may help with acceleration
         vaapiIntel
-        intel-media-driver
 
         # extra amdvlk drivers
         amdvlk # Vulkan for AMD (check compatibility; may not support GCN2 fully)

@@ -26,7 +26,8 @@
   };
 
   environment.variables = {
-    NIXOS_OZONE_WL = "1";
+    # Ozone Wayland not working https://discourse.nixos.org/t/electron-apps-work-only-with-disable-gpu/63851
+    # NIXOS_OZONE_WL = "1";
     NIXOS_XDG_OPEN_USE_PORTAL = "1";
     GDK_BACKEND = "wayland";
     QT_QPA_PLATFORM = "wayland";

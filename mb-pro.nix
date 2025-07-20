@@ -19,29 +19,17 @@
 
   # https://forum.manjaro.org/t/kworker-kacpid-over-70-of-cpu-dual-boot-mac-manjaro/61981
 
-  # boot.kernelPackages = pkgs.linuxPackages_6_12;
-
-  # nixpkgs.config.permittedInsecurePackages = [
-  #   # "broadcom-sta-6.30.223.271-57-6.12.38"
-  #   "broadcom-sta"
-  # ];
-
   boot = {
-    #   extraModulePackages = [
-    # config.boot.kernelPackages.broadcom_sta
-    # # config.boot.kernelPackages.linuxKernel.packages.linux_6_12.broadcom_sta
-    # config.boot.kernelPackages.broadcom_sta
-    # ];
-
-
+    loader.grub.configurationLimit = 3;
+    loader.systemd-boot.configurationLimit = 3;
 
     kernelModules = [
       "applesmc"
       "i915"
       "wl"
-      "radeon"
+      # "radeon"
       # "amdgpu"
-      "apple-gmux"
+      # "apple-gmux"
       "brcmfmac" # wifi
     ];
 
@@ -49,6 +37,7 @@
       "hid_apple.iso_layout=0"
       "acpi_backlight=vendor"
       "acpi_mask_gpe=0x15"
+      # blank boot
       # "radeon.si_support=0"
       # "amdgpu.si_support=1"
       "brcmfmac.feature_disable=0x82000" # wifi
@@ -59,6 +48,8 @@
       "nvidia" # Disable NVIDIA video cards
       # "radeon" # Blacklist radeon after switch
     ];
+
+    initrd.kernelModules = [ "amdgpu" ]; # AMD GPU
   };
 
   # wifi
@@ -68,7 +59,7 @@
   };
 
   hardware = {
-    amdgpu.initrd.enable = false;
+    amdgpu.initrd.enable = true;
     bluetooth.enable = true;
     facetimehd.enable = true;
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware; # or true
@@ -79,14 +70,18 @@
 
       extraPackages = with pkgs; [
         libvdpau-va-gl
+
         ## vaapi
         vaapiVdpau
         mesa
 
+        # open cl for older GPU using radeon, graphics cards older than GCN 1 
+        mesa.opencl
+
         # QSV - Quick Sync Video
         intel-media-sdk
 
-        # intel - may help with accelleration
+        # intel - may help with acceleration
         vaapiIntel
         intel-media-driver
       ];

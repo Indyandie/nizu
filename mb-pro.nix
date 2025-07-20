@@ -43,6 +43,7 @@
       # Sea Islands
       "radeon.cik_support=0"
       "amdgpu.cik_support=1"
+      "acpi_osi=Darwin"
       "brcmfmac.feature_disable=0x82000" # wifi
     ];
 
@@ -66,6 +67,7 @@
     bluetooth.enable = true;
     facetimehd.enable = true;
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware; # or true
+    enableRedistributableFirmware = true;
 
     graphics = {
       enable = true;
@@ -74,23 +76,27 @@
       extraPackages = with pkgs; [
         libvdpau-va-gl
 
+        libvdpau-va-gl
+
         ## vaapi
         vaapiVdpau
         mesa
         intel-vaapi-driver # older intel versions
+        vaapiIntel # For Intel Haswell
 
         # open cl for older GPU using radeon, graphics cards older than GCN 1 
         mesa.opencl
 
         # QSV - Quick Sync Video
         intel-media-sdk
+        intel-media-driver # For Intel Quick Sync
 
         # intel - may help with acceleration
         vaapiIntel
         intel-media-driver
 
         # extra amdvlk drivers
-        amdvlk
+        amdvlk # Vulkan for AMD (check compatibility; may not support GCN2 fully)
         driversi686Linux.amdvlk # 32 bit apps
       ];
     };

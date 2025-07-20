@@ -75,6 +75,13 @@
         ## vaapi
         vaapiVdpau
         mesa
+
+        # QSV - Quick Sync Video
+        intel-media-sdk
+
+        # intel - may help with accelleration
+        vaapiIntel
+        intel-media-driver
       ];
     };
   };

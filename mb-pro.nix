@@ -37,9 +37,12 @@
       "hid_apple.iso_layout=0"
       "acpi_backlight=vendor"
       "acpi_mask_gpe=0x15"
-      # blank boot
+      # blank boot - Southern Islands
       # "radeon.si_support=0"
       # "amdgpu.si_support=1"
+      # Sea Islands
+      "radeon.cik_support=0"
+      "amdgpu.cik_support=1"
       "brcmfmac.feature_disable=0x82000" # wifi
     ];
 
@@ -74,6 +77,7 @@
         ## vaapi
         vaapiVdpau
         mesa
+        intel-vaapi-driver # older intel versions
 
         # open cl for older GPU using radeon, graphics cards older than GCN 1 
         mesa.opencl

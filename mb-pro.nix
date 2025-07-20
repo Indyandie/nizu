@@ -84,6 +84,10 @@
         # intel - may help with acceleration
         vaapiIntel
         intel-media-driver
+
+        # extra amdvlk drivers
+        amdvlk
+        driversi686Linux.amdvlk # 32 bit apps
       ];
     };
   };

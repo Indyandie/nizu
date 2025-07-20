@@ -29,7 +29,7 @@
       "wl"
       # "radeon"
       # "amdgpu"
-      # "apple-gmux"
+      "apple-gmux"
       "brcmfmac" # wifi
     ];
 

@@ -684,6 +684,7 @@
 
     # JS
     unstable.deno
+    unstable.bun
 
     # markup
     pandoc

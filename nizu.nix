@@ -146,6 +146,13 @@
         unstable.svelte-language-server
         unstable.astro-language-server
 
+        # dprint
+        dprint
+        dprint-plugins.g-plane-malva # CSS
+        dprint-plugins.g-plane-markup_fmt # Vento, Astro
+        dprint-plugins.dprint-plugin-typescript
+        dprint-plugins.dprint-plugin-biome # TS/JS
+
         # html
         html-tidy # formatter
         emmet-ls

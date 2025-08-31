@@ -147,9 +147,13 @@
         unstable.astro-language-server
 
         # html
+        html-tidy # formatter
         emmet-ls
         unstable.vscode-langservers-extracted
         unstable.tailwindcss-language-server
+
+        # xml
+        xq-xml # formatter
 
         # sh
         unstable.dot-language-server

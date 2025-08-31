@@ -146,6 +146,9 @@
         unstable.svelte-language-server
         unstable.astro-language-server
 
+        ## rescript
+        rescript-language-server
+
         # dprint
         dprint
         dprint-plugins.g-plane-malva # CSS

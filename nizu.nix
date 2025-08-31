@@ -328,6 +328,7 @@
           "sudo"
           "vi-mode"
         ];
+        custom = "$USER/oh-my-zsh";
       };
     };
 

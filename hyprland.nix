@@ -102,5 +102,12 @@
     unstable.hyprsunset
 
     # hyprsysteminfo # https://wiki.hyprland.org/Hypr-Ecosystem/hyprsysteminfo/
+
+    # quickshell
+    quickshell
+
+    ## QT tooling
+    ## https://doc.qt.io/qt-6/qtqml-tooling.html
+    kdePackages.full ## qmlls
   ];
 }

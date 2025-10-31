@@ -20,8 +20,8 @@
   # https://forum.manjaro.org/t/kworker-kacpid-over-70-of-cpu-dual-boot-mac-manjaro/61981
 
   boot = {
-    loader.grub.configurationLimit = 3;
-    loader.systemd-boot.configurationLimit = 3;
+    loader.grub.configurationLimit = 1;
+    loader.systemd-boot.configurationLimit = 1;
 
     kernelModules = [
       "applesmc"

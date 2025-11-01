@@ -104,7 +104,7 @@
     # hyprsysteminfo # https://wiki.hyprland.org/Hypr-Ecosystem/hyprsysteminfo/
 
     # quickshell
-    quickshell
+    unstable.quickshell
 
     ## QT tooling
     ## https://doc.qt.io/qt-6/qtqml-tooling.html

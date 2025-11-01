@@ -350,7 +350,7 @@
     # firefox
     firefox = {
       enable = true;
-      package = pkgs.unstable.floorp;
+      package = pkgs.unstable.floorp-bin;
     };
 
     # chromium policies

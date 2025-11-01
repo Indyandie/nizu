@@ -5,7 +5,7 @@ print 'starting configuration\n'
 FLAKE_FL='flake.nix'
 CONF_FL='configuration.nix'
 NXOS_DIR='/etc/nixos/'
-KONF_DIR='/home/nizusan/XXXXXXX/linux/nixos/'
+KONF_DIR='/home/nizusan/konfigu/linux/nixos/'
 NXOS_CONF_FL="$NXOS_DIR$CONF_FL"
 NXOS_FLAKE_FL="$NXOS_DIR$FLAKE_FL"
 NXOS_NIZU_DIR="${NXOS_DIR}nizu/"

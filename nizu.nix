@@ -170,7 +170,8 @@
         unstable.bash-language-server
         unstable.ansible
         unstable.ansible-lint
-        unstable.ansible-language-server
+        ansible-language-server
+        ## Removed from unstable - ansible-language-server (https://github.com/ansible/ansible-language-server?tab=readme-ov-file)repo moved to https://github.com/ansible/vscode-ansible 
 
         # md
         unstable.marksman

@@ -2,7 +2,6 @@
 {
   imports = [
     ./hyprland.nix
-    ./mb-pro.nix
     ./yubi.nix
   ];
 

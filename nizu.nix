@@ -51,7 +51,7 @@
         gtk-icon-theme-name=rose-pine-moon-icons
         gtk-font-name=JetBrainsMono Nerd Font 16
         gtk-cursor-theme-name=BreezeX-RosePine-Linux
-        gtk-cursor-theme-size=48
+        gtk-cursor-theme-size=18
         gtk-toolbar-style=GTK_TOOLBAR_ICONS
         gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
         gtk-button-images=0

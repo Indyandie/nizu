@@ -1,9 +1,5 @@
 { config, pkgs, options, ... }:
 {
-  imports = [
-    ./hyprland.nix
-    ./yubi.nix
-  ];
 
   nix = {
     extraOptions = ''

@@ -41,6 +41,7 @@
           ./nizu/hyprland.nix
           ./nizu/yubi.nix
           ./nizu/fw-16-7040-amd.nix
+          ./nizu/steam.nix
         ];
       };
     };

@@ -36,6 +36,7 @@ CONF_LIST=(
     'mb-pro.nix'
     'yubi.nix'
     'steam.nix'
+    'vpn.nix'
     'fw-16-7040-amd.nix'
 )
 

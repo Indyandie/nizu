@@ -109,13 +109,6 @@
       socketActivation = true;
     };
 
-    # mullvad vpn
-    mullvad-vpn = {
-      enable = true;
-      package = pkgs.unstable.mullvad;
-      enableExcludeWrapper = false;
-    };
-
     # text expander (no worky)
     # espanso = {
     #   enable = true;
@@ -229,10 +222,6 @@
         # # data sync
         syncthing
         localsend
-
-        # browser/vpn
-        unstable.mullvad-vpn
-        unstable.mullvad-browser
 
         # markdown
         libsForQt5.ghostwriter

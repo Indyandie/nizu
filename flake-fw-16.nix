@@ -38,10 +38,12 @@
           nixos-hardware.nixosModules.framework-16-7040-amd
           ./configuration.nix
           ./nizu/nizu.nix
-          ./nizu/hyprland.nix
-          ./nizu/yubi.nix
+
           ./nizu/fw-16-7040-amd.nix
+          ./nizu/hyprland.nix
           ./nizu/steam.nix
+          ./nizu/vpn.nix
+          ./nizu/yubi.nix
         ];
       };
     };

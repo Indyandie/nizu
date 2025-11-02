@@ -10,9 +10,9 @@ print 'starting configuration\n'
 # print "ln $KONF_DIR$CONF_FL $NXOS_CONF_FL"
 # ln $KONF_DIR$CONF_FL $NXOS_CONF_FL
 
-FLAKE_FL='flake.nix'
+FLAKE_FL='flake-fw-16.nix'
 NXOS_DIR='/etc/nixos/'
-NXOS_FLAKE_FL="$NXOS_DIR$FLAKE_FL"
+NXOS_FLAKE_FL="${NXOS_DIR}flake.nix"
 NXOS_NIZU_DIR="${NXOS_DIR}nizu/"
 NIZU_DIR='/home/nizusan/nizu/'
 

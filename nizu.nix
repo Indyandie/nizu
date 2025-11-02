@@ -277,7 +277,6 @@
         goxel
 
         # games
-        unstable.airshipper
 
         # rss
         gnome-feeds

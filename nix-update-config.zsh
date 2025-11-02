@@ -35,6 +35,7 @@ CONF_LIST=(
     'hyprland.nix'
     'mb-pro.nix'
     'yubi.nix'
+    'fw-16-7040-amd.nix'
 )
 
 print "\ncreating hardlink: $NXOS_FLAKE_FL"

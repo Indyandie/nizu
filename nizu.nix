@@ -126,6 +126,9 @@
       shell = pkgs.zsh;
 
       packages = with pkgs; [
+        # sounds - freedesktop
+        sound-theme-freedesktop
+
         # node & npm
         nodejs_22
 

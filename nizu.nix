@@ -479,12 +479,16 @@
     nixpkgs-fmt
     nil
 
-    # programs
+    ## version control
     gh
     lazygit # tui
-    file # MIME
     diff-so-fancy
     difftastic
+    unstable.jujutsu
+    unstable.jjui
+
+    # programs
+    file # MIME
     unstable.starship
     neofetch
     zsh

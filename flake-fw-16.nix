@@ -2,7 +2,7 @@
   description = "nizu - framework 16";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
@@ -29,7 +29,9 @@
                 # use this variant if unfree packages are needed:
                 unstable = import nixpkgs-unstable {
                   # inherit prev.system;
-                  inherit (final) system;
+                  inherit (final.stdenv.hostPlatform) system;
+                  # 25.11 evaluation warning: 'system' has been renamed to/replaced by 'stdenv.hostPlatform.system'
+                  # https://discourse.nixos.org/t/how-to-fix-evaluation-warning-system-has-been-renamed-to-replaced-by-stdenv-hostplatform-system/72120/5
                   config.allowUnfree = true;
                 };
               })

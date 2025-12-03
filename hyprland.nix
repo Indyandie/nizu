@@ -57,7 +57,7 @@
     seatd
 
     # launcher
-    rofi-wayland
+    rofi
     bemoji # emoji picker
     wtype # bemoji dependency
     # wofi
@@ -81,10 +81,10 @@
 
     # qt
     libsForQt5.qt5.qtwayland
-    qt6.qtwayland
+    kdePackages.qtwayland
     adwaita-qt
     adwaita-qt6
-    # hyprland-qt-support  # https://wiki.hyprland.org/Hypr-Ecosystem/hyprland-qt-support/
+    hyprland-qt-support  # https://wiki.hyprland.org/Hypr-Ecosystem/hyprland-qt-support/
 
     hyprpolkitagent
 
@@ -99,6 +99,6 @@
 
     ## QT tooling
     ## https://doc.qt.io/qt-6/qtqml-tooling.html
-    kdePackages.full ## qmlls
+    kdePackages.qtdeclarative ## qmlls
   ];
 }

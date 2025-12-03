@@ -162,7 +162,7 @@
         unstable.bash-language-server
         unstable.ansible
         unstable.ansible-lint
-        ansible-language-server
+        # 25.11 ansible-language-server removed
         ## Removed from unstable - ansible-language-server (https://github.com/ansible/ansible-language-server?tab=readme-ov-file)repo moved to https://github.com/ansible/vscode-ansible 
 
         # md
@@ -227,7 +227,7 @@
         localsend
 
         # markdown
-        libsForQt5.ghostwriter
+        kdePackages.ghostwriter
         mermaid-cli
 
         # email
@@ -251,7 +251,7 @@
 
         # typst
         tinymist
-        typstfmt
+        typstyle # 25.11 typstfmt remove 
 
         # ascii
         unstable.ascii-draw
@@ -541,7 +541,7 @@
     dict
 
     # pinentry
-    pinentry
+    pinentry-qt
 
     # ascii
     figlet
@@ -700,7 +700,8 @@
     ols
 
     # android
-    android-udev-rules
+    # 25.11 android-udev-rules - has been removed due to being superseded by built-in systemd uaccess rules.
+    # https://github.com/M0Rf30/android-udev-rules
 
     # rss tui
     unstable.newsboat
@@ -722,7 +723,7 @@
 
     packages = with pkgs; [
       noto-fonts
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       noto-fonts-cjk-sans
       nerd-fonts.jetbrains-mono
       atkinson-hyperlegible

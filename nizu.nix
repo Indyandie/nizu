@@ -228,7 +228,11 @@
 
         # markdown
         kdePackages.ghostwriter
+        apostrophe
         mermaid-cli
+
+        # graphs
+        gnome-graphs
 
         # email
         protonmail-desktop

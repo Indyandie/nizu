@@ -109,6 +109,17 @@
       socketActivation = true;
     };
 
+    dictd = {
+      enable = true;
+
+      DBs = with pkgs.dictdDBs; [
+        wordnet
+        wiktionary
+        jpn2eng
+        eng2jpn
+      ];
+    };
+
     # text expander (no worky)
     # espanso = {
     #   enable = true;

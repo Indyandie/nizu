@@ -97,6 +97,9 @@
     # quickshell
     unstable.quickshell
 
+    # hyprshell
+    unstable.hyprshell
+
     ## QT tooling
     ## https://doc.qt.io/qt-6/qtqml-tooling.html
     kdePackages.qtdeclarative ## qmlls

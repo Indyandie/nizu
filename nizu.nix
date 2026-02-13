@@ -476,6 +476,9 @@
 
     wayland
     xwayland
+
+    unstable.raylib
+    unstable.sdl3
   ]);
 
   # pkgs

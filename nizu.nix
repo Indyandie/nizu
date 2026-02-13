@@ -711,8 +711,16 @@
     unstable.chawan
 
     # odin
-    odin
-    ols
+    unstable.odin
+    unstable.ols
+
+    # sdl
+    unstable.sdl3
+    unstable.sdl3-ttf
+    unstable.sdl3-image
+
+    # raylib
+    unstable.raylib
 
     # android
     # 25.11 android-udev-rules - has been removed due to being superseded by built-in systemd uaccess rules.

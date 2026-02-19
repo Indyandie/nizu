@@ -716,7 +716,7 @@
 
     # odin
     unstable.odin
-    unstable.ols
+    ols
 
     # sdl
     unstable.sdl3

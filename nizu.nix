@@ -479,6 +479,7 @@
 
     unstable.raylib
     unstable.sdl3
+    unstable.glfw
   ]);
 
   # pkgs
@@ -724,6 +725,9 @@
 
     # raylib
     unstable.raylib
+
+    # opengl
+    unstable.glfw
 
     # android
     # 25.11 android-udev-rules - has been removed due to being superseded by built-in systemd uaccess rules.

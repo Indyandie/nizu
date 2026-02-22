@@ -311,6 +311,12 @@
   };
 
   programs = {
+    ## nix-direnv
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
+
     ## xfce thunar
     thunar = {
       enable = true;

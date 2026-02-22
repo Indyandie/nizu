@@ -373,120 +373,123 @@
   # run a non-nixos executable on NixOs
   # https://unix.stackexchange.com/questions/522822/different-methods-to-run-a-non-nixos-executable-on-nixos
 
-  programs.nix-ld.enable = true;
+  programs.nix-ld = {
+    enable = true;
+    libraries = options.programs.nix-ld.libraries.default ++ (with pkgs; [
+      stdenv.cc.cc
+      libGL
+      libelf
+      libva
+      openssl
+      xorg.libX11
+      xorg.libXcomposite
+      xorg.libXdamage
+      xorg.libXext
+      xorg.libXfixes
+      xorg.libXrandr
+      xorg.libXtst
+      xorg.libXxf86vm
+      xorg.libxcb
+      xorg.libxshmfence
 
-  programs.nix-ld.libraries = options.programs.nix-ld.libraries.default ++ (with pkgs; [
-    stdenv.cc.cc
-    openssl
-    xorg.libXcomposite
-    xorg.libXtst
-    xorg.libXrandr
-    xorg.libXext
-    xorg.libX11
-    xorg.libXfixes
-    libGL
-    libva
-    xorg.libxcb
-    xorg.libXdamage
-    xorg.libxshmfence
-    xorg.libXxf86vm
-    libelf
+      # Required
+      glib
+      gtk2
+      bzip2
 
-    # Required
-    glib
-    gtk2
-    bzip2
+      # Without these it silently fails
+      SDL2
+      SDL2.dev
+      alsa-lib
+      cups
+      dbus-glib
+      gnome2.GConf
+      libcap
+      libusb1
+      nspr
+      nss
+      udev
+      xorg.libICE
+      xorg.libSM
+      xorg.libX11
+      xorg.libXScrnSaver
+      xorg.libXau
+      xorg.libXcursor
+      xorg.libXdmcp
+      xorg.libXext
+      xorg.libXfixes
+      xorg.libXi
+      xorg.libXinerama
+      xorg.libXrandr
+      xorg.libXrender
+      xorg.libXxf86vm
+      xorg.libxcb
 
-    # Without these it silently fails
-    alsa-lib
-    xorg.libICE
-    xorg.libSM
-    xorg.libX11
-    xorg.libXScrnSaver
-    xorg.libXau
-    xorg.libXcursor
-    xorg.libXdmcp
-    xorg.libXext
-    xorg.libXfixes
-    xorg.libXi
-    xorg.libXinerama
-    xorg.libXrandr
-    xorg.libXrender
-    xorg.libXxf86vm
-    xorg.libxcb
-    udev
-    gnome2.GConf
-    nspr
-    nss
-    cups
-    libcap
-    SDL2
-    SDL2.dev
-    libusb1
-    dbus-glib
+      # Only libraries are needed from those two
+      libudev0-shim
 
-    # Only libraries are needed from those two
-    libudev0-shim
+      # Verified games requirements
+      SDL
+      SDL2_image
+      glew110
+      libidn
+      libogg
+      libvorbis
+      tbb
+      xorg.libXmu
+      xorg.libXt
 
-    # Verified games requirements
-    xorg.libXt
-    xorg.libXmu
-    libogg
-    libvorbis
-    SDL
-    SDL2_image
-    glew110
-    libidn
-    tbb
+      # Other things from runtime
+      SDL2_mixer
+      SDL2_ttf
+      SDL_image
+      SDL_mixer
+      SDL_ttf
+      alsa-lib # renamed
+      atk
+      cairo
+      dbus
+      expat
+      flac
+      fontconfig
+      freeglut
+      freetype
+      gdk-pixbuf
+      libappindicator-gtk2
+      libcaca
+      libcanberra
+      libdbusmenu-gtk2
+      libgcrypt
+      libindicator-gtk2
+      libjpeg
+      libmikmod
+      libpng
+      libpng12
+      librsvg
+      libsamplerate
+      libtheora
+      libtiff
+      libvdpau
+      libvpx
+      pango
+      pixman
+      speex
+      xorg.libXft
 
-    # Other things from runtime
-    flac
-    freeglut
-    libjpeg
-    libpng
-    libpng12
-    libsamplerate
-    libmikmod
-    libtheora
-    libtiff
-    pixman
-    speex
-    SDL_image
-    SDL_ttf
-    SDL_mixer
-    SDL2_ttf
-    SDL2_mixer
-    libappindicator-gtk2
-    libdbusmenu-gtk2
-    libindicator-gtk2
-    libcaca
-    libcanberra
-    libgcrypt
-    libvpx
-    librsvg
-    xorg.libXft
-    libvdpau
-    pango
-    cairo
-    atk
-    gdk-pixbuf
-    fontconfig
-    freetype
-    dbus
-    alsa-lib # renamed
-    expat
-    # Needed for electron
-    libdrm
-    mesa
-    libxkbcommon
+      # Needed for electron
+      libdrm
+      libxkbcommon
+      mesa
 
-    wayland
-    xwayland
+      wayland
+      xwayland
 
-    unstable.raylib
-    unstable.sdl3
-    unstable.glfw
-  ]);
+      unstable.raylib
+      unstable.sdl3
+      unstable.glfw
+    ]);
+  };
+
 
   # pkgs
   environment.systemPackages = with pkgs; [

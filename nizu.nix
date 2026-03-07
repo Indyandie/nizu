@@ -344,6 +344,7 @@
           "deno"
           "sudo"
           "vi-mode"
+          "direnv"
         ];
         custom = "$USER/oh-my-zsh";
       };

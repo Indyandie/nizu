@@ -141,11 +141,10 @@
         sound-theme-freedesktop
 
         # node & npm
-        nodejs_22
+        nodejs
 
         # js
         unstable.typescript
-        unstable.svelte-language-server
         unstable.astro-language-server
 
         ## rescript
@@ -173,7 +172,7 @@
         unstable.bash-language-server
         unstable.ansible
         unstable.ansible-lint
-        # 25.11 ansible-language-server removed
+        unstable.ansible-language-server
         ## Removed from unstable - ansible-language-server (https://github.com/ansible/ansible-language-server?tab=readme-ov-file)repo moved to https://github.com/ansible/vscode-ansible 
 
         # md
@@ -205,7 +204,7 @@
 
         ## browsers
 
-        # ladybird
+        ladybird
 
         unstable.brave
         # (unstable.brave.override {
@@ -231,10 +230,10 @@
         # zig
 
         # # rust
-        unstable.rustup
+        # unstable.rustup
 
         # # data sync
-        syncthing
+        unstable.syncthing
         localsend
 
         # markdown
@@ -246,11 +245,10 @@
         gnome-graphs
 
         # email
-        protonmail-desktop
+        unstable.protonmail-desktop
 
         # notes
         unstable.obsidian
-        unstable.standardnotes
 
         # sounds
         sound-theme-freedesktop
@@ -259,7 +257,7 @@
         unstable.signal-desktop
 
         # API Testing
-        bruno
+        unstable.bruno
 
         # epub
         foliate
@@ -290,7 +288,6 @@
 
         ## music player
         tauon
-
 
         ## to do
         taskwarrior3
@@ -341,7 +338,6 @@
         enable = true;
         plugins = [
           "git"
-          "deno"
           "sudo"
           "vi-mode"
           "direnv"
@@ -509,17 +505,15 @@
     nil
 
     ## version control
-    gh
-    lazygit # tui
-    diff-so-fancy
-    difftastic
+    unstable.lazygit # tui
+    unstable.diff-so-fancy
+    unstable.difftastic
     unstable.jujutsu
     unstable.jjui
 
     # programs
     file # MIME
     unstable.starship
-    neofetch
     zsh
     oh-my-zsh
     eza
@@ -542,8 +536,8 @@
     bat-extras.batman
     bat-extras.batpipe
     # clipboard-jh # copy pasta # https://github.com/Slackadays/Clipboard/issues/171
-    glow
-    atuin # shell history
+    unstable.glow
+    unstable.atuin # shell history
 
     # multiplexer
     unstable.zellij
@@ -552,10 +546,10 @@
     unstable.dasel
 
     # csv
-    csvkit
-    csvq
-    csvlens
-    sc-im
+    unstable.csvkit
+    unstable.csvq
+    unstable.csvlens
+    unstable.sc-im
     unstable.qsv
 
     # JSON
@@ -567,7 +561,7 @@
     unstable.yq-go
 
     # words
-    dict
+    unstable.dict
 
     # pinentry
     pinentry-qt
@@ -576,7 +570,7 @@
     figlet
     lolcat
     fortune-kind
-    chafa
+    unstable.chafa
 
     # unicode
     uni
@@ -704,10 +698,6 @@
 
     openssl
 
-    # JS
-    unstable.deno
-    unstable.bun
-
     # markup
     pandoc
     # weasyprint
@@ -749,7 +739,7 @@
     # DNS
     dig
 
-    # vibes 
+    # slop
     unstable.opencode
 
     # boot

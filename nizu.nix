@@ -204,7 +204,7 @@
 
         ## browsers
 
-        ladybird
+        # ladybird
 
         unstable.brave
         # (unstable.brave.override {
@@ -317,16 +317,13 @@
     ## xfce thunar
     thunar = {
       enable = true;
-      plugins = with pkgs.xfce; [
+      plugins = with pkgs; [
         thunar-archive-plugin
         thunar-volman
         thunar-media-tags-plugin
         thunar-dropbox-plugin
       ];
     };
-
-    # light
-    light.enable = true;
 
     # zsh
     zsh = {
@@ -378,16 +375,16 @@
       libelf
       libva
       openssl
-      xorg.libX11
-      xorg.libXcomposite
-      xorg.libXdamage
-      xorg.libXext
-      xorg.libXfixes
-      xorg.libXrandr
-      xorg.libXtst
-      xorg.libXxf86vm
-      xorg.libxcb
-      xorg.libxshmfence
+      libx11
+      libxcomposite
+      libxdamage
+      libxext
+      libxfixes
+      libxrandr
+      libxtst
+      libxxf86vm
+      libxcb
+      libxshmfence
 
       # Required
       glib
@@ -406,21 +403,21 @@
       nspr
       nss
       udev
-      xorg.libICE
-      xorg.libSM
-      xorg.libX11
-      xorg.libXScrnSaver
-      xorg.libXau
-      xorg.libXcursor
-      xorg.libXdmcp
-      xorg.libXext
-      xorg.libXfixes
-      xorg.libXi
-      xorg.libXinerama
-      xorg.libXrandr
-      xorg.libXrender
-      xorg.libXxf86vm
-      xorg.libxcb
+      libice
+      libsm
+      libx11
+      libxscrnsaver
+      libXau
+      libxcursor
+      libxdmcp
+      libxext
+      libxfixes
+      libxi
+      libxinerama
+      libxrandr
+      libxrender
+      libxxf86vm
+      libxcb
 
       # Only libraries are needed from those two
       libudev0-shim
@@ -433,8 +430,8 @@
       libogg
       libvorbis
       tbb
-      xorg.libXmu
-      xorg.libXt
+      libxmu
+      libxt
 
       # Other things from runtime
       SDL2_mixer
@@ -471,7 +468,7 @@
       pango
       pixman
       speex
-      xorg.libXft
+      libxft
 
       # Needed for electron
       libdrm
@@ -730,8 +727,7 @@
     unstable.glfw
 
     # android
-    # 25.11 android-udev-rules - has been removed due to being superseded by built-in systemd uaccess rules.
-    # https://github.com/M0Rf30/android-udev-rules
+    android-tools
 
     # rss tui
     unstable.newsboat

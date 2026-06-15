@@ -140,16 +140,6 @@
         # sounds - freedesktop
         sound-theme-freedesktop
 
-        # node & npm
-        nodejs
-
-        # js
-        unstable.typescript
-        unstable.astro-language-server
-
-        ## rescript
-        rescript-language-server
-
         # dprint
         dprint
         dprint-plugins.g-plane-malva # CSS
@@ -179,10 +169,6 @@
         unstable.marksman
         unstable.ltex-ls
 
-        # py
-        python313Packages.python-lsp-server
-        python313Packages.black
-
         # lua
         unstable.lua-language-server
 
@@ -195,9 +181,6 @@
 
         # toml
         unstable.taplo
-
-        # bash lsp
-        unstable.bash-language-server
 
         # snippet lsp
         simple-completion-language-server
@@ -224,7 +207,7 @@
 
 
         # # neovim dependency
-        gcc
+        # gcc
         # cl
         # rocmPackages.llvm.clang
         # zig
@@ -237,8 +220,6 @@
         localsend
 
         # markdown
-        kdePackages.ghostwriter
-        apostrophe
         mermaid-cli
 
         # graphs
@@ -257,7 +238,7 @@
         unstable.signal-desktop
 
         # API Testing
-        unstable.bruno
+        # unstable.bruno
 
         # epub
         foliate
@@ -268,9 +249,6 @@
 
         # ascii
         unstable.ascii-draw
-
-        ## css
-        unstable.lightningcss
 
         ## pdf
         unstable.evince
@@ -344,10 +322,10 @@
     };
 
     # nvim
-    neovim = {
-      enable = true;
-      withNodeJs = true;
-    };
+    # neovim = {
+    #   enable = true;
+    #   withNodeJs = true;
+    # };
 
     # firefox
     firefox = {
@@ -425,7 +403,8 @@
       # Verified games requirements
       SDL
       SDL2_image
-      glew110
+      glew_1_10
+      # glew
       libidn
       libogg
       libvorbis
@@ -734,9 +713,6 @@
 
     # DNS
     dig
-
-    # slop
-    unstable.opencode
 
     # boot
     # unetbootin

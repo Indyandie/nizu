@@ -35,4 +35,10 @@
     enable = true;
     binfmt = true;
   };
+
+  # pkgs
+  environment.systemPackages = with pkgs; [
+    sc-controller # steam controller
+  ];
+
 }

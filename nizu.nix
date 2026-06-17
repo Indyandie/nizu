@@ -63,7 +63,7 @@
 
   };
 
-  security.rtkit.enable = true;
+  security.rtkit.enable = true; # Realtimekit service (pipewire priority)
 
   boot = {
     extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
@@ -105,7 +105,7 @@
       };
       pulse.enable = true;
       wireplumber.enable = true;
-      jack.enable = true; # (optional)
+      jack.enable = true;
       socketActivation = true;
     };
 
@@ -265,7 +265,7 @@
         gnome-feeds
 
         ## music player
-        tauon
+        musicpod
 
         ## to do
         taskwarrior3

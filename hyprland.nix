@@ -71,9 +71,11 @@
     eww
     acpi
 
-    # screenshots
-    grim
+    # screenshots https://wiki.hypr.land/Useful-Utilities/Screenshots-and-Recording/
+    unstable.grim
     unstable.slurp
+    unstable.swappy
+    unstable.satty
 
     # screen-recording
     wf-recorder

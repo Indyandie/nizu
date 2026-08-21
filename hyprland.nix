@@ -65,7 +65,8 @@
     # terminal
     unstable.alacritty
     kitty
-    unstable.ghostty
+    unstable.ghostty # TODO: Remove if foot works out
+    unstable.foot
 
     # status bar
     eww

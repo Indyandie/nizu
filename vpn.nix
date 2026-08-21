@@ -1,12 +1,22 @@
-{ pkgs, ... }:
+{ pkgs, lib, ifFw16 ? false, ... }:
 
 {
+
   # mullvad vpn
-  services.mullvad-vpn = {
-    enable = true;
-    package = pkgs.unstable.mullvad-vpn;
-    enableExcludeWrapper = false;
-  };
+  services.mullvad-vpn = lib.mkMerge [
+    {
+      enable = true;
+      enableExcludeWrapper = false;
+    }
+
+    (lib.mkIf ifFw16 {
+      package = pkgs.unstable.mullvad;
+      gui = {
+        enable = true;
+        package = pkgs.unstable.mullvad-vpn;
+      };
+    })
+  ];
 
   users.users.nizusan = {
     packages = with pkgs; [

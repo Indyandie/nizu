@@ -18,9 +18,15 @@
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = attrs;
+        specialArgs = attrs // {
+          ifFw16 = true;
+        };
         modules = [
           {
+            disabledModules = [ "services/networking/mullvad-vpn.nix" ];
+            imports = [
+              (nixpkgs-unstable + "/nixos/modules/services/networking/mullvad-vpn.nix")
+            ];
             nixpkgs.overlays = [
               (final: prev: {
                 # unstable = nixpkgs-unstable.legacyPackages.${prev.system};

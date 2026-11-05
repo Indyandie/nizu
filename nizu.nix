@@ -143,15 +143,11 @@
         # dprint
         dprint
         dprint-plugins.g-plane-malva # CSS
-        dprint-plugins.g-plane-markup_fmt # Vento, Astro
-        dprint-plugins.dprint-plugin-typescript
-        dprint-plugins.dprint-plugin-biome # TS/JS
+        # dprint-plugins.dprint-plugin-biome # TS/JS
 
         # html
         html-tidy # formatter
         emmet-ls
-        unstable.vscode-langservers-extracted
-        unstable.tailwindcss-language-server
 
         # xml
         xq-xml # formatter

@@ -256,6 +256,7 @@
         goxel
 
         # games
+        unstable.tic-80
 
         # rss
         gnome-feeds

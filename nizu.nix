@@ -163,7 +163,8 @@
 
         # md
         unstable.marksman
-        unstable.ltex-ls
+        # unstable.ltex-ls ARCHIVED
+        unstable.ltex-ls-plus
 
         # lua
         unstable.lua-language-server

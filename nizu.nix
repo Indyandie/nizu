@@ -368,8 +368,8 @@
       bzip2
 
       # Without these it silently fails
-      SDL2
-      SDL2.dev
+      unstable.SDL2
+      unstable.SDL2.dev
       alsa-lib
       cups
       dbus-glib
@@ -399,8 +399,8 @@
       libudev0-shim
 
       # Verified games requirements
-      SDL
-      SDL2_image
+      unstable.SDL
+      unstable.SDL2_image
       glew_1_10
       # glew
       libidn
@@ -411,11 +411,14 @@
       libxt
 
       # Other things from runtime
-      SDL2_mixer
-      SDL2_ttf
-      SDL_image
-      SDL_mixer
-      SDL_ttf
+      unstable.SDL2_mixer
+      unstable.SDL2_ttf
+      unstable.SDL_image
+      unstable.SDL_mixer
+      unstable.SDL_ttf
+      unstable.sdl3
+      unstable.sdl3-ttf
+      unstable.sdl3-image
       alsa-lib # renamed
       atk
       cairo
@@ -693,6 +696,7 @@
     ols
 
     # sdl
+    unstable.SDL2
     unstable.sdl3
     unstable.sdl3-ttf
     unstable.sdl3-image

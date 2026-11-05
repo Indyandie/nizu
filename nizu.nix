@@ -472,7 +472,7 @@
     # nix-du
 
     # gpg
-    keepassxc
+    unstable.keepassxc
 
     # editors
     unstable.helix
